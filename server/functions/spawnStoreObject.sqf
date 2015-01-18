@@ -228,6 +228,30 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					{
 						_object setRepairCargo 25;
 					};
+					
+					case (_object isKindOf "B_Plane_CAS_01_F"):
+					{
+						_object removeMagazines "6Rnd_Missile_AGM_02_F";
+						_object addMagazine ["6Rnd_Missile_AGM_02_F", 3];
+					};
+
+					case (_object isKindOf "O_Plane_CAS_02_F"):
+					{
+						_object removeMagazines "4Rnd_Missile_AGM_01_F";
+						_object addMagazine ["4Rnd_Missile_AGM_01_F", 3];
+					};
+					
+					case (_object isKindOf "O_UAV_02_F"):
+					{
+						_object removeMagazines "6Rnd_LG_scalpel";
+						_object addMagazine ["6Rnd_LG_scalpel", 3];
+					};
+
+					case (_object isKindOf "I_UAV_02_F"):
+					{
+						_object removeMagazines "6Rnd_LG_scalpel";
+						_object addMagazine ["6Rnd_LG_scalpel", 3];
+					};
 				};
 
 				if (_object getVariable ["A3W_purchasedVehicle", false] && !isNil "fn_manualVehicleSave") then

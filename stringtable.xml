@@ -90,6 +90,12 @@
 		<Key ID="STR_WL_ShopDescriptions_Warchest">
 			<English>A safe to store your team's money.</English>
 		</Key>
+		<Key ID="STR_WL_ShopDescriptions_CCTV_Camera">
+            <English>This is the remote camera for a television system in which the video signals are transmitted from one or more cameras via Wifi to a restricted set of base stations.</English>
+        </Key>
+        <Key ID="STR_WL_ShopDescriptions_CCTV_Base">
+            <English>This is the base station for a television system in which the video signals are transmitted from one or more cameras via Wifi.</English>
+        </Key>
 	</Package>
 	<Package name="Dialogs">
 		<Key ID="STR_WL_dialog_TeamkillText">

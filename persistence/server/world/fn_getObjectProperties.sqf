@@ -59,6 +59,14 @@ switch (true) do
 		_variables pushBack ["groupOnly", _obj getVariable ["groupOnly", false]];
 		_variables pushBack ["ownerName", toArray (_obj getVariable ["ownerName", "[Beacon]"])];
 	};
+	case (_obj call _isCamera):
+	{
+		_variables pushBack ["a3w_cctv_camera", (_obj getVariable ["a3w_cctv_camera", nil])];
+    	_variables pushBack ["camera_name", (_obj getVariable ["camera_name", nil])];
+    	_variables pushBack ["camera_owner_type", (_obj getVariable ["camera_owner_type", nil])];
+    	_variables pushBack ["camera_owner_value", (_obj getVariable ["camera_owner_value", nil])];
+    	_variables pushBack ["mf_item_id", (_obj getVariable ["mf_item_id", nil])];
+	};
 };
 
 _r3fSide = _obj getVariable "R3F_Side";

@@ -24,7 +24,7 @@ clearBackpackCargoGlobal _vehicle;
 
 if !(_vehicle isKindOf "UAV_02_base_F") then
 {
-	_vehicle disableTIEquipment true;
+	_vehicle disableTIEquipment false;
 };
 
 {

@@ -10,6 +10,8 @@ pvar_teamKillList = [];
 publicVariable "pvar_teamKillList";
 pvar_spawn_beacons = [];
 publicVariable "pvar_spawn_beacons";
+cctv_cameras = [];
+publicVariable "cctv_cameras";
 pvar_warchest_funds_east = 0;
 publicVariable "pvar_warchest_funds_east";
 pvar_warchest_funds_west = 0;

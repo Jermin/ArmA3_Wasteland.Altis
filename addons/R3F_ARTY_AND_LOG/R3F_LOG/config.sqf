@@ -64,7 +64,9 @@ R3F_LOG_CFG_objets_heliportables =
 	"UGV_01_base_F",
 	"SDV_01_base_F",
 	"Boat_Civil_01_base_F",
-	"Boat_Armed_01_base_F"
+	"Boat_Armed_01_base_F",
+	"Truck_F",
+	"Tank_F"
 ];
 
 
@@ -101,7 +103,17 @@ R3F_LOG_CFG_transporteurs =
 	["B_Heli_Transport_03_base_F", 30],
 	["Heli_Transport_04_base_F", 30],
 	["Heli_Attack_01_base_F", 10],
-	["Heli_Attack_02_base_F", 20]
+	["Heli_Attack_02_base_F", 20],
+	["B_Heli_Transport_03_F", 50],
+	["B_Heli_Transport_03_unarmed_F", 50],
+	["O_Heli_Transport_04_F", 50],
+	["O_Heli_Transport_04_box_F", 50],
+	["O_Heli_Transport_04_covered_F", 50],
+	["O_Heli_Transport_04_ammo_F", 50],
+	["O_Heli_Transport_04_bench_F", 50],
+	["O_Heli_Transport_04_fuel_F", 50],
+	["O_Heli_Transport_04_medevac_F", 50],
+	["O_Heli_Transport_04_repair_F", 50]
 ];
 
 
@@ -158,7 +170,35 @@ R3F_LOG_CFG_objets_transportables =
 	["Land_Shoot_House_Wall_F", 3],
 	["Land_Stone_8m_F", 5],
 	["Land_ToiletBox_F", 2],
-	["Land_BarrelWater_F", 2]
+	["Land_BarrelWater_F", 2],
+	["Land_Crane_F", 30],
+	["Land_Money_F", 0],
+	["Land_BC_Court_F", 20],
+	["Land_TTowerBig_1_F", 30],
+	["Land_TTowerBig_2_F", 30],
+	["Land_Castle_01_step_F", 5],
+	["Land_runway_edgelight_blue_F", 2],
+	["BlockConcrete_F", 5],
+	["Land_Shoot_House_Wall_Long_Stand_F", 3],
+	["Land_Shoot_House_Wall_Long_Crouch_F", 3],
+	["Land_Shoot_House_Wall_Long_Prone_F", 2],
+	["Land_Shoot_House_Corner_F", 3],
+	["Land_Shoot_House_Corner_Stand_F", 3],
+	["Land_Shoot_House_Corner_Crouch_F", 3],
+	["Land_Shoot_House_Corner_Prone_F", 2],
+	["Land_Shoot_House_Panels_F", 3],
+	["Land_Shoot_House_Tunnel_F", 3],
+	["Land_Shoot_House_Tunnel_Crouch_F", 3],
+	["Land_Shoot_House_Tunnel_Prone_F", 2],
+	["Land_LampHalogen_F", 2],
+	["Land_spp_Tower_F", 40],
+	["Land_Canal_Wall_10m_F", 10],
+	["Land_i_Addon_03_V1_F", 20],
+	["Land_i_Addon_03mid_V1_F", 20],
+	["Land_i_Addon_04_V1_F", 20],
+	["Land_Grave_dirt_F", 4],
+	["Land_Grave_forest_F", 4],
+	["Land_Grave_rocks_F", 4]
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
@@ -215,5 +255,35 @@ R3F_LOG_CFG_objets_deplacables =
 	"Land_Shoot_House_Wall_F",
 	"Land_Stone_8m_F",
 	"Land_ToiletBox_F",
-	"Land_BarrelWater_F"
+	"Land_BarrelWater_F",
+	"Land_Crane_F" ,
+	"Land_HandyCam_F",
+	"Land_Laptop_unfolded_F",
+	"Land_Money_F",
+	"Land_BC_Court_F",
+	"Land_TTowerBig_1_F",
+	"Land_TTowerBig_2_F",
+	"Land_Castle_01_step_F",
+	"Land_runway_edgelight_blue_F",
+	"BlockConcrete_F",
+	"Land_Shoot_House_Wall_Long_Stand_F",
+	"Land_Shoot_House_Wall_Long_Crouch_F",
+	"Land_Shoot_House_Wall_Long_Prone_F",
+	"Land_Shoot_House_Corner_F",
+	"Land_Shoot_House_Corner_Stand_F",
+	"Land_Shoot_House_Corner_Crouch_F",
+	"Land_Shoot_House_Corner_Prone_F",
+	"Land_Shoot_House_Panels_F",
+	"Land_Shoot_House_Tunnel_F",
+	"Land_Shoot_House_Tunnel_Crouch_F",
+	"Land_Shoot_House_Tunnel_Prone_F",
+	"Land_LampHalogen_F",
+	"Land_spp_Tower_F",
+	"Land_Canal_Wall_10m_F",
+	"Land_i_Addon_03_V1_F",
+	"Land_i_Addon_03mid_V1_F",
+	"Land_i_Addon_04_V1_F",
+	"Land_Grave_dirt_F",
+	"Land_Grave_forest_F",
+	"Land_Grave_rocks_F"
 ];
