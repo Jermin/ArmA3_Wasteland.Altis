@@ -254,7 +254,7 @@ if (_playerSavingOn || _serverSavingOn) then
 		["warchestSaving", _warchestSavingOn],
 		["warchestMoneySaving", _warchestMoneySavingOn],
 		["spawnBeaconSaving", _beaconSavingOn],
-		["cctvCameraSaving", _cctvCameraSavingOn],
+		["cctvCameraSaving", _cctvCameraSavingOn]
 	];
 };
 

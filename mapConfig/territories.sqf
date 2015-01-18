@@ -29,4 +29,3 @@
 	["TERRITORY_PYRSOS_TRANSMITTER", "Pyrsos Transmitter", 1200, "TRANSMITTER"],
 	["TERRITORY_MILITARY_RESEARCH", "Telos Military Base", 1200, "MILITARY"]
 ]
-]
