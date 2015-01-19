@@ -31,13 +31,6 @@ boomerang_led_set_state = {
   _led ctrlShow _state;
 };
 
-boomerang_voice = "Male12";
-boomerang_voice_tone = "Normal"; //Stealth, Normal, Combat
-boomerang_sounds_path =  ("a3\dubbing_radio_f\data\" + boomerang_voice + "\RadioProtocolENG\" + boomerang_voice_tone);
-boomerang_contact_sound = (boomerang_sounds_path + "\150_Reporting\EnemyDetected_2.ogg");
-
-#define POS_ASL (if(surfaceIsWater (getPos player)) then {positionCameraToWorld [0,0,0]} else {ATLtoASL(positionCameraToWorld [0,0,0])})
-
 boomerang_led_sound = { _this spawn {
   ARGVX3(0,_index,0);
   playSound "contact";
