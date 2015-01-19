@@ -1,13 +1,6 @@
-#inclide "hud_constants.h"
+#include "hud_constants.h"
 
-#define led(index) \
-  class boomerang_hud_led ## index: gui_RscPictureKeepAspect { \
-    idc = boomerang_hud_led ## index ## _idc; \
-    x = -10; y = -10; \
-    w = 0.1; h = 0.1; \
-  }
-
- class boomerang_hud {
+class boomerang_hud {
   idd = boomerang_hud_idd;
   movingEnable = 1;
   enableSimulation = 0;
@@ -20,32 +13,32 @@
   objects[]    = {};
   controls[]   = {
     boomerang_hud_background,
-    boomerang_hud_led1,
-    boomerang_hud_led2,
-    boomerang_hud_led3,
-    boomerang_hud_led4,
-    boomerang_hud_led5,
-    boomerang_hud_led6,
-    boomerang_hud_led7,
-    boomerang_hud_led8,
-    boomerang_hud_led9,
-    boomerang_hud_led10,
-    boomerang_hud_led11,
-    boomerang_hud_led12
+    boomerang_hud_1_led,
+    boomerang_hud_2_led,
+    boomerang_hud_3_led,
+    boomerang_hud_4_led,
+    boomerang_hud_5_led,
+    boomerang_hud_6_led,
+    boomerang_hud_7_led,
+    boomerang_hud_8_led,
+    boomerang_hud_9_led,
+    boomerang_hud_10_led,
+    boomerang_hud_11_led,
+    boomerang_hud_12_led
   };
 
-  led(1);
-  led(2);
-  led(3);
-  led(4);
-  led(5);
-  led(6);
-  led(7);
-  led(8);
-  led(9);
-  led(10);
-  led(11);
-  led(12);
+  LED(1);
+  LED(2);
+  LED(3);
+  LED(4);
+  LED(5);
+  LED(6);
+  LED(7);
+  LED(8);
+  LED(9);
+  LED(10);
+  LED(11);
+  LED(12);
 
   class boomerang_hud_background: gui_RscPictureKeepAspect {
     idc = boomerang_hud_background_idc;
