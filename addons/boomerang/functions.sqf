@@ -1,12 +1,12 @@
 if (!isNil "boomerang_functions_defined") exitWith {};
 
 #include "macro.h"
-
+#include "hud_constants.h"
 
 
 diag_log format["Loading boomerang functions ..."];
 
-call compile preprocessFileLineNumbers "addons\parking\config.sqf";
+call compile preprocessFileLineNumbers "addons\boomerang\config.sqf";
 
 boomerand_hud_scale = 1; //scale for how big to show the boomerang device
 
@@ -49,7 +49,12 @@ boomerang_led_sound = { _this spawn {
 boomerang_alert_at = {
   disableSerialization;
   ARGVX3(0,_direction,0);
-  [_direction] call boomerang_led_sound;
+  ARGVX4(1,_voice,false, true);
+
+  if (_voice) then {
+    [_direction] call boomerang_led_sound;
+  };
+
   [_direction, true] call boomerang_led_set_state;
   uiSleep 2;
   [_direction, false] call boomerang_led_set_state;
@@ -139,12 +144,16 @@ boomerang_hud_setup = {
 
   boomerang_hud_active = true;
 
+
   [_boomerang_background] spawn {
+    disableSerialization;
     ARGVX2(0,_ctrl);
-    waitUntil {sleep 1; (not (alive player) || { ctrlShown _ctrl})};
+    waitUntil {sleep 1; (not (alive player) || {not(ctrlShown _ctrl)})};
     [] call boomerang_hud_remove;
   };
+
 };
+
 
 vector_angle2 = {
   ARGVX3(0,_obj,objNull);
@@ -199,7 +208,13 @@ boomerang_fired_near_handler = {
   boomerang_last_event_pos = _clock_pos;
   boomerang_last_event_time = diag_tickTime;
 
- [_clock_pos] spawn boomerang_alert_at;
+  if (!isNil "boomerang_alert_script_handle" &&  {not(scriptDone boomerang_alert_script_handle)}) exitWith {
+    //don't play the sound, but at least show the LED
+    [_clock_pos, false] spawn boomerang_alert_at;
+  };
+
+  boomerang_alert_script_handle = [_clock_pos, true] spawn boomerang_alert_at;
+
 };
 
 boomerang_add_events = {
@@ -207,17 +222,21 @@ boomerang_add_events = {
 };
 
 
+boomerang_toggle_hud = {_this spawn {
+  if (isNil "boomerang_hud_active") exitWith {
+    [] call boomerang_hud_remove;
+    [] call boomerang_hud_setup;
+  };
 
-boomerang_load_hud = {
   []  call boomerang_hud_remove;
-  [] call boomerang_hud_setup;
+};
+false
 };
 
 
 [] call boomerang_add_events;
 
 boomerang_functions_defined = true;
-
 
 
 diag_log format["Loading boomerang functions complete"];

@@ -96,6 +96,9 @@
         <Key ID="STR_WL_ShopDescriptions_CCTV_Base">
             <English>This is the base station for a television system in which the video signals are transmitted from one or more cameras via Wifi.</English>
         </Key>
+		<Key ID="STR_WL_ShopDescriptions_Boomerang_Terminal">
+			<English>This is a portable terminal for the Boomerang shot detection system.</English>
+		</Key>
 	</Package>
 	<Package name="Dialogs">
 		<Key ID="STR_WL_dialog_TeamkillText">
