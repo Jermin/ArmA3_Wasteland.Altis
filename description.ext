@@ -66,6 +66,7 @@ class RscTitles
 	#include "client\systems\hud\dialog\hud.hpp"
 	#include "client\systems\playerMenu\dialog\welcome.hpp"
 	#include "client\systems\scoreboard\score_gui.hpp"
+	#include "addons\boomerang\hud.hpp"
 };
 
 class CfgFunctions
