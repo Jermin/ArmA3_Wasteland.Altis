@@ -1,0 +1,1 @@
+boomerang_max_inventory_terminals = 1; //maximum number of Boomerang terminals that player can carry in inventory

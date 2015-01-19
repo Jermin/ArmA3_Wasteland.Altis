@@ -16,4 +16,4 @@ waitUntil {scriptDone _h;};
 MF_ITEMS_BOOMERANG_TERMINAL = "boomerang_terminal";
 MF_ITEMS_BOOMERANG_TERMINAL_TYPE = "Land_FMradio_F";
 MF_ITEMS_BOOMERANG_TERMINAL_ICON = "addons\cctv\icons\laptop.paa";
-[MF_ITEMS_BOOMERANG_TERMINAL, "Boomerang Terminal", {_this call boomerang_toggle_hud}, MF_ITEMS_BOOMERANG_TERMINAL_TYPE, MF_ITEMS_BOOMERANG_TERMINAL_ICON, cctv_max_inventory_base_stations] call mf_inventory_create;
+[MF_ITEMS_BOOMERANG_TERMINAL, "Boomerang Terminal", {_this call boomerang_toggle_hud}, MF_ITEMS_BOOMERANG_TERMINAL_TYPE, MF_ITEMS_BOOMERANG_TERMINAL_ICON, boomerang_max_inventory_terminals] call mf_inventory_create;
