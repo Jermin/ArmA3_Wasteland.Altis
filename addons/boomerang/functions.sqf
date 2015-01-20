@@ -122,7 +122,7 @@ boomerang_hud_setup = {
   private["_x","_y", "_w", "_h"];
   _w = 0.6 * boomerand_hud_scale;
   _h = 0.6 * boomerand_hud_scale;
-  _x = safezoneX;
+  _x = safezoneX + (safeZoneW / 8);
   _y = safezoneY;
   _boomerang_background ctrlSetPosition [_x,_y,_w,_h];
   _boomerang_background ctrlSetText "addons\boomerang\images\boomerang.paa";
@@ -215,15 +215,20 @@ boomerang_add_events = {
 };
 
 
-boomerang_toggle_hud = {_this spawn {
-  if (isNil "boomerang_hud_active") exitWith {
-    [] call boomerang_hud_remove;
-    [] call boomerang_hud_setup;
-  };
+boomerang_toggle_hud = {
+  _this spawn {
+    if (isNil "boomerang_hud_active") exitWith {
+      [] call boomerang_hud_remove;
+      [] call boomerang_hud_setup;
+    };
 
-  []  call boomerang_hud_remove;
+    []  call boomerang_hud_remove;
+  };
+  false
 };
-false
+
+boomerang_station_use = {
+  false;
 };
 
 
