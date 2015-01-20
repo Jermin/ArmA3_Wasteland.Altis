@@ -3,12 +3,9 @@ if (!isNil "boomerang_functions_defined") exitWith {};
 #include "macro.h"
 #include "hud_constants.h"
 
-
 diag_log format["Loading boomerang functions ..."];
 
 call compile preprocessFileLineNumbers "addons\boomerang\config.sqf";
-
-
 
 boomerang_hud_remove = {
   11 cuttext ["","plain"];
@@ -108,6 +105,22 @@ boomerand_test_leds = {
   } forEach [false, true, false];
 };
 
+boomerang_is_terminal_nearby = {
+  ARGVX4(0,_player,objNull,false);
+  ARGVX4(1,_distance,0,false);
+
+  def(_vehicles);
+  _vehicles = (nearestObjects [getPos _player, ["Helicopter", "Plane", "Ship_F", "Car", "Motorcycle", "Tank", MF_ITEMS_BOOMERANG_STATION_TYPE], _distance]);
+  init(_result,false);
+  {
+    if (_x getVariable ["has_boomerang", false]) exitWith {
+      _result = true;
+    };
+  } forEach _vehicles;
+
+  (_result)
+};
+
 boomerang_hud_setup = {
   disableSerialization;
   11 cutRsc ["boomerang_hud","PLAIN",1e+011,false];
@@ -138,15 +151,48 @@ boomerang_hud_setup = {
   boomerang_hud_active = true;
 
 
-  [_boomerang_background] spawn {
-    disableSerialization;
-    ARGVX2(0,_ctrl);
-    waitUntil {sleep 1; (not (alive player) || {not(ctrlShown _ctrl)})};
+  [] spawn {
+    def(_vehicle_has_station);
+    def(_player_has_terminal);
+    def(_terminal_nearby);
+    init(_notification,0);
+
+    _notify_no_terminal = {
+      _text = "No portable termial.";
+      _text = format["<t align='center' font='PuristaMedium' size='1.2' >Boomerang</t><br /><img image='%1' size='1.9' /><br /><t align='center'>(%2)</t>", MF_ITEMS_BOOMERANG_TERMINAL_ICON, "disconnected"] + "<br /><br />" + _text;
+      hintSilent parseText _text;
+    };
+
+    _notify_no_station = {
+      _text = "No stations nearby.";
+      _text = format["<t align='center' font='PuristaMedium' size='1.2' >Boomerang</t><br /><img image='%1' size='1.9' /><br /><t align='center'>(%2)</t>", MF_ITEMS_BOOMERANG_STATION_ICON, "disconnected"] + "<br /><br />" + _text;
+      hintSilent parseText _text;
+    };
+
+    hintSilent ""; //clear any hints
+
+    waitUntil {
+      sleep 3;
+      if (not(alive player)) exitWith {true}; //player died, close the hud
+      if (isNil "boomerang_hud_active") exitWith {true}; //something else closed the hud, bail out
+
+      _vehicle_has_station = ((vehicle player) getVariable ["has_boomerang", false]);
+      if (_vehicle_has_station) exitWith {false}; //vehicle has boomerang, leave the hud open
+
+      _player_has_terminal = (MF_ITEMS_BOOMERANG_TERMINAL call mf_inventory_count > 0);
+      if (not(_player_has_terminal)) exitWith {call _notify_no_terminal; true};  //player dropped the terminal, close the hud
+
+      _terminal_nearby = [player, 25] call boomerang_is_terminal_nearby;
+
+      if (not(_terminal_nearby)) exitWith {call _notify_no_station; true}; //there are no nearby temrinals, close the hug
+
+      false
+    };
+
     [] call boomerang_hud_remove;
   };
 
 };
-
 
 vector_angle2 = {
   ARGVX3(0,_obj,objNull);
@@ -155,7 +201,6 @@ vector_angle2 = {
   _local = _obj worldToModel _v2;
   (_local select 0) atan2 ( _local select 1);
 };
-
 
 boomerang_get_clock_pos = {
   ARGVX3(0,_unit,objNull);
@@ -184,6 +229,7 @@ boomerang_fired_near_handler = {
   ARGVX3(6,_ammo,"");
 
   if (_unit == _firer) exitWith {};
+  _unit = (vehicle _unit);
 
   def(_clock_pos);
   _clock_pos = [_unit, _firer] call boomerang_get_clock_pos;
@@ -210,6 +256,59 @@ boomerang_fired_near_handler = {
 
 };
 
+boomerang_vehicle_notify = {
+  ARGVX4(0,_player,objNull,false);
+  ARGVX4(1,_vehicle,objNull,false);
+
+  if (not(_vehicle getVariable ["has_boomerang", false])) exitWith {false};
+
+  _text = "This vehicle has a boomerang system installed. Press Control+B to activate it.";
+  _text = format["<t align='center' font='PuristaMedium' size='1.2' >Boomerang</t><br /><img image='%1' size='1.9' /><br /><t align='center'>(%2)</t>", MF_ITEMS_BOOMERANG_STATION_ICON, "available"] + "<br /><br />" + _text;
+  hintSilent parseText _text;
+
+  [] call boomerang_setup_keyUp;
+  [_vehicle] call boomerang_vehicle_add_firedNear;
+  true
+};
+
+
+boomerang_vehicle_watch = {
+  def(_notified):
+  def(_vehicle);
+
+  waitUntil {
+    sleep 2;
+    //wait until the player enters a vehicle, and is notified
+    waitUntil {
+      sleep 2;
+      if ((vehicle player) == (player)) exitWith {false};
+      if ([player, (vehicle player)] call boomerang_vehicle_notify) exitWith {true};
+      false
+    };
+    _vehicle = (vehicle player);
+    //wait until the player exits the vehicle
+    waitUntil {sleep 2; ((vehicle player) != _vehicle)};
+   [] call boomerang_remove_keyUp;
+   [_vehicle] call boomerang_vehicle_removeFiredNear;
+    hintSilent "";
+  };
+};
+
+boomerang_vehicle_add_firedNear = {
+  ARGVX3(0,_vehicle,objNull);
+  def(_id);
+  _id = _vehicle addEventHandler ["FiredNear", {_this call boomerang_fired_near_handler}];
+  _vehicle setVariable ["FiredNear_ID", _id];
+};
+
+boomerang_vehicle_removeFiredNear = {
+  ARGVX3(0,_vehicle,objNull);
+  def(_id);
+  _id = _vehicle getVariable "FiredNear_ID";
+  if (isNil "_id") exitWith {};
+  _vehicle removeEventHandler ["FiredNear", _id];
+};
+
 boomerang_add_events = {
   player addEventHandler ["FiredNear", {_this call boomerang_fired_near_handler}];
 };
@@ -227,14 +326,111 @@ boomerang_toggle_hud = {
   false
 };
 
+#define MUTEX_UNLOCK mutexScriptInProgress = false; doCancelAction = false
+
+
+boomerang_ground_deploy = {
+  ARGVX3(0,_player,objNull);
+  ARGVX3(1,_item_type,"");
+
+  def(_msg);
+  _msg = "You are about to deploy the Boomerang Base Station. Players nearby will need to use a Boomerang Terminal. Do you want to proceed?";
+  if (not([_msg, "Boomerang Ground Deploy", true, true] call BIS_fnc_guiMessage)) exitWith {false};
+
+  //this is needed in order for the mf_inventory_drop call to work (since it's nested inside USE)
+  MUTEX_UNLOCK ;
+
+  private["_device"];
+  _device = _item_type call mf_inventory_drop;
+
+  if (!isOBJECT(_device)) exitWith {false};
+
+  _device setVariable ["is_boomerang", true, true];
+  _device setVariable ["boomerang_owner_type", "player"];
+  _device setVariable ["boomerang_owner_value", getPlayerUID _player];
+  _device setVariable ["has_boomerang", true, true];
+
+
+  true
+};
+
+boomerang_vehcle_deploy = {
+  ARGVX3(0,_vehicle,objNull);
+  ARGVX3(1,_player,objNull);
+
+  def(_msg);
+  _msg = "You are about to deploy the Boomerang Base Station in this vehicle. Once installed, it cannot be removed. Do you want to proceed?";
+  if (not([_msg, "Boomerang Vehicle Deploy", true,true] call BIS_fnc_guiMessage)) exitWith {false};
+
+  _vehicle setVariable ["has_boomerang", true, true];
+  _vehicle setVariable ["boomerang_owner_type", "player"];
+  _vehicle setVariable ["boomerang_owner_value", getPlayerUID _player];
+
+   [_id, 1] call mf_inventory_remove;
+
+
+  true
+};
+
 boomerang_station_use = {
-  false;
+  private["_item_type"];
+  _item_type = _this;
+
+  init(_vehicle, vehicle player);
+  init(_player,player);
+
+  if (_vehicle != _player) exitWith {
+    [_vehicle,_player] call boomerang_vehcle_deploy;
+    false
+  };
+
+  [_player, _item_type] call boomerang_ground_deploy;
+
+  false
 };
 
 
+boomerang_keyUpHandler = {
+  init(_vehicle,vehicle player);
+  if (_vehicle == player) exitWith {};
+  if (!(_vehicle getVariable ["has_boomerang", false])) exitWith {};
+
+  ARGVX2(0,_this);
+  ARGV2(0,_display);
+  ARGV2(1,_key);
+  ARGV2(2,_shift);
+  ARGV2(3,_control);
+  ARGV2(4,_alt);
+
+
+  if (_control && {_key == DIK_B}) then {
+    [] call boomerang_toggle_hud;
+  };
+  true
+};
+
+boomerang_remove_keyUp = {
+  disableSerialization;
+    _display = findDisplay 46;
+  if (not(undefined(boomerang_keyUpHandler_id))) then {
+    _display displayRemoveEventHandler  ["keyUp",boomerang_keyUpHandler_id];
+    boomerang_keyUpHandler_id = nil;
+  };
+};
+
+boomerang_setup_keyUp = {
+  init(_data,_this);
+
+  disableSerialization;
+  _display = findDisplay 46;
+  if (undefined(boomerang_keyUpHandler_id) ) then {
+    boomerang_keyUpHandler_id = _display displayAddEventHandler  ["keyUp",format["[_this,%1] call boomerang_keyUpHandler",_data]];
+  };
+};
+
 [] call boomerang_add_events;
+[] spawn boomerang_vehicle_watch;
 
 boomerang_functions_defined = true;
-
 
 diag_log format["Loading boomerang functions complete"];
