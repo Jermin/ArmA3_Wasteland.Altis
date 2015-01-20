@@ -8,9 +8,7 @@ diag_log format["Loading boomerang functions ..."];
 
 call compile preprocessFileLineNumbers "addons\boomerang\config.sqf";
 
-boomerand_hud_scale = 1; //scale for how big to show the boomerang device
-boomerang_hud_x = safezoneX + (safeZoneW / 8);
-boomerang_hud_y = safezoneY;
+
 
 boomerang_hud_remove = {
   11 cuttext ["","plain"];
