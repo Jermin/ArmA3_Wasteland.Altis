@@ -9,6 +9,8 @@ diag_log format["Loading boomerang functions ..."];
 call compile preprocessFileLineNumbers "addons\boomerang\config.sqf";
 
 boomerand_hud_scale = 1; //scale for how big to show the boomerang device
+boomerang_hud_x = safezoneX + (safeZoneW / 8);
+boomerang_hud_y = safezoneY;
 
 boomerang_hud_remove = {
   11 cuttext ["","plain"];
@@ -85,8 +87,8 @@ boomerang_led_setup = {
   private["_x","_y", "_w", "_h"];
   _w = 0.025 * boomerand_hud_scale;
   _h = 0.025 * boomerand_hud_scale;
-  _x = safezoneX + _w * 8.6;
-  _y = safezoneY + _h * 13.78;
+  _x = boomerang_hud_x + _w * 8.6;
+  _y = boomerang_hud_y + _h * 13.78;
 
   def(_vec);
   _vec = boomerang_led_coord_map select (_index -1);
@@ -122,8 +124,8 @@ boomerang_hud_setup = {
   private["_x","_y", "_w", "_h"];
   _w = 0.6 * boomerand_hud_scale;
   _h = 0.6 * boomerand_hud_scale;
-  _x = safezoneX + (safeZoneW / 8);
-  _y = safezoneY;
+  _x = boomerang_hud_x;
+  _y = boomerang_hud_y;
   _boomerang_background ctrlSetPosition [_x,_y,_w,_h];
   _boomerang_background ctrlSetText "addons\boomerang\images\boomerang.paa";
   _boomerang_background ctrlCommit 0;
