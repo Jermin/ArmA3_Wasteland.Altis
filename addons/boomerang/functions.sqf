@@ -7,6 +7,8 @@ diag_log format["Loading boomerang functions ..."];
 
 call compile preprocessFileLineNumbers "addons\boomerang\config.sqf";
 
+
+
 boomerang_hud_remove = {
   11 cuttext ["","plain"];
   boomerang_hud_active = nil;
@@ -28,13 +30,50 @@ boomerang_led_set_state = {
   _led ctrlShow _state;
 };
 
+//0 - voice
+//1 - beep
+//2 - muted
+boomerang_sound_mode = 0;
+
+
 boomerang_led_sound = { _this spawn {
   ARGVX3(0,_index,0);
-  playSound "contact";
-  uiSleep 1;
-  playSound ("at_" + str(_index));
-  uiSleep 1;
+
+  if (boomerang_sound_mode == 2) exitWith {};
+
+  if (boomerang_sound_mode == 0) exitWith {
+    playSound "contact_voice";
+    uiSleep 1;
+    playSound ("at_" + str(_index));
+    uiSleep 1;
+  };
+
+  if (boomerang_sound_mode == 1) exitWith {
+    playSound "contact_beep";
+    uiSleep 2;
+  };
 }};
+
+boomerang_cycle_sound_mode = {
+  boomerang_sound_mode = (boomerang_sound_mode + 1) % 3;
+
+  def(_mode);
+  if (boomerang_sound_mode == 0) then {
+    _mode = "Voice reports";
+  }
+  else { if (boomerang_sound_mode == 1) then {
+    _mode = "Beep sounds";
+  }
+  else { if (boomerang_sound_mode == 2) then {
+    _mode = "Sound muted";
+  };};};
+
+  def(_text);
+  _text = _mode;
+  _text = format["<t align='center' font='PuristaMedium' size='1.2' >Boomerang</t><br /><img image='%1' size='1.9' /><br /><t align='center'>(%2)</t>", MF_ITEMS_BOOMERANG_TERMINAL_ICON, "Sound mode"] + "<br /><br />" + _text;
+  hintSilent parseText _text;
+};
+
 
 boomerang_alert_at = {
   disableSerialization;
@@ -95,15 +134,6 @@ boomerang_led_setup = {
   _led ctrlCommit 0;
 };
 
-boomerand_test_leds = {
-  disableSerialization;
-  {
-    for "_i" from 1 to 12 do {
-      [_i, _x] call boomerang_led_set_state;
-      uiSleep 0.01;
-    };
-  } forEach [false, true, false];
-};
 
 boomerang_is_terminal_nearby = {
   ARGVX4(0,_player,objNull,false);
@@ -119,6 +149,18 @@ boomerang_is_terminal_nearby = {
   } forEach _vehicles;
 
   (_result)
+};
+
+
+boomerand_test_leds = {
+  disableSerialization;
+  {
+    for "_i" from 1 to 12 do {
+      [_i, _x] call boomerang_led_set_state;
+      if ((_i % 2) == 0) then { playSound "contact_beep";};
+      uiSleep 0.01;
+    };
+  } forEach [true, false];
 };
 
 boomerang_hud_setup = {
@@ -152,6 +194,8 @@ boomerang_hud_setup = {
 
 
   [] spawn {
+    [] call boomerang_setup_hud_keyUp;
+
     def(_vehicle_has_station);
     def(_player_has_terminal);
     def(_terminal_nearby);
@@ -169,7 +213,7 @@ boomerang_hud_setup = {
       hintSilent parseText _text;
     };
 
-    hintSilent ""; //clear any hints
+    //hintSilent ""; //clear any hints
 
     waitUntil {
       sleep 3;
@@ -182,12 +226,14 @@ boomerang_hud_setup = {
       _player_has_terminal = (MF_ITEMS_BOOMERANG_TERMINAL call mf_inventory_count > 0);
       if (not(_player_has_terminal)) exitWith {call _notify_no_terminal; true};  //player dropped the terminal, close the hud
 
-      _terminal_nearby = [player, 25] call boomerang_is_terminal_nearby;
+      _terminal_nearby = [player, boomerang_min_distance] call boomerang_is_terminal_nearby;
 
       if (not(_terminal_nearby)) exitWith {call _notify_no_station; true}; //there are no nearby temrinals, close the hug
 
       false
     };
+
+    [] call boomerang_remove_hud_keyUp;
 
     [] call boomerang_hud_remove;
   };
@@ -266,7 +312,7 @@ boomerang_vehicle_notify = {
   _text = format["<t align='center' font='PuristaMedium' size='1.2' >Boomerang</t><br /><img image='%1' size='1.9' /><br /><t align='center'>(%2)</t>", MF_ITEMS_BOOMERANG_STATION_ICON, "available"] + "<br /><br />" + _text;
   hintSilent parseText _text;
 
-  [] call boomerang_setup_keyUp;
+  [] call boomerang_setup_vehicle_keyUp;
   [_vehicle] call boomerang_vehicle_add_firedNear;
   true
 };
@@ -288,7 +334,7 @@ boomerang_vehicle_watch = {
     _vehicle = (vehicle player);
     //wait until the player exits the vehicle
     waitUntil {sleep 2; ((vehicle player) != _vehicle)};
-   [] call boomerang_remove_keyUp;
+   [] call boomerang_remove_vehicle_keyUp;
    [_vehicle] call boomerang_vehicle_removeFiredNear;
     hintSilent "";
   };
@@ -318,7 +364,20 @@ boomerang_toggle_hud = {
   _this spawn {
     if (isNil "boomerang_hud_active") exitWith {
       [] call boomerang_hud_remove;
+      def(_text);
+      _text = "";
+      _text = format["<t align='center' font='PuristaMedium' size='1.2' >Boomerang</t><br /><img image='%1' size='1.9' /><br /><t align='center'>(%2)</t>", MF_ITEMS_BOOMERANG_TERMINAL_ICON, "connecting ..."] + "<br /><br />" + _text;
+      hintSilent parseText _text;
       [] call boomerang_hud_setup;
+      sleep 4;
+      if (not(isNil "boomerang_hud_active")) then {
+        _text = (
+                 "Cycle mode:    Shift + M <br />" +
+                 "Exit system:   Ctrl + E"
+                );
+        _text = format["<t align='center' font='PuristaMedium' size='1.2' >Boomerang</t><br /><img image='%1' size='1.9' /><br /><t align='center'>(%2)</t>", MF_ITEMS_BOOMERANG_STATION_ICON, "connected"] + "<br /><br /><t align='left'>" + _text + "</t>";
+        hintSilent parseText _text;
+      };
     };
 
     []  call boomerang_hud_remove;
@@ -326,10 +385,16 @@ boomerang_toggle_hud = {
   false
 };
 
+
 #define MUTEX_UNLOCK mutexScriptInProgress = false; doCancelAction = false
 
 
 boomerang_ground_deploy = {
+
+  if (not(boomerang_allow_ground_deploy)) exitWith {
+    ["Deploying the boomerang on the ground is not allowed.", "Boomerang Vehicle Deploy", true] call BIS_fnc_guiMessage;
+  };
+
   ARGVX3(0,_player,objNull);
   ARGVX3(1,_item_type,"");
 
@@ -355,8 +420,17 @@ boomerang_ground_deploy = {
 };
 
 boomerang_vehcle_deploy = {
+
+  if (not(boomerang_allow_vehicle_deploy)) exitWith {
+    ["The Boomerang base station cannot be deployed inside vehicles.", "Boomerang Vehicle Deploy", true] call BIS_fnc_guiMessage;
+  };
+
   ARGVX3(0,_vehicle,objNull);
   ARGVX3(1,_player,objNull);
+
+  if (isARRAY(boomerang_vehicle_class_list) && ({typeOf _vehilce == _x} count boomerang_vehicle_class_list) == 0) exitWith {
+    ["The Boomerang base station cannot be deployed in this kind of vehicle", "Boomerang Vehicle Deploy", true] call BIS_fnc_guiMessage;
+  };
 
   def(_msg);
   _msg = "You are about to deploy the Boomerang Base Station in this vehicle. Once installed, it cannot be removed. Do you want to proceed?";
@@ -390,7 +464,7 @@ boomerang_station_use = {
 };
 
 
-boomerang_keyUpHandler = {
+boomerang_vehicle_keyUpHandler = {
   init(_vehicle,vehicle player);
   if (_vehicle == player) exitWith {};
   if (!(_vehicle getVariable ["has_boomerang", false])) exitWith {};
@@ -409,24 +483,96 @@ boomerang_keyUpHandler = {
   true
 };
 
-boomerang_remove_keyUp = {
+boomerang_remove_vehicle_keyUp = {
   disableSerialization;
     _display = findDisplay 46;
-  if (not(undefined(boomerang_keyUpHandler_id))) then {
-    _display displayRemoveEventHandler  ["keyUp",boomerang_keyUpHandler_id];
-    boomerang_keyUpHandler_id = nil;
+  if (not(undefined(boomerang_vehicle_keyUpHandler_id))) then {
+    _display displayRemoveEventHandler  ["keyUp",boomerang_vehicle_keyUpHandler_id];
+    boomerang_vehicle_keyUpHandler_id = nil;
   };
 };
 
-boomerang_setup_keyUp = {
+boomerang_setup_vehicle_keyUp = {
   init(_data,_this);
 
   disableSerialization;
   _display = findDisplay 46;
-  if (undefined(boomerang_keyUpHandler_id) ) then {
-    boomerang_keyUpHandler_id = _display displayAddEventHandler  ["keyUp",format["[_this,%1] call boomerang_keyUpHandler",_data]];
+  if (undefined(boomerang_vehicle_keyUpHandler_id) ) then {
+    boomerang_vehicle_keyUpHandler_id = _display displayAddEventHandler  ["keyUp",format["[_this,%1] call boomerang_vehicle_keyUpHandler",_data]];
   };
 };
+
+
+
+boomerang_toggle_hud = {
+  _this spawn {
+    if (isNil "boomerang_hud_active") exitWith {
+      [] call boomerang_hud_remove;
+      def(_text);
+      _text = "";
+      _text = format["<t align='center' font='PuristaMedium' size='1.2' >Boomerang</t><br /><img image='%1' size='1.9' /><br /><t align='center'>(%2)</t>", MF_ITEMS_BOOMERANG_TERMINAL_ICON, "connecting ..."] + "<br /><br />" + _text;
+      hintSilent parseText _text;
+      [] call boomerang_hud_setup;
+      sleep 5;
+      if (not(isNil "boomerang_hud_active")) then {
+        _text = (
+                 "Cycle mode:    Shift + M <br />" +
+                 "Exit system:    Ctrl + E"
+                );
+        _text = format["<t align='center' font='PuristaMedium' size='1.2' >Boomerang</t><br /><img image='%1' size='1.9' /><br /><t align='center'>(%2)</t>", MF_ITEMS_BOOMERANG_STATION_ICON, "connected"] + "<br /><br /><t align='left'>" + _text + "</t>";
+        hintSilent parseText _text;
+      };
+    };
+
+    []  call boomerang_hud_remove;
+  };
+  false
+};
+
+
+boomerang_hud_keyUpHandler = {
+  //player groupChat format["%1", _this];
+  if (isNil "boomerang_hud_active") exitWith {};
+  ARGVX2(0,_this);
+  ARGV2(0,_display);
+  ARGV2(1,_key);
+  ARGV2(2,_shift);
+  ARGV2(3,_control);
+  ARGV2(4,_alt);
+
+  if (_shift && {_key == DIK_M}) exitWith {
+    [] call boomerang_cycle_sound_mode;
+    true
+  };
+
+  if (_control && {_key == DIK_E}) then {
+    []  call boomerang_hud_remove;
+    true
+  };
+
+  false
+};
+
+boomerang_remove_hud_keyUp = {
+  disableSerialization;
+    _display = findDisplay 46;
+  if (not(undefined(boomerang_hud_keyUpHandler_id))) then {
+    _display displayRemoveEventHandler  ["keyDown",boomerang_hud_keyUpHandler_id];
+    boomerang_hud_keyUpHandler_id = nil;
+  };
+};
+
+boomerang_setup_hud_keyUp = {
+  init(_data,_this);
+
+  disableSerialization;
+  _display = findDisplay 46;
+  if (undefined(boomerang_hud_keyUpHandler_id) ) then {
+    boomerang_hud_keyUpHandler_id = _display displayAddEventHandler  ["keyDown",format["[_this,%1] call boomerang_hud_keyUpHandler",_data]];
+  };
+};
+
+
 
 [] call boomerang_add_events;
 [] spawn boomerang_vehicle_watch;

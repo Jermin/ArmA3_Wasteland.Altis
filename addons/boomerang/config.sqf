@@ -1,6 +1,12 @@
 boomerang_max_inventory_terminals = 1; //maximum number of Boomerang terminals that player can carry in inventory
 boomerang_max_inventory_stations = 1; //maximum number of Boomerang stations that player can carry in inventory
 
+boomerang_allow_vehicle_deploy = true; //whether or not to allow deploying boomerang on vehicles
+boomerang_allow_ground_deploy = true; //whether or not to allow deploying boomerang on the ground
+boomerang_min_distance = 25; //minimum distance from the base station for terminals to work
+boomerang_vehicle_class_list = []; //list of vehicle classes where boomerang can be deployed (empty means all)
+
+
 boomerand_hud_scale = 1; //scale for how big to show the boomerang device
 boomerang_hud_x = safezoneX + (safeZoneW / 8); // X screen coordinate for the boomerang device
 boomerang_hud_y = safezoneY; //Y screen coordinate for the boomerang device

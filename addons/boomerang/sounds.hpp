@@ -1,5 +1,6 @@
 #include "sound_constants.h"
-SOUND(contact,PATH(contact.ogg));
+SOUND(contact_voice,PATH(contact.ogg));
+SOUND(contact_beep,PATH(beep.ogg));
 SOUND(at_1,PATH(1.ogg));
 SOUND(at_2,PATH(2.ogg));
 SOUND(at_3,PATH(3.ogg));
