@@ -67,6 +67,14 @@ switch (true) do
     	_variables pushBack ["camera_owner_value", (_obj getVariable ["camera_owner_value", nil])];
     	_variables pushBack ["mf_item_id", (_obj getVariable ["mf_item_id", nil])];
 	};
+	case (_obj call _isBoomerang):
+	{
+		_variables pushBack ["is_boomerang", (_obj getVariable "is_boomerang")];
+    	_variables pushBack ["has_boomerang", (_obj getVariable "has_boomerang")];
+    	_variables pushBack ["boomerang_owner_type", (_obj getVariable "boomerang_owner_type")];
+    	_variables pushBack ["boomerang_owner_value", (_obj getVariable "boomerang_owner_value")];
+    	_variables pushBack ["mf_item_id", (_obj getVariable "mf_item_id")];
+	};
 };
 
 _r3fSide = _obj getVariable "R3F_Side";

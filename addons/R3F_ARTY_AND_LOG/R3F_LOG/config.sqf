@@ -257,7 +257,6 @@ R3F_LOG_CFG_objets_deplacables =
 	"Land_ToiletBox_F",
 	"Land_BarrelWater_F",
 	"Land_Crane_F" ,
-	"Land_HandyCam_F",
 	"Land_Laptop_unfolded_F",
 	"Land_Money_F",
 	"Land_BC_Court_F",
@@ -287,4 +286,6 @@ R3F_LOG_CFG_objets_deplacables =
 	"Land_Grave_forest_F",
 	"Land_Grave_rocks_F",
 	"Land_Laptop_F"
+	"Land_HandyCam_F",
+	"Land_SatellitePhone_F"
 ];

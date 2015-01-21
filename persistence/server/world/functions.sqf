@@ -4,7 +4,7 @@
 //	@file Name: functions.sqf
 //	@file Author: AgentRev
 
-private ["_baseSavingOn", "_boxSavingOn", "_staticWeaponSavingOn", "_warchestSavingOn", "_warchestMoneySavingOn", "_beaconSavingOn", "_cctvCameraSavingOn", "_savingMethod", "_isBox", "_isStaticWeapon", "_isWarchest", "_isBeacon"];
+private ["_baseSavingOn", "_boxSavingOn", "_staticWeaponSavingOn", "_warchestSavingOn", "_warchestMoneySavingOn", "_beaconSavingOn", "_cctvCameraSavingOn", "_boomerangSavingOn", "_savingMethod", "_isBox", "_isStaticWeapon", "_isWarchest", "_isBeacon"];
 
 _baseSavingOn = ["A3W_baseSaving"] call isConfigOn;
 _boxSavingOn = ["A3W_boxSaving"] call isConfigOn;
@@ -13,6 +13,7 @@ _warchestSavingOn = ["A3W_warchestSaving"] call isConfigOn;
 _warchestMoneySavingOn = ["A3W_warchestMoneySaving"] call isConfigOn;
 _beaconSavingOn = ["A3W_spawnBeaconSaving"] call isConfigOn;
 _cctvCameraSavingOn = ["A3W_cctvCameraSaving"] call isConfigOn;
+_boomerangSavingOn = ["A3W_boomerangSaving"] call isConfigOn;
 
 _savingMethod = call A3W_savingMethod;
 
@@ -21,6 +22,7 @@ _isStaticWeapon = { _this isKindOf "StaticWeapon" };
 _isWarchest = { _this getVariable ["a3w_warchest", false] && {(_this getVariable ["side", sideUnknown]) in [WEST,EAST]} };
 _isBeacon = { _this getVariable ["a3w_spawnBeacon", false] };
 _isCamera = { _this getVariable ["a3w_cctv_camera", false] };
+_isBoomerang = { _this getVariable ["has_boomerang", false] };
 
 _isSaveable =
 {
