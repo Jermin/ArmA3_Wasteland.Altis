@@ -2,6 +2,7 @@
 #define boomerang_hud_led_idc_base 3000
 //3001 - 3012 are for LEDs
 #define boomerang_hud_background_idc 3013
+#define boomerang_hud_lcd_idc 3014
 
 #define LED_IDC(x) (boomerang_hud_led_idc_base + x)
 

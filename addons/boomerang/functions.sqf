@@ -30,6 +30,20 @@ boomerang_led_set_state = {
   _led ctrlShow _state;
 };
 
+boomerang_lcd_set = {
+  ARGVX3(0,_text,"");
+
+  def(_display);
+  _display = uiNamespace getVariable "boomerang_hud";
+
+  def(_boomerang_lcd);
+  _boomerang_lcd = _display displayCtrl boomerang_hud_lcd_idc;
+
+  _boomerang_lcd ctrlSetText _text;
+  _boomerang_lcd ctrlCommit 0;
+};
+
+
 //0 - voice
 //1 - beep
 //2 - muted
@@ -78,7 +92,10 @@ boomerang_cycle_sound_mode = {
 boomerang_alert_at = {
   disableSerialization;
   ARGVX3(0,_direction,0);
-  ARGVX4(1,_voice,false, true);
+  ARGVX3(1,_dist,0);
+  ARGVX4(2,_voice,false,true);
+
+  [(" " +str(round(_dist)) + " M")] call boomerang_lcd_set;
 
   if (_voice) then {
     [_direction] call boomerang_led_sound;
@@ -87,6 +104,7 @@ boomerang_alert_at = {
   [_direction, true] call boomerang_led_set_state;
   uiSleep 2;
   [_direction, false] call boomerang_led_set_state;
+  [""] call boomerang_lcd_set;
 };
 
 //pre-computed set of relative coordinates
@@ -163,6 +181,7 @@ boomerand_test_leds = {
   } forEach [true, false];
 };
 
+
 boomerang_hud_setup = {
   disableSerialization;
   11 cutRsc ["boomerang_hud","PLAIN",1e+011,false];
@@ -171,7 +190,9 @@ boomerang_hud_setup = {
   _display = uiNamespace getVariable "boomerang_hud";
 
   def(_boomerang_background);
+  def(_boomerang_lcd);
   _boomerang_background = _display displayCtrl boomerang_hud_background_idc;
+  _boomerang_lcd = _display displayCtrl boomerang_hud_lcd_idc;
 
 
   private["_x","_y", "_w", "_h"];
@@ -182,6 +203,20 @@ boomerang_hud_setup = {
   _boomerang_background ctrlSetPosition [_x,_y,_w,_h];
   _boomerang_background ctrlSetText "addons\boomerang\images\boomerang.paa";
   _boomerang_background ctrlCommit 0;
+
+  private["_lx","_ly","_lw","_lh"];
+  _lw = _w/3.25;
+  _lh = _h/10.4;
+  _lx = _x + (_w /10) * 2.26 ;
+  _ly = _y + (_h /10) * 2.83;
+
+  _boomerang_lcd ctrlSetPosition [_lx,_ly,_lw,_lh];
+  _boomerang_lcd ctrlSetBackgroundColor [0,0,0,0.3];
+  _boomerang_lcd ctrlSetFontHeight 0.045 * boomerand_hud_scale;
+  _boomerang_lcd ctrlSetFont "PuristaBold";
+  _boomerang_lcd ctrlSetTextColor  [0,0,0,0.67];
+  _boomerang_lcd ctrlSetText "";
+  _boomerang_lcd ctrlCommit 0;
 
   for "_i" from 1 to 12 do {
     [_i] call boomerang_led_setup;
@@ -293,12 +328,13 @@ boomerang_fired_near_handler = {
   boomerang_last_event_pos = _clock_pos;
   boomerang_last_event_time = diag_tickTime;
 
+  init(_dist,(_unit distance _firer));
   if (!isNil "boomerang_alert_script_handle" &&  {not(scriptDone boomerang_alert_script_handle)}) exitWith {
     //don't play the sound, but at least show the LED
-    [_clock_pos, false] spawn boomerang_alert_at;
+    [_clock_pos, _dist, false] spawn boomerang_alert_at;
   };
 
-  boomerang_alert_script_handle = [_clock_pos, true] spawn boomerang_alert_at;
+  boomerang_alert_script_handle = [_clock_pos, _dist, true] spawn boomerang_alert_at;
 
 };
 
@@ -427,8 +463,8 @@ boomerang_vehcle_deploy = {
 
   ARGVX3(0,_vehicle,objNull);
   ARGVX3(1,_player,objNull);
-
-  if (isARRAY(boomerang_vehicle_class_list) && ({typeOf _vehilce == _x} count boomerang_vehicle_class_list) == 0) exitWith {
+  player groupChat format["%1", boomerang_vehicle_class_list];
+  if (isARRAY(boomerang_vehicle_class_list) && ({_vehicle isKindOf _x} count boomerang_vehicle_class_list) == 0) exitWith {
     ["The Boomerang base station cannot be deployed in this kind of vehicle", "Boomerang Vehicle Deploy", true] call BIS_fnc_guiMessage;
   };
 

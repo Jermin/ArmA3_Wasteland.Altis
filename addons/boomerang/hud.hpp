@@ -24,7 +24,8 @@ class boomerang_hud {
     boomerang_hud_9_led,
     boomerang_hud_10_led,
     boomerang_hud_11_led,
-    boomerang_hud_12_led
+    boomerang_hud_12_led,
+    boomerang_hud_lcd
   };
 
   LED(1);
@@ -44,5 +45,12 @@ class boomerang_hud {
     idc = boomerang_hud_background_idc;
     x = -10; y = -10;
     w = 0.1; h = 0.1;
+  };
+
+  class boomerang_hud_lcd: gui_RscText {
+    idc = boomerang_hud_lcd_idc;
+    x = -10; y = -10;
+    w = 0.1; h = 0.1;
+    text = ""
   };
 };
