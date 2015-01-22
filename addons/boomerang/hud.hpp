@@ -51,6 +51,6 @@ class boomerang_hud {
     idc = boomerang_hud_lcd_idc;
     x = -10; y = -10;
     w = 0.1; h = 0.1;
-    text = ""
+    text = "";
   };
 };

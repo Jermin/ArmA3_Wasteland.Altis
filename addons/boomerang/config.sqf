@@ -3,7 +3,7 @@ boomerang_max_inventory_stations = 1; //maximum number of Boomerang stations tha
 
 boomerang_allow_vehicle_deploy = true; //whether or not to allow deploying boomerang on vehicles
 boomerang_allow_ground_deploy = true; //whether or not to allow deploying boomerang on the ground
-boomerang_min_distance = 25; //minimum distance from the base station for terminals to work
+boomerang_min_distance = 100; //minimum distance from the base station for terminals to work
 boomerang_vehicle_class_list = ["All"]; //list of vehicle classes where boomerang can be deployed
 
 

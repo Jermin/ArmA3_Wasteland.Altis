@@ -229,7 +229,12 @@ boomerang_hud_setup = {
 
 
   [] spawn {
+    init(_player,player);
+    [_player] call boomerang_remove_firedNear;
+    [_player] call boomerang_add_firedNear;
     [] call boomerang_setup_hud_keyUp;
+
+
 
     def(_vehicle_has_station);
     def(_player_has_terminal);
@@ -269,8 +274,8 @@ boomerang_hud_setup = {
     };
 
     [] call boomerang_remove_hud_keyUp;
-
     [] call boomerang_hud_remove;
+    [_player] call boomerang_remove_firedNear;
   };
 
 };
@@ -349,7 +354,8 @@ boomerang_vehicle_notify = {
   hintSilent parseText _text;
 
   [] call boomerang_setup_vehicle_keyUp;
-  [_vehicle] call boomerang_vehicle_add_firedNear;
+  [_vehicle] call boomerang_remove_firedNear;
+  [_vehicle] call boomerang_add_firedNear;
   true
 };
 
@@ -371,19 +377,20 @@ boomerang_vehicle_watch = {
     //wait until the player exits the vehicle
     waitUntil {sleep 2; ((vehicle player) != _vehicle)};
    [] call boomerang_remove_vehicle_keyUp;
-   [_vehicle] call boomerang_vehicle_removeFiredNear;
+   [_vehicle] call boomerang_remove_firedNear;
     hintSilent "";
   };
 };
 
-boomerang_vehicle_add_firedNear = {
+boomerang_add_firedNear = {
   ARGVX3(0,_vehicle,objNull);
   def(_id);
   _id = _vehicle addEventHandler ["FiredNear", {_this call boomerang_fired_near_handler}];
   _vehicle setVariable ["FiredNear_ID", _id];
 };
 
-boomerang_vehicle_removeFiredNear = {
+boomerang_remove_firedNear = {
+  diag_log format["%1 call boomerang_remove_firedNear", _this];
   ARGVX3(0,_vehicle,objNull);
   def(_id);
   _id = _vehicle getVariable "FiredNear_ID";
@@ -391,9 +398,6 @@ boomerang_vehicle_removeFiredNear = {
   _vehicle removeEventHandler ["FiredNear", _id];
 };
 
-boomerang_add_events = {
-  player addEventHandler ["FiredNear", {_this call boomerang_fired_near_handler}];
-};
 
 
 boomerang_toggle_hud = {
@@ -610,7 +614,6 @@ boomerang_setup_hud_keyUp = {
 
 
 
-[] call boomerang_add_events;
 [] spawn boomerang_vehicle_watch;
 
 boomerang_functions_defined = true;
