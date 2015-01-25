@@ -6,7 +6,7 @@
 
 #include "functions.sqf"
 
-private ["_strToSide", "_maxLifetime", "_isWarchestEntry", "_isBeaconEntry", "_worldDir", "_methodDir", "_objCount", "_objects", "_exclObjectIDs"];
+private ["_strToSide", "_maxLifetime", "_isWarchestEntry", "_isBeaconEntry", "_isCameraEntry", "_worldDir", "_methodDir", "_objCount", "_objects", "_exclObjectIDs"];
 
 _strToSide =
 {
@@ -25,6 +25,7 @@ _maxLifetime = ["A3W_objectLifetime", 0] call getPublicVar;
 
 _isWarchestEntry = { [_variables, "a3w_warchest", false] call fn_getFromPairs };
 _isBeaconEntry = { [_variables, "a3w_spawnBeacon", false] call fn_getFromPairs };
+_isCameraEntry = { [_variables, "a3w_cctv_camera", false] call fn_getFromPairs };
 
 _worldDir = "persistence\server\world";
 _methodDir = format ["%1\%2", _worldDir, call A3W_savingMethodDir];
@@ -51,6 +52,7 @@ _exclObjectIDs = [];
 		{
 			case (call _isWarchestEntry):       { _warchestSavingOn };
 			case (call _isBeaconEntry):         { _beaconSavingOn };
+			case (call _isCameraEntry):         { _cctvCameraSavingOn };
 			case (_class call _isBox):          { _boxSavingOn };
 			case (_class call _isStaticWeapon): { _staticWeaponSavingOn };
 			default                             { _baseSavingOn };
@@ -121,6 +123,16 @@ _exclObjectIDs = [];
 
 			_obj setVariable [_var, _value, true];
 		} forEach _variables;
+
+		// CCTV Camera
+		if (isNil "cctv_cameras" || {typeName cctv_cameras != typeName []}) then {
+			cctv_cameras = [];
+			};
+			
+			 if (_obj getVariable ["a3w_cctv_camera",false]) then {
+				cctv_cameras pushBack _obj;
+				publicVariable "cctv_cameras";
+		};
 
 		clearWeaponCargoGlobal _obj;
 		clearMagazineCargoGlobal _obj;

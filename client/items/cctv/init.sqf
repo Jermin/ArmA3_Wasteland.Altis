@@ -19,6 +19,6 @@ MF_ITEMS_CCTV_CAMERA_ICON = "addons\cctv\icons\camcorder.paa";
 [MF_ITEMS_CCTV_CAMERA, "IP/Net Camera",{_this call cctv_camera_use},MF_ITEMS_CCTV_CAMERA_TYPE, MF_ITEMS_CCTV_CAMERA_ICON, cctv_max_inventory_cameras] call mf_inventory_create;
 
 MF_ITEMS_CCTV_BASE = "cctv_base";
-MF_ITEMS_CCTV_BASE_TYPE = "Land_Laptop_unfolded_F";
+MF_ITEMS_CCTV_BASE_TYPE = "Land_Laptop_F";
 MF_ITEMS_CCTV_BASE_ICON = "addons\cctv\icons\laptop.paa";
 [MF_ITEMS_CCTV_BASE, "Camera Terminal", {_this call cctv_base_use}, MF_ITEMS_CCTV_BASE_TYPE, MF_ITEMS_CCTV_BASE_ICON, cctv_max_inventory_base_stations] call mf_inventory_create;
