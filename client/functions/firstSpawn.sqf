@@ -59,10 +59,7 @@ player addEventHandler ["Put",
 	};
 }];
 
-if (!isServer) then
-{
-	player addEventHandler ["WeaponDisassembled", { _this spawn weaponDisassembledEvent }];
-};
+player addEventHandler ["WeaponDisassembled", { _this spawn weaponDisassembledEvent }];
 
 player addEventHandler ["InventoryOpened",
 {
