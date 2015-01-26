@@ -533,6 +533,8 @@ allStoreGear = compileFinal str (call headArray + call uniformArray + call vestA
 
 genObjectsArray = compileFinal str
 [
+	["Food sacks", "Land_Sacks_goods_F", 5000, "object"], // Added on player request
+	["Water Barrel", "Land_BarrelWater_F", 5000, "object"], // Added on player request
 	["Empty Ammo Crate", "Box_NATO_Ammo_F", 100, "ammocrate"],
 	["Metal Barrel", "Land_MetalBarrel_F", 25, "object"],
 	["Toilet Box", "Land_ToiletBox_F", 25, "object"],
