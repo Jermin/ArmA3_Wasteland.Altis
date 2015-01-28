@@ -243,25 +243,41 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					
 					case (_object isKindOf "B_Plane_CAS_01_F"):
 					{
-						_object removeMagazines "6Rnd_Missile_AGM_02_F";
+						_object setVehicleAmmo 0;
+						_object addMagazine "1000Rnd_Gatling_30mm_Plane_CAS_01_F";
+						_object addMagazine "2Rnd_Missile_AA_04_F";
 						_object addMagazine ["6Rnd_Missile_AGM_02_F", 3];
+						_object addMagazine "7Rnd_Rocket_04_HE_F";
+						_object addMagazine "7Rnd_Rocket_04_AP_F";
+						_object addMagazine "4Rnd_Bomb_04_F";
 					};
 
 					case (_object isKindOf "O_Plane_CAS_02_F"):
 					{
-						_object removeMagazines "4Rnd_Missile_AGM_01_F";
+						_object setVehicleAmmo 0;
+						_object addMagazine "500Rnd_Cannon_30mm_Plane_CAS_02_F";
+						_object addMagazine "2Rnd_Missile_AA_03_F";
 						_object addMagazine ["4Rnd_Missile_AGM_01_F", 3];
+						_object addMagazine "20Rnd_Rocket_03_HE_F";
+						_object addMagazine "20Rnd_Rocket_03_AP_F";
+						_object addMagazine "2Rnd_Bomb_03_F";
 					};
 					
+					case (_object isKindOf "B_UAV_02_F"):
+					{
+						_object setVehicleAmmo 0;
+						_object addMagazine ["6Rnd_LG_scalpel", 3];
+					};
+
 					case (_object isKindOf "O_UAV_02_F"):
 					{
-						_object removeMagazines "6Rnd_LG_scalpel";
+						_object setVehicleAmmo 0;
 						_object addMagazine ["6Rnd_LG_scalpel", 3];
 					};
 
 					case (_object isKindOf "I_UAV_02_F"):
 					{
-						_object removeMagazines "6Rnd_LG_scalpel";
+						_object setVehicleAmmo 0;
 						_object addMagazine ["6Rnd_LG_scalpel", 3];
 					};
 				};
