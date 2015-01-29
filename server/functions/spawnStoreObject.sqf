@@ -250,6 +250,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 						_object addMagazine "7Rnd_Rocket_04_HE_F";
 						_object addMagazine "7Rnd_Rocket_04_AP_F";
 						_object addMagazine "4Rnd_Bomb_04_F";
+						_object addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1]];
 					};
 
 					case (_object isKindOf "O_Plane_CAS_02_F"):
@@ -261,24 +262,28 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 						_object addMagazine "20Rnd_Rocket_03_HE_F";
 						_object addMagazine "20Rnd_Rocket_03_AP_F";
 						_object addMagazine "2Rnd_Bomb_03_F";
+						_object addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1]];
 					};
 					
 					case (_object isKindOf "B_UAV_02_F"):
 					{
 						_object setVehicleAmmo 0;
 						_object addMagazine ["6Rnd_LG_scalpel", 3];
+						_object addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1]];
 					};
 
 					case (_object isKindOf "O_UAV_02_F"):
 					{
 						_object setVehicleAmmo 0;
 						_object addMagazine ["6Rnd_LG_scalpel", 3];
+						_object addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1]];
 					};
 
 					case (_object isKindOf "I_UAV_02_F"):
 					{
 						_object setVehicleAmmo 0;
 						_object addMagazine ["6Rnd_LG_scalpel", 3];
+						_object addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1]];
 					};
 				};
 
