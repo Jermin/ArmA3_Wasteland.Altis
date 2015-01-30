@@ -32,20 +32,20 @@ storeOwnerConfig = compileFinal str
 // Outfits for store owners
 storeOwnerConfigAppearance = compileFinal str
 [
-	["GenStore1", [["weapon", ""], ["uniform", "U_IG_Guerilla2_2"]]],
-	["GenStore2", [["weapon", ""], ["uniform", "U_IG_Guerilla2_3"]]],
-	["GenStore3", [["weapon", ""], ["uniform", "U_IG_Guerilla3_1"]]],
-	["GenStore4", [["weapon", ""], ["uniform", "U_IG_Guerilla2_1"]]],
-	["GenStore5", [["weapon", ""], ["uniform", "U_IG_Guerilla3_2"]]],
+	["GenStore1", [["weapon", ""], ["uniform", "U_B_Protagonist_VR"]]],
+	["GenStore2", [["weapon", ""], ["uniform", "U_O_Protagonist_VR"]]],
+	["GenStore3", [["weapon", ""], ["uniform", "U_I_Protagonist_VR"]]],
+	["GenStore4", [["weapon", ""], ["uniform", "U_B_Protagonist_VR"]]],
+	["GenStore5", [["weapon", ""], ["uniform", "U_O_Protagonist_VR"]]],
 
-	["GunStore1", [["weapon", ""], ["uniform", "U_B_SpecopsUniform_sgg"]]],
-	["GunStore2", [["weapon", ""], ["uniform", "U_O_SpecopsUniform_blk"]]],
-	["GunStore3", [["weapon", ""], ["uniform", "U_I_CombatUniform_tshirt"]]],
-	["GunStore4", [["weapon", ""], ["uniform", "U_IG_Guerilla1_1"]]],
+	["GunStore1", [["weapon", "LMG_Zafir_F"], ["uniform", "U_B_SpecopsUniform_sgg"]]],
+	["GunStore2", [["weapon", "srifle_DMR_01_F"], ["uniform", "U_O_SpecopsUniform_blk"]]],
+	["GunStore3", [["weapon", "srifle_GM6_camo_SOS_F"], ["uniform", "U_I_CombatUniform_tshirt"]]],
+	["GunStore4", [["weapon", "arifle_Katiba_GL_F"], ["uniform", "U_IG_Guerilla1_1"]]],
 
-	["VehStore1", [["weapon", ""], ["uniform", "U_Competitor"]]],
+	["VehStore1", [["weapon", ""], ["uniform", "U_IG_leader"]]],
 	["VehStore2", [["weapon", ""], ["uniform", "U_Competitor"]]],
-	["VehStore3", [["weapon", ""], ["uniform", "U_Competitor"]]],
+	["VehStore3", [["weapon", ""], ["uniform", "U_Rangemaster"]]],
 	["VehStore4", [["weapon", ""], ["uniform", "U_Competitor"]]],
 	["VehStore5", [["weapon", ""], ["uniform", "U_Competitor"]]]
 ];

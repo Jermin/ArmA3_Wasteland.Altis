@@ -95,7 +95,7 @@ allGunStoreFirearms = compileFinal str (call pistolArray + call smgArray + call 
 
 staticGunsArray = compileFinal str
 [
-	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 2500],
+	["Vehicle Ammo Crate", "/", 2500],
 	["Static Titan AT 4Rnd (NATO)", "B_static_AT_F", 14000], // Static launchers only have 4 ammo, hence the lower price
 	["Static Titan AT 4Rnd (CSAT)", "O_static_AT_F", 14000],
 	["Static Titan AT 4Rnd (AAF)", "I_static_AT_F", 14000],
@@ -714,7 +714,7 @@ helicoptersArray = compileFinal str
 	["UH-80 Ghost Hawk (Green)", "B_Heli_Transport_01_camo_F", 16000, "vehicle"], // UH-60 Stealth with 2 side miniguns (green camo)
 	["AH-9 Pawnee", "B_Heli_Light_01_armed_F", 12000, "vehicle"], // Armed AH-6
 	//["PO-30 Orca (Armed, Black)", "O_Heli_Light_02_v2_F", 20000, "vehicle"], // Armed Ka-60
-	//["PO-30 Orca (Armed, Hex)", "O_Heli_Light_02_F", 21000, "vehicle"], // Armed Ka-60
+	["PO-30 Orca (Armed, Hex)", "O_Heli_Light_02_F", 15000, "vehicle"], // Armed Ka-60
 	["WY-55 Hellcat (Armed)", "I_Heli_light_03_F", 17500, "vehicle"], // Armed AW159
 	//["AH-99 Blackfoot", "B_Heli_Attack_01_F", 22500, "vehicle"], // RAH-66 with gunner
 	["Mi-48 Kajman (Hex)", "O_Heli_Attack_02_F", 25000, "vehicle"], // Mi-28 with gunner
@@ -799,6 +799,7 @@ colorsArray = compileFinal str
 			["Denim", "client\images\vehicleTextures\denim.jpg"],
 			["Psych", "client\images\vehicleTextures\psych.jpg"],
 			["Leopard", "client\images\vehicleTextures\leopard.jpg"],
+			["Holland", "client\images\vehicleTextures\holland.jpg"], //GoT addition (dutch flag)
 			["'Murica", "client\images\vehicleTextures\murica.jpg"],
 			["Confederate", "client\images\vehicleTextures\confederate.jpg"],
 			["Yellow Camo", "client\images\vehicleTextures\camo_fuel.jpg"],

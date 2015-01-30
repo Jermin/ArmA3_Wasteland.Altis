@@ -269,21 +269,24 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					{
 						_object setVehicleAmmo 0;
 						_object addMagazine ["6Rnd_LG_scalpel", 3];
-						_object addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1]];
+						_object addMagazine "Laserdesignator_mounted";
+						_object addMagazineTurret ["60Rnd_CMFlare_Chaff_Magazine", [-1]];
 					};
 
 					case (_object isKindOf "O_UAV_02_F"):
 					{
 						_object setVehicleAmmo 0;
 						_object addMagazine ["6Rnd_LG_scalpel", 3];
-						_object addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1]];
+						_object addMagazine "Laserdesignator_mounted";
+						_object addMagazineTurret ["60Rnd_CMFlare_Chaff_Magazine", [-1]];
 					};
 
 					case (_object isKindOf "I_UAV_02_F"):
 					{
 						_object setVehicleAmmo 0;
 						_object addMagazine ["6Rnd_LG_scalpel", 3];
-						_object addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1]];
+						_object addMagazine "Laserdesignator_mounted";
+						_object addMagazineTurret ["60Rnd_CMFlare_Chaff_Magazine", [-1]];
 					};
 				};
 
