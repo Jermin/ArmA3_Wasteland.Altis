@@ -243,7 +243,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					
 					case (_object isKindOf "B_Plane_CAS_01_F"):
 					{
-						_object setVehicleAmmo 0;
+						_object setVehicleAmmoDef 0;
 						_object addMagazine "1000Rnd_Gatling_30mm_Plane_CAS_01_F";
 						_object addMagazine "2Rnd_Missile_AA_04_F";
 						_object addMagazine ["6Rnd_Missile_AGM_02_F", 3];
@@ -255,7 +255,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 
 					case (_object isKindOf "O_Plane_CAS_02_F"):
 					{
-						_object setVehicleAmmo 0;
+						_object setVehicleAmmoDef 0;
 						_object addMagazine "500Rnd_Cannon_30mm_Plane_CAS_02_F";
 						_object addMagazine "2Rnd_Missile_AA_03_F";
 						_object addMagazine ["4Rnd_Missile_AGM_01_F", 3];
@@ -267,7 +267,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					
 					case (_object isKindOf "B_UAV_02_F"):
 					{
-						_object setVehicleAmmo 0;
+						_object setVehicleAmmoDef 0;
 						_object addMagazine ["6Rnd_LG_scalpel", 3];
 						_object addMagazine "Laserdesignator_mounted";
 						_object addMagazineTurret ["60Rnd_CMFlare_Chaff_Magazine", [-1]];
@@ -275,7 +275,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 
 					case (_object isKindOf "O_UAV_02_F"):
 					{
-						_object setVehicleAmmo 0;
+						_object setVehicleAmmoDef 0;
 						_object addMagazine ["6Rnd_LG_scalpel", 3];
 						_object addMagazine "Laserdesignator_mounted";
 						_object addMagazineTurret ["60Rnd_CMFlare_Chaff_Magazine", [-1]];
@@ -283,7 +283,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 
 					case (_object isKindOf "I_UAV_02_F"):
 					{
-						_object setVehicleAmmo 0;
+						_object setVehicleAmmoDef 0;
 						_object addMagazine ["6Rnd_LG_scalpel", 3];
 						_object addMagazine "Laserdesignator_mounted";
 						_object addMagazineTurret ["60Rnd_CMFlare_Chaff_Magazine", [-1]];
