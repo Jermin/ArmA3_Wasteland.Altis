@@ -135,6 +135,15 @@ class CfgSounds
 							sound[] = {"addons\beacondetector\sound\beep.wav", db-10, 0.1};
 							titles[] = {};
 		};
+	class onspawn
+	{
+		// how the sound is referred to in the editor
+		name = "intro"; // Name for mission editor
+		// filename, volume, pitch
+		sound[] = {\client\sounds\intro, 1,1};
+		// subtitle delay in seconds, subtitle text
+		titles[] = { };
+	};
 
 	#include "addons\boomerang\sounds.hpp"
 };

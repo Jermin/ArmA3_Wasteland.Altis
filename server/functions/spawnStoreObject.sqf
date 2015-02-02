@@ -269,7 +269,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					{
 						_object setVehicleAmmoDef 0;
 						_object addMagazine ["6Rnd_LG_scalpel", 3];
-						_object addMagazine "Laserdesignator_mounted";
+						_object addMagazine ["Laserdesignator_mounted", [-1]];
 						_object addMagazineTurret ["60Rnd_CMFlare_Chaff_Magazine", [-1]];
 					};
 
@@ -277,7 +277,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					{
 						_object setVehicleAmmoDef 0;
 						_object addMagazine ["6Rnd_LG_scalpel", 3];
-						_object addMagazine "Laserdesignator_mounted";
+						_object addMagazine ["Laserdesignator_mounted", [-1]];
 						_object addMagazineTurret ["60Rnd_CMFlare_Chaff_Magazine", [-1]];
 					};
 
@@ -285,7 +285,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					{
 						_object setVehicleAmmoDef 0;
 						_object addMagazine ["6Rnd_LG_scalpel", 3];
-						_object addMagazine "Laserdesignator_mounted";
+						_object addMagazine ["Laserdesignator_mounted", [-1]];
 						_object addMagazineTurret ["60Rnd_CMFlare_Chaff_Magazine", [-1]];
 					};
 				};

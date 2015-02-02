@@ -124,6 +124,8 @@ player addEventHandler ["InventoryClosed",
 	};
 };
 
+playsound "intro";
+
 player addEventHandler ["HandleDamage", unitHandleDamage];
 
 if (["A3W_combatAbortDelay", 0] call getPublicVar > 0) then
