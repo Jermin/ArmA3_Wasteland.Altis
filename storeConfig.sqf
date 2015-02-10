@@ -95,7 +95,7 @@ allGunStoreFirearms = compileFinal str (call pistolArray + call smgArray + call 
 
 staticGunsArray = compileFinal str
 [
-	["Vehicle Ammo Crate", "/", 2500],
+	//["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 2500],
 	["Static Titan AT 4Rnd (NATO)", "B_static_AT_F", 14000], // Static launchers only have 4 ammo, hence the lower price
 	["Static Titan AT 4Rnd (CSAT)", "O_static_AT_F", 14000],
 	["Static Titan AT 4Rnd (AAF)", "I_static_AT_F", 14000],
@@ -569,7 +569,6 @@ genObjectsArray = compileFinal str
 	["Concrete Ramp", "Land_RampConcrete_F", 200, "object"],
 	["Concrete Ramp (High)", "Land_RampConcreteHigh_F", 250, "object"],
 	["Scaffolding", "Land_Scaffolding_F", 200, "object"],
-	["Fake Money", "Land_Money_F", 10, "object"],
 	["Basketball Court", "Land_BC_Court_F", 500, "object"],
 	["Transmitter Tower", "Land_TTowerBig_1_F", 1000, "object"],
 	["Transmitter Tower (Tall)", "Land_TTowerBig_2_F", 1500, "object"],
@@ -694,7 +693,7 @@ tanksArray = compileFinal str
 helicoptersArray = compileFinal str
 [
 	["MH-9 Hummingbird", "B_Heli_Light_01_F", 3000, "vehicle"], // MH-6
-	["M-900", "C_Heli_Light_01_civil_F", 3000, "vehicle"],
+	["M-900", "C_Heli_Light_01_civil_F", 1500, "vehicle"],
 	["PO-30 Orca (Black)", "O_Heli_Light_02_unarmed_F", 4500, "vehicle"], // Ka-60
 	["WY-55 Hellcat (Green)", "I_Heli_light_03_unarmed_F", 4500, "vehicle"], // AW159
 	["CH-49 Mohawk", "I_Heli_Transport_02_F", 7500, "vehicle"], // AW101

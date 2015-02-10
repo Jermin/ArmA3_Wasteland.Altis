@@ -11,7 +11,7 @@
 
 storeSellingHandle = _this spawn
 {
-#define CHOPSHOP_PRICE_RELATIONSHIP 2
+#define CHOPSHOP_PRICE_RELATIONSHIP 3
 #define VEHICLE_MAX_SELLING_DISTANCE 50
 
 private ["_vehicle","_type", "_price", "_confirmMsg", "_playerMoney", "_text", "_variables"];
@@ -38,7 +38,7 @@ _price = 500;
 	if (_type == _x select 1) then
 	{	
 	_price = _x select 2;
-	_price = _price / CHOPSHOP_PRICE_RELATIONSHIP;
+	_price = (ceil (((_price) / CHOPSHOP_PRICE_RELATIONSHIP) / 5)) * 5;
 	};
 	
 } forEach (call allVehStoreVehicles);
@@ -61,7 +61,7 @@ _price = 500;
 			_vehicle setVariable ["ownerUID", getPlayerUID player, true];
 			_vehicle setVariable ["ownerN", name player, true];
 
-			player setVariable["cmoney",(player getVariable "cmoney")+_price,true];
+			player setVariable["cmoney",(player getVariable "cmoney")-_price,true];
 			_ownerN = _Vehicle getvariable "ownerN";
 			_text = format ["Ownership on %1 is set to %2", _type, _ownerN];
 			[_text, 10] call mf_notify_client;

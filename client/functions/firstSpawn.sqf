@@ -10,6 +10,8 @@ client_firstSpawn = true;
 
 [] execVM "client\functions\welcomeMessage.sqf";
 
+playsound "intro";
+
 // if this is the first spawn start the timer
 if(format["%1",firstspawn] == format["%1","1"]) then {
 	[] spawn rewardForPlaying;
@@ -123,8 +125,6 @@ player addEventHandler ["InventoryClosed",
 		false
 	};
 };
-
-playsound "intro";
 
 player addEventHandler ["HandleDamage", unitHandleDamage];
 
