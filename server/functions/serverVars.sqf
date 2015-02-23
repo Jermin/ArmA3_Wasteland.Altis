@@ -35,10 +35,10 @@ lightMilitaryVehicles =
 	"O_Quadbike_01_F",
 	"I_Quadbike_01_F",
 	"I_G_Quadbike_01_F",
-//	"O_Truck_02_covered_F",
-//	"I_Truck_02_covered_F",
-//	"O_Truck_02_transport_F",
-//	"I_Truck_02_transport_F",
+	"O_Truck_02_covered_F",
+	"I_Truck_02_covered_F",
+	"O_Truck_02_transport_F",
+	"I_Truck_02_transport_F",
 	"I_G_Offroad_01_armed_F"
 ];
 
@@ -57,8 +57,8 @@ mediumMilitaryVehicles =
 //Water Vehicles - Random Spawns
 waterVehicles =
 [
-//	"B_Lifeboat",
-//	"O_Lifeboat",
+	"B_Lifeboat",
+	"O_Lifeboat",
 //	"C_Rubberboat",
 //	"B_SDV_01_F",
 //	"O_SDV_01_F",
@@ -175,7 +175,8 @@ vehicleWeapons =
 	"arifle_MXM_F",
 	"srifle_EBR_F",
 	"LMG_Mk200_F",
-	"LMG_Zafir_F"
+	"LMG_Zafir_F",
+	"launch_RPG32_F"
 ];
 
 vehicleAddition =
@@ -198,6 +199,8 @@ vehicleAddition =
 	"acc_pointer_IR",
 	"Medikit",
 	"Medikit",
+	"HandGrenade",
+	"MiniGrenade",
 	"FirstAidKit",
 	"ToolKit"
 ];
