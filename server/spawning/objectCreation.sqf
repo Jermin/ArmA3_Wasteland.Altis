@@ -24,10 +24,6 @@ switch (true) do
 		_obj setVariable ["food", 40, true];
 		_obj allowDamage false;
 	};
-	case (_objClass == "Land_Pier_Box_F" || _objClass == "Land_Crane_F" || _objClass == "Land_Cargo_Tower_V1_F" || _objClass == "Land_Cargo_Patrol_V1_F"):
-	{
-		_obj allowDamage false;
-	};
 	case (_objClass isKindOf "ReammoBox_F"):
 	{
 		clearMagazineCargoGlobal _obj;
