@@ -364,7 +364,7 @@ else
 
 // Make Military Towers indestructible
 
-_list = nearestObjects [[0,0], ["Land_Crane_F", "Land_Cargo_Tower_V1_F", "Land_Cargo_Patrol_V1_F", "Land_spp_Tower_F"], 99999];
+_list = nearestObjects [[0,0], ["Land_Crane_F", "Land_Cargo_Tower_V1_F", "Land_Cargo_Patrol_V1_F", "Land_spp_Tower_F", "Land_Airport_Tower_F"], 99999];
 {_x allowdamage false} forEach _list;
 
 //Execute Server Missions.

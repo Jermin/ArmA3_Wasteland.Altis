@@ -40,7 +40,17 @@ _objName = getText (configFile >> "CfgVehicles" >> _objClass >> "displayName");
 	if (_type == _x select 1) then
 	{	
 	_price = _x select 2;
-	_price = _price / CHOPSHOP_PRICE_RELATIONSHIP;
+	_price = (ceil ((_price / CHOPSHOP_PRICE_RELATIONSHIP) / 5)) * 5;
+	};
+
+	if (_type == "B_Plane_CAS_01_F" || _type == "O_Plane_CAS_02_F" || _type == "B_Heli_Attack_01_F") then
+	{	
+		_price = 25000;
+	};
+
+	if (_type == "O_Heli_Light_02_F") then
+	{	
+		_price = 15000;
 	};
 	
 } forEach (call allVehStoreVehicles);

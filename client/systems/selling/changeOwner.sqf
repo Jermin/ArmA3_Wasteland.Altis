@@ -39,15 +39,30 @@ _price = 500;
 	{	
 	_price = _x select 2;
 	_price = (ceil (((_price) / CHOPSHOP_PRICE_RELATIONSHIP) / 5)) * 5;
-	};
-	
+	};	
 } forEach (call allVehStoreVehicles);
+
+	if (_type == "B_Plane_CAS_01_F" || _type == "O_Plane_CAS_02_F" || _type == "B_Heli_Attack_01_F") then
+	{	
+		_price = 16500;
+	};
+
+	if (_type == "O_Heli_Light_02_F") then
+	{	
+		_price = 10000;
+	};
 
 	if (!isNil "_price") then 
 	{
 		// Add total cost to confirm message
 		_confirmMsg = format ["Changing owner on %1 will cost you $%2 for:<br/>", _type, _price];
 		_confirmMsg = _confirmMsg + format ["<br/><t font='EtelkaMonospaceProBold'>1</t> x %1", _type];
+
+		if (_price > _playerMoney) exitWith
+		{
+			playSound "FD_CP_Not_Clear_F";
+			[format ['You do not have enough money to change the ownership of %1', _type], "Error"] call  BIS_fnc_guiMessage;
+		};
 
 		// Display confirm message
 		if ([parseText _confirmMsg, "Confirm", "OK", true] call BIS_fnc_guiMessage) then
@@ -61,7 +76,7 @@ _price = 500;
 			_vehicle setVariable ["ownerUID", getPlayerUID player, true];
 			_vehicle setVariable ["ownerN", name player, true];
 
-			player setVariable["cmoney",(player getVariable "cmoney")-_price,true];
+			player setVariable["cmoney", _playerMoney - _price, true];
 			_ownerN = _Vehicle getvariable "ownerN";
 			_text = format ["Ownership on %1 is set to %2", _type, _ownerN];
 			[_text, 10] call mf_notify_client;

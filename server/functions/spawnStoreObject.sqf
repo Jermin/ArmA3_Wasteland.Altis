@@ -206,7 +206,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 						_object setVariable ["water", 50, true];
 					};
 
-					case ({_object isKindOf _x} count ["Land_Pier_Box_F", "Land_Crane_F", "Land_Cargo_Tower_V1_F", "Land_Cargo_Patrol_V1_F"] > 0):
+					case ({_object isKindOf _x} count ["Land_Pier_Box_F", "Land_Crane_F", "Land_Cargo_Tower_V1_F", "Land_Cargo_Patrol_V1_F", "Land_spp_Tower_F", "Land_i_Addon_03_V1_F", "Land_i_Addon_03mid_V1_F", "Land_i_Addon_04_V1_F"] > 0):
 					{
 						_object allowDamage false;
 					};
