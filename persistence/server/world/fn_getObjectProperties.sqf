@@ -76,6 +76,21 @@ if (!isNil "_r3fSide") then
 	_variables pushBack ["R3F_Side", str _r3fSide];
 };
 
+// BASE LOCKING
+_lockDown = _obj getVariable "lockDown";
+
+if (!isNil "_lockDown") then
+{
+   _variables pushBack ["lockDown", _lockDown];
+};
+
+_password = _obj getVariable "password";
+if (!isNil "_password") then 
+{
+   _variables pushBack ["password", _password];
+};
+//BASE LOCKING, End
+
 _weapons = [];
 _magazines = [];
 _items = [];

@@ -29,10 +29,17 @@ switch (_lockState) do
 
 		_checks =
 		{
-			private ["_progress", "_object", "_failed", "_text"];
+			private ["_progress", "_object", "_failed", "_text", "_reLocker"];
 			_progress = _this select 0;
 			_object = _this select 1;
 			_failed = true;
+			
+			_reLockers = nearestObjects [player, ["Land_Device_assembled_F"], 100];
+			if (count _reLockers > 0) then { 
+				_reLocker = _reLockers select 0; 
+				}else{
+				_reLocker = objNull;
+				}; 
 
 			switch (true) do
 			{
@@ -41,6 +48,7 @@ switch (_lockState) do
 				case (vehicle player != player): { _text = "Action failed! You can't do this in a vehicle" };
 				case (!isNull (_object getVariable ["R3F_LOG_est_transporte_par", objNull])): { _text = "Action failed! Somebody moved the object" };
 				case (_object getVariable ["objectLocked", false]): { _text = "Somebody else locked it before you" };
+				case (_reLocker getVariable ["lockDown", false]): { _text = "You cannot lock objects close to a base under Lock Down" }; // Re Locker
 				default
 				{
 					_failed = false;
@@ -110,11 +118,18 @@ switch (_lockState) do
 
 		_checks =
 		{
-			private ["_progress", "_object", "_failed", "_text"];
+			private ["_progress", "_object", "_failed", "_text", "_reLocker"];
 			_progress = _this select 0;
 			_object = _this select 1;
 			_failed = true;
 
+			_reLockers = nearestObjects [player, ["Land_Device_assembled_F"], 100];
+			if (count _reLockers > 0) then { 
+				_reLocker = _reLockers select 0; 
+				}else{
+				_reLocker = objNull;
+			}; 
+			
 			switch (true) do
 			{
 				case (!alive player): {};
@@ -122,6 +137,7 @@ switch (_lockState) do
 				case (vehicle player != player): { _text = "Action failed! You can't do this in a vehicle" };
 				case (!isNull (_object getVariable ["R3F_LOG_est_transporte_par", objNull])): { _text = "Action failed! Somebody moved the object" };
 				case !(_object getVariable ["objectLocked", false]): { _text = "Somebody else unlocked it before you" };
+				case (_reLocker getVariable ["lockDown", false]): { _text = "You cannot unlock objects close to a base under Lock Down" }; // Re Locker
 				default
 				{
 					_failed = false;

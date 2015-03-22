@@ -202,7 +202,8 @@ R3F_LOG_CFG_objets_transportables =
 	["Land_Pier_Box_F", 20],
 	["Land_Grave_dirt_F", 4],
 	["Land_Grave_forest_F", 4],
-	["Land_Grave_rocks_F", 4]
+	["Land_Grave_rocks_F", 4],
+	["Land_Device_assembled_F", 10] //Re Locker
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
@@ -290,5 +291,6 @@ R3F_LOG_CFG_objets_deplacables =
 	"Land_Grave_forest_F",
 	"Land_Grave_rocks_F",
 	"Land_Laptop_F",
-	"Land_HandyCam_F"
+	"Land_HandyCam_F",
+	"Land_Device_assembled_F" //relocker
 ];

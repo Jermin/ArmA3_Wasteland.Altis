@@ -75,3 +75,4 @@ if (isServer) then
 [] execVM "addons\laptop\init.sqf";						// Addon for hack laptop mission
 [] execVM "addons\outlw_magRepack\MagRepack_init_sv.sqf";
 [] execVM "addons\zlt_fastrope\zlt_fastrope.sqf";
+[] execVM "addons\AF_Keypad\AF_KP_vars.sqf";			// Keypad for base locking

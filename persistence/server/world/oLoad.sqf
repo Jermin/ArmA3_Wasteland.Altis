@@ -104,6 +104,8 @@ _exclObjectIDs = [];
 			{
 				case "side": { _value = _value call _strToSide };
 				case "R3F_Side": { _value = _value call _strToSide };
+				case "lockDown": { _value };
+				case "password": { _value };
 				case "ownerName":
 				{
 					switch (typeName _value) do

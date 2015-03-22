@@ -274,7 +274,6 @@ player createDiaryRecord ["changelog",
 "
 ]];
 
-
 player createDiaryRecord ["credits",
 [
 "Credits",
