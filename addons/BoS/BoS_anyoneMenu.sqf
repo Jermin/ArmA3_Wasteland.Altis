@@ -18,6 +18,7 @@ if (!isNil "_uid") then {
 					"Re Lock base objects",
 					"Show objects owned by you",
 					"Show Base Border"
+					"Repair Re-Locker",
 	];
 
 	{
