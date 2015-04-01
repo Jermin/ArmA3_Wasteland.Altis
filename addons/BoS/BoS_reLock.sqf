@@ -8,12 +8,13 @@ private ["_price", "_playerMoney"];
 #define RADIUS 30
 _maxLifetime = ["A3W_objectLifetime", 0] call getPublicVar;
 _objects = nearestObjects [position player, ["thingX", "Building", "ReammoBox_F"], RADIUS];
-_ownedObjects = {typeName _x == "OBJECT" && {!(isNil {_x getVariable "ownerUID"})}} count _objects;
+_ownedObjects = {typeName _x == "OBJECT" && {!(isNil {_x getVariable "ownerUID"})} && {_x getVariable "objectLocked"}} count _objects;
 //_ownedObjects = {typeName _x == "OBJECT" && {_x getVariable ["ownerUID",""] == getPlayerUID player}} count _objects; // Use this if you want only owned objects to be relocked.
 
 _playerMoney = player getVariable "cmoney";
 _price = _ownedObjects * 100;
 _playerMoney = player getVariable "cmoney";
+
 
 /*
 if (isNIL "_relockedTime") exitWith
