@@ -137,7 +137,7 @@ switch (_lockState) do
 				case (vehicle player != player): { _text = "Action failed! You can't do this in a vehicle" };
 				case (!isNull (_object getVariable ["R3F_LOG_est_transporte_par", objNull])): { _text = "Action failed! Somebody moved the object" };
 				case !(_object getVariable ["objectLocked", false]): { _text = "Somebody else unlocked it before you" };
-				case (_reLocker getVariable ["lockDown", false]): { _text = "You cannot unlock objects close to a base under Lock Down" }; // Re Locker
+				case (_reLocker getVariable ["lockDown", false] && alive _reLocker): { _text = "You cannot unlock objects close to a base under Lock Down" }; // Re Locker
 				default
 				{
 					_failed = false;
