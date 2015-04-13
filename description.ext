@@ -86,7 +86,7 @@ class CfgSounds
 {
     sounds[] =
 	{
-		beep, beep2, beep3, beep4, beep5, beep6, beep7, beep8, beep9, intro
+		beep, beep2, beep3, beep4, beep5, beep6, beep7, beep8, beep9
 	};
 
 	class beep
@@ -134,13 +134,4 @@ class CfgSounds
 							sound[] = {"addons\beacondetector\sound\beep.wav", db-10, 0.1};
 							titles[] = {};
 		};
-	class intro
-	{
-		// how the sound is referred to in the editor
-		name = "mintro"; // Name for mission editor
-		// filename, volume, pitch
-		sound[] = {"client\sounds\intro.ogg", 1,1};
-		// subtitle delay in seconds, subtitle text
-		titles[] = { };
-	};
 };
