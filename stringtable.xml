@@ -96,18 +96,6 @@
         <Key ID="STR_WL_ShopDescriptions_CCTV_Base">
             <English>This is the base station for a television system in which the video signals are transmitted from one or more cameras via Wifi.</English>
         </Key>
-		<Key ID="STR_WL_ShopDescriptions_Boomerang_Terminal">
-			<English>
-				This is a portable terminal for the Boomerang shot detection system.
-				This terminal connects to any Boomerang base station installed in nearby vehicles.
-			</English>
-		</Key>
-		<Key ID="STR_WL_ShopDescriptions_Boomerang_Station">
-			<English>
-				This is the base station for the Boomerang shot detection system. You can install it in vehicles by clicking ""Use"" while inside the vehicle.
-				All players inside the vehicle can use the Boomerang system without a portable terminal.
-			</English>
-		</Key>
 	</Package>
 	<Package name="Dialogs">
 		<Key ID="STR_WL_dialog_TeamkillText">

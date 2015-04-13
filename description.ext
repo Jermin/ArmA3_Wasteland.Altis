@@ -67,14 +67,12 @@ class RscTitles
 	#include "client\systems\hud\dialog\hud.hpp"
 	#include "client\systems\playerMenu\dialog\welcome.hpp"
 	#include "client\systems\scoreboard\score_gui.hpp"
-	#include "addons\boomerang\hud.hpp"
 };
 
 class CfgFunctions
 {
 	class A3W
 	{
-		#include "client\CfgFunctions.hpp"
 		#include "server\CfgFunctions.hpp"
 	};
 };
@@ -139,12 +137,10 @@ class CfgSounds
 	class intro
 	{
 		// how the sound is referred to in the editor
-		name = "intro"; // Name for mission editor
+		name = "mintro"; // Name for mission editor
 		// filename, volume, pitch
-		sound[] = {\client\sounds\intro.ogg, 1,1};
+		sound[] = {"client\sounds\intro.ogg", 1,1};
 		// subtitle delay in seconds, subtitle text
 		titles[] = { };
 	};
-
-	#include "addons\boomerang\sounds.hpp"
 };
