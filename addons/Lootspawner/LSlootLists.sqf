@@ -110,8 +110,8 @@ lootMagazine_list =
 		[
 			"100Rnd_65x39_caseless_mag",
 			"100Rnd_65x39_caseless_mag_Tracer",
-			"150Rnd_762x51_Box",
-			"150Rnd_762x51_Box_Tracer",
+			"150Rnd_762x54_Box",
+			"150Rnd_762x54_Box_Tracer",
 			//"16Rnd_9x21_Mag",
 			"1Rnd_HE_Grenade_shell",
 			"1Rnd_Smoke_Grenade_shell",
