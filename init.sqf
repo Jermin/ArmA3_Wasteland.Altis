@@ -77,3 +77,4 @@ if (isServer) then
 [] execVM "addons\zlt_fastrope\zlt_fastrope.sqf";
 [] execVM "addons\AF_Keypad\AF_KP_vars.sqf";			// Keypad for base locking
 [] execVM "addons\APOC_Airdrop_Assistance\init.sqf";		// Airdrop
+[] execVM "addons\HvT\HvT.sqf"; 						// High Value Target
