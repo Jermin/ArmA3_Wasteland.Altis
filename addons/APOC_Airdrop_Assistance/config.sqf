@@ -17,11 +17,11 @@ APOC_AA_VehOptions =
 
 APOC_AA_SupOptions =
 [// ["stringItemName", 	"Crate Type for fn_refillBox 	,Price," drop type"]
-["Launchers", 			"mission_USLaunchers", 			25000, "supply"],
-["Assault Rifle", 		"mission_USSpecial", 			15000, "supply"],
-["Sniper Rifles", 		"mission_main_A3snipers", 		25000, "supply"],
-["DLC Rifles", 			"airdrop_DLC_Rifles", 			35000, "supply"],
-["DLC LMGs", 			"airdrop_DLC_LMGs", 			35000, "supply"],
+["Launchers", 			"mission_USLaunchers", 			35000, "supply"],
+["Assault Rifles", 		"mission_USSpecial", 			25000, "supply"],
+["DLC Rifles", 			"airdrop_DLC_Rifles", 			40000, "supply"],
+["DLC LMGs", 			"airdrop_DLC_LMGs", 			45000, "supply"],
+["Sniper Rifles", 		"airdrop_Snipers", 		50000, "supply"],
 
 //"Menu Text",			"Crate Type", 			"Cost", "drop type"
 ["Food",				"Land_Sacks_goods_F",	5000, 	"picnic"],
