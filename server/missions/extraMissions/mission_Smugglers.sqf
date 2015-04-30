@@ -5,9 +5,9 @@
 //	@file Author: JoSchaap, AgentRev, LouD
 
 if (!isServer) exitwith {};
-#include "extraMissionDefines.sqf";
+#include "sideMissionDefines.sqf";
 
-private ["_positions", "_smugglerVeh", "_vehicle1", "_vehicle2", "_boxes1", "_currBox1", "_box1", "_boxes2", "_currBox2", "_box2", "_cashrandomizera", "_cashamountrandomizera", "_cashpilerandomizera", "_casha", "_cashamounta", "_cashpilea", "_cashrandomizerb", "_cashamountrandomizerb", "_cashpilerandomizerb", "_cashb", "_cashamountb", "_cashpileb", "_cash1", "_cash2"];
+private ["_positions", "_smugglerVeh", "_vehicle1", "_vehicle2", "_boxes1", "_currBox1", "_randomBox", "_box1", "_boxes2", "_currBox2", "_box2", "_cashrandomizera", "_cashamountrandomizera", "_cashpilerandomizera", "_casha", "_cashamounta", "_cashpilea", "_cashrandomizerb", "_cashamountrandomizerb", "_cashpilerandomizerb", "_cashb", "_cashamountb", "_cashpileb", "_cash1", "_cash2"];
 
 _setupVars =
 {
@@ -19,7 +19,7 @@ _setupVars =
 _setupObjects =
 {
 	_missionPos = markerPos _missionLocation;
-	_smugglerVeh = ["B_G_Offroad_01_armed_F"] call BIS_fnc_selectRandom; 
+	_smugglerVeh = ["B_MRAP_01_hmg_F","O_MRAP_02_hmg_F","I_MRAP_03_hmg_F"] call BIS_fnc_selectRandom; 
 
 	_vehicle1 = [_smugglerVeh,[(_missionPos select 0) - 5, (_missionPos select 1) + 10,0],0.5,1,0,"NONE"] call createMissionVehicle;
 	_vehicle1 setVariable [call vChecksum, true, false];
@@ -33,13 +33,13 @@ _setupObjects =
 	_vehicle2 setVehicleLock "UNLOCKED";
 	_vehicle2 setVariable ["R3F_LOG_disabled", false, true];
 	
-	_boxes1 = ["Box_IND_Wps_F","Box_NATO_Wps_F","Box_IND_WpsLaunch_F"];
+	_boxes1 = ["Box_FIA_Support_F","Box_FIA_Wps_F","Box_FIA_Ammo_F"];
 	_currBox1 = _boxes1 call BIS_fnc_selectRandom;
+	_randomBox = ["mission_USLaunchers","mission_USSpecial","mission_Main_A3snipers"] call BIS_fnc_selectRandom;
 	_box1 = createVehicle [_currBox1,[(_missionPos select 0), (_missionPos select 1),0],[], 0, "NONE"];
-	_box1 allowDamage false;
-	_box1 setVariable ["R3F_LOG_disabled", true, true];
+	[_box1, _randomBox] call fn_refillbox;
 	
-	_boxes2 = ["Box_IND_Wps_F","Box_NATO_Wps_F","Box_IND_WpsLaunch_F"];
+	_boxes2 = ["Box_FIA_Support_F","Box_FIA_Wps_F","Box_FIA_Ammo_F"];
 	_currBox2 = _boxes2 call BIS_fnc_selectRandom;
 	_box2 = createVehicle [_currBox2,[(_missionPos select 0) - 5, (_missionPos select 1) - 8,0],[], 0, "NONE"];
 	_box2 allowDamage false;
@@ -53,7 +53,7 @@ _setupObjects =
 	
 	_missionPicture = getText (configFile >> "CfgVehicles" >> _smugglerVeh >> "picture");
 	
-	_missionHintText = format ["A group of weapon smugglers have been spotted. Stop the weapon deal and take their weapons and money.", extraMissionColor];
+	_missionHintText = format ["A group of weapon smugglers have been spotted. Stop the weapon deal and take their weapons and money.", sideMissionColor];
 };
 	
 _waitUntilMarkerPos = nil;
@@ -110,4 +110,4 @@ _successExec =
 	_successHintMessage = format ["The smugglers are dead, the weapons and money are yours!"];
 };
 
-_this call extraMissionProcessor;
+_this call sideMissionProcessor;

@@ -35,10 +35,10 @@
 	- Place the "outlw_magRepack" folder into your mission folder.
 
 	- Add the following to your init.sqf
-		- [] execVM "outlw_magRepack\MagRepack_init_sv.sqf";
+		- [] execVM "addons\outlw_magRepack\MagRepack_init_sv.sqf";
 
 	- Add the following to your description.ext
-		- #include "outlw_magRepack\MagRepack_config.hpp"
+		- #include "addons\outlw_magRepack\MagRepack_config.hpp"
 
 -------------
 | Changelog |
