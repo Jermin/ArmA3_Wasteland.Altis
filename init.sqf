@@ -80,3 +80,4 @@ if (isServer) then
 [] execVM "addons\AF_Keypad\AF_KP_vars.sqf";			// Keypad for base locking
 [] execVM "addons\APOC_Airdrop_Assistance\init.sqf";		// Airdrop
 [] execVM "addons\HvT\HvT.sqf"; 						// High Value Target
+if(hasInterface) then{[] execVM "addons\statusBar\statusbar.sqf"};
