@@ -71,7 +71,8 @@ class Mission
 		"a3_characters_f_beta",
 		"a3_characters_f_gamma",
 		"a3_characters_f",
-		"A3_Structures_F_EPC_Civ_Accessories"
+		"A3_Structures_F_EPC_Civ_Accessories",
+		"A3_Structures_F_Civ_InfoBoards"
 	};
 	addOnsAuto[]=
 	{
@@ -92,7 +93,7 @@ class Mission
 	randomSeed=14957468;
 	class Intel
 	{
-		briefingName="A3Wasteland Altis v1.1b"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
+		briefingName="A3Wasteland Altis v1.1b";
 		overviewText="Wasteland survival sandbox by Team Wasteland - visit A3Wasteland.com for more details";
 		resistanceWest=0;
 		timeOfChanges=3e+038;
@@ -2046,7 +2047,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=30;
+		items=31;
 		class Item0
 		{
 			position[]={5892.3325,225.05762,20124.521};
@@ -2323,19 +2324,20 @@ class Mission
 		};
 		class Item25
 		{
-			position[]={14492,18.768188,16383.846};
-			azimut=185.51801;
+			position[]={25618.682,20.873209,21353.275};
+			azimut=136.1844;
+			offsetY=0.15000001;
 			id=184;
 			side="EMPTY";
-			vehicle="Land_Atm_01_F";
+			vehicle="Land_Atm_02_F";
 			skill=0.60000002;
 			init="[this] call A3W_fnc_setupMissionATM";
 			description="DO NOT MODIFY IN EDITOR";
 		};
 		class Item26
 		{
-			position[]={25618.682,20.873209,21353.275};
-			azimut=136.1844;
+			position[]={16774.646,18.403027,12594.591};
+			azimut=270.28101;
 			offsetY=0.15000001;
 			id=185;
 			side="EMPTY";
@@ -2346,8 +2348,8 @@ class Mission
 		};
 		class Item27
 		{
-			position[]={16774.646,18.403027,12594.591};
-			azimut=270.28101;
+			position[]={9507.4814,118.30473,15937.552};
+			azimut=4.3656998;
 			offsetY=0.15000001;
 			id=186;
 			side="EMPTY";
@@ -2358,9 +2360,8 @@ class Mission
 		};
 		class Item28
 		{
-			position[]={9507.4814,118.30473,15937.552};
-			azimut=4.3656998;
-			offsetY=0.15000001;
+			position[]={21647.465,14.035986,7676.2676};
+			azimut=230.96605;
 			id=187;
 			side="EMPTY";
 			vehicle="Land_Atm_02_F";
@@ -2370,9 +2371,20 @@ class Mission
 		};
 		class Item29
 		{
-			position[]={21647.465,14.035986,7676.2676};
-			azimut=230.96605;
+			position[]={16648.055,17.151157,16147.757};
+			azimut=408.03439;
 			id=188;
+			side="EMPTY";
+			vehicle="Land_Atm_02_F";
+			skill=0.60000002;
+			init="[this] call A3W_fnc_setupMissionATM";
+			description="DO NOT MODIFY IN EDITOR";
+		};
+		class Item30
+		{
+			position[]={10341.4,125.33739,19047.801};
+			azimut=208.29601;
+			id=189;
 			side="EMPTY";
 			vehicle="Land_Atm_02_F";
 			skill=0.60000002;
