@@ -6,7 +6,7 @@ APOC_AA_coolDownTime = 1800; //Expressed in sec. 1800 = 30 minutes
 
 APOC_AA_VehOptions =
 [ // ["Menu Text",		ItemClassname,				Price,	"Drop Type"]
-["Quadbike (Civilian)", "C_Quadbike_01_F", 			500, 	 "vehicle"],
+["Quadbike (Civilian)", "C_Quadbike_01_F", 			2000, 	 "vehicle"],
 ["Offroad HMG", 		"B_G_Offroad_01_armed_F",	5000, 	 "vehicle"],
 ["MH-9 Hummingbird",	"B_Heli_Light_01_F", 		6000,	 "vehicle"],
 ["Strider HMG", 		"I_MRAP_03_hmg_F", 			15000, 	 "vehicle"],

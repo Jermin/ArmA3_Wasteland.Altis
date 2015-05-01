@@ -17,8 +17,6 @@ _setupVars =
 	_locationsArray = MissionSpawnMarkers;
 };
 
-
-
 _setupObjects =
 {
 	_missionPos = markerPos _missionLocation;
@@ -34,7 +32,6 @@ _waitUntilExec = nil;
 _waitUntilCondition = nil;
 _waitUntilSuccessCondition = {{isPlayer _x && _x distance _geoPos < 5} count playableUnits > 0};
 
-
 _failedExec =
 {
 	// Mission failed
@@ -49,12 +46,12 @@ _successExec =
 	_randomBox = ["mission_USLaunchers","mission_USSpecial","mission_Main_A3snipers"] call BIS_fnc_selectRandom;
 	_randomCase = ["Box_FIA_Support_F","Box_FIA_Wps_F","Box_FIA_Ammo_F"] call BIS_fnc_selectRandom;
 	
-	_box1 = createVehicle [_randomCase,[(_geoPos select 0), (_geoPos select 1),150],[], 0, "NONE"];
+	_box1 = createVehicle [_randomCase,[(_geoPos select 0), (_geoPos select 1),200],[], 0, "NONE"];
 	_box1 setDir random 360;
 	[_box1, _randomBox] call fn_refillbox;
 	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1];
 
-	playSound3D ["A3\data_f_curator\sound\cfgsounds\air_raid.wss", _box1, false, _box1, 25, 1, 0];
+	playSound3D ["A3\data_f_curator\sound\cfgsounds\air_raid.wss", _box1, false, _box1, 15, 1, 1500];
 	
 	_para = createVehicle [format ["I_parachute_02_F"], [0,0,999999], [], 0, ""];
 
