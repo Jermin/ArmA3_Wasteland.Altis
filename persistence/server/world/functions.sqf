@@ -22,9 +22,17 @@ _isWarchest = { _this getVariable ["a3w_warchest", false] && {(_this getVariable
 _isBeacon = { _this getVariable ["a3w_spawnBeacon", false] };
 _isCamera = { _this getVariable ["a3w_cctv_camera", false] };
 
+/*
 _isSaveable =
 {
 	_result = false;
 	{ if (_this == _x) exitWith { _result = true } } forEach A3W_saveableObjects;
 	_result
+};
+*/
+
+// FPS Fix by Torndeco
+_isSaveable = 
+{
+	_this in A3W_saveableObjects
 };
