@@ -564,12 +564,12 @@ backpackArray = compileFinal str
 
 genItemArray = compileFinal str
 [
-	["UAV Terminal (NATO)", "B_UavTerminal", 300, "gps"],
-	["UAV Terminal (CSAT)", "O_UavTerminal", 300, "gps"],
-	["UAV Terminal (AAF)", "I_UavTerminal", 300, "gps"],
-	["Quadrotor UAV (NATO)", "B_UAV_01_backpack_F", 1200, "backpack"],
-	["Quadrotor UAV (CSAT)", "O_UAV_01_backpack_F", 1200, "backpack"],
-	["Quadrotor UAV (AAF)", "I_UAV_01_backpack_F", 1200, "backpack"],
+	["UAV Terminal (NATO)", "B_UavTerminal", 500, "gps"],
+	["UAV Terminal (CSAT)", "O_UavTerminal", 500, "gps"],
+	["UAV Terminal (AAF)", "I_UavTerminal", 500, "gps"],
+	["Quadrotor UAV (NATO)", "B_UAV_01_backpack_F", 2000, "backpack"],
+	["Quadrotor UAV (CSAT)", "O_UAV_01_backpack_F", 2000, "backpack"],
+	["Quadrotor UAV (AAF)", "I_UAV_01_backpack_F", 2000, "backpack"],
 	["Remote Designator Bag (NATO) [DLC]", "B_Static_Designator_01_weapon_F", 2500, "backpack"],
 	["Remote Designator Bag (CSAT) [DLC]", "O_Static_Designator_02_weapon_F", 2500, "backpack"],
 	["GPS", "ItemGPS", 100, "gps"],
