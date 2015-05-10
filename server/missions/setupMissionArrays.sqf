@@ -9,16 +9,16 @@ if (!isServer) exitWith {};
 MainMissions =
 [
 	// Mission filename, weight
-	["mission_ArmedDiversquad", 1],
-	["mission_Coastal_Convoy", 1],
-	["mission_Convoy", 1],
+	["mission_ArmedDiversquad", 0.5],
+	["mission_Coastal_Convoy", 0.5],
+	["mission_Convoy", 0.5],
 	["mission_HostileHeliFormation", 0.5],
-	["mission_APC", 1],
-	["mission_MBT", 1],
-	["mission_LightArmVeh", 1],
+	["mission_APC", 1.5],
+	["mission_MBT", 1.5],
+	["mission_LightArmVeh", 0.5],
 	["mission_ArmedHeli", 2],
-	["mission_ArmedJet", 2],
-	["mission_CivHeli", 1]
+	["mission_ArmedJet", 1],
+	["mission_CivHeli", 0.5]
 ];
 
 SideMissions =

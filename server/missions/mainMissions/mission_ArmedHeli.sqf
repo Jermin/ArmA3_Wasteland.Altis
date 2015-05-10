@@ -16,7 +16,6 @@ _setupVars =
 	_vehicleClass =
 	[
 		"B_Heli_Light_01_armed_F",
-		"B_Heli_Transport_01_F",
 		"B_Heli_Attack_01_F",
 		"O_Heli_Light_02_F",
 		"O_Heli_Attack_02_F",
