@@ -92,6 +92,25 @@ switch (true) do
 	{
 		_vehicle addMagazine "300Rnd_20mm_shells";
 	};
+	case (_class isKindOf "O_Heli_Attack_02_F"):
+	{
+		_vehicle removeWeaponTurret ["rockets_Skyfire",[0]];
+		_vehicle removeMagazinesTurret ["38Rnd_80mm_rockets",[0]];
+		
+		_vehicle  addWeaponTurret ["rockets_Skyfire", [-1]];
+		sleep 0.5;
+		_vehicle addMagazineTurret ["38Rnd_80mm_rockets", [-1]];
+	};
+	
+	case (_class isKindOf "O_Heli_Attack_02_black_F"):
+	{
+		_vehicle removeWeaponTurret ["rockets_Skyfire",[0]];
+		_vehicle removeMagazinesTurret ["38Rnd_80mm_rockets",[0]];
+		
+		_vehicle  addWeaponTurret ["rockets_Skyfire", [-1]];
+		sleep 0.5;
+		_vehicle addMagazineTurret ["38Rnd_80mm_rockets", [-1]];
+	};
 };
 
 _weapons = getArray (configFile >> "CfgVehicles" >> _class >> "weapons");
