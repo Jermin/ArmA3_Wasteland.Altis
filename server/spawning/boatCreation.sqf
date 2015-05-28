@@ -41,6 +41,7 @@ if (!isNil "_respawnSettings") then
 
 //Set Vehicle Attributes
 _boat setFuel (0.3 + random 0.2);
+_boat setVariable ["R3F_LOG_disabled",false,true];
 
 if (_boatType isKindOf "Boat_Armed_01_base_F") then
 {
