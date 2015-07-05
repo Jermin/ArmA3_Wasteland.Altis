@@ -19,17 +19,23 @@ if (!isNil "_uid") then {
 
 	_panelOptions = 
 	[
-		"Hello Kitty ($ 500)",
-		"Skulls ($ 500)",
-		"Green Camo ($ 500)",
+		"Bloodshot ($ 500)",
 		"Orange Camo ($ 500)",
-		"Red Camo ($ 500)",
 		"Pink Camo ($ 500)",
-		"Red Digi Camo ($ 500)",
-		"Ice Camo ($ 500)",
-		"Digital Camo ($ 500)",
-		"Snakeskin Camo ($ 500)",
-		"Yellow Camo ($ 500)"
+		"Red Camo ($ 500)",
+		"Digital ($ 500)",
+		"Digital Black ($ 500)",
+		"Digital Desert ($ 500)",
+		"Digital Wood ($ 500)",
+		"Drylands ($ 500)",
+		"Hex ($ 500)",
+		"Sand ($ 500)",
+		"Swamp ($ 500)",
+		"Urban ($ 500)",
+		"Woodland ($ 500)",
+		"Woodland Dark ($ 500)",
+		"Woodland Tiger ($ 500)",
+		"Hello Kitty ($ 500)"
 	];
 
 	{

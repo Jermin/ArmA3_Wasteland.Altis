@@ -53,7 +53,7 @@ if (!isNil "_uid") then
 				case 5:
 				{
 					closeDialog 0;					
-					[6] execVM "addons\Painter\UniformPainter.sqf";
+					[5] execVM "addons\Painter\UniformPainter.sqf";
 				};
 				case 6:
 				{
@@ -79,6 +79,36 @@ if (!isNil "_uid") then
 				{
 					closeDialog 0;					
 					[10] execVM "addons\Painter\UniformPainter.sqf";
+				};	
+				case 11:
+				{
+					closeDialog 0;					
+					[11] execVM "addons\Painter\UniformPainter.sqf";
+				};	
+				case 12:
+				{
+					closeDialog 0;					
+					[12] execVM "addons\Painter\UniformPainter.sqf";
+				};	
+				case 13:
+				{
+					closeDialog 0;					
+					[13] execVM "addons\Painter\UniformPainter.sqf";
+				};
+				case 14:
+				{
+					closeDialog 0;					
+					[14] execVM "addons\Painter\UniformPainter.sqf";
+				};	
+				case 15:
+				{
+					closeDialog 0;					
+					[15] execVM "addons\Painter\UniformPainter.sqf";
+				};	
+				case 16:
+				{
+					closeDialog 0;					
+					[16] execVM "addons\Painter\UniformPainter.sqf";
 				};	
 			};
 		};
