@@ -78,11 +78,12 @@ if (hasInterface || isServer) then
 	[] execVM "addons\proving_ground\init.sqf";
 	[] execVM "addons\JumpMF\init.sqf";
 	[] execVM "addons\outlw_magRepack\MagRepack_init.sqf";
-	[] execVM "addons\laptop\init.sqf";						// Addon for hack laptop mission
+	[] execVM "addons\laptop\init.sqf";							// Addon for hack laptop mission
 	[] execVM "addons\zlt_fastrope\zlt_fastrope.sqf";
-	[] execVM "addons\AF_Keypad\AF_KP_vars.sqf";			// Keypad for base locking
+	[] execVM "addons\AF_Keypad\AF_KP_vars.sqf";				// Keypad for base locking
 	[] execVM "addons\APOC_Airdrop_Assistance\init.sqf";		// Airdrop
-	[] execVM "addons\HvT\HvT.sqf"; 						// High Value Target
+	[] execVM "addons\HvT\HvT.sqf"; 							// High Value Target
+	[] execVM "addons\Grenades\ToxicGas.sqf"; 					// Toxic Gas Addon
 	[] execVM "addons\statusBar\statusbar.sqf"
 	[] execVM "addons\lsd_nvg\init.sqf";
 	if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
