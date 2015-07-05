@@ -5,10 +5,11 @@
 //Starts off much the same as the client start.  This is to find information from config arrays
 
 
-private ["_type","_selection","_player"]; //Variables coming from command menu and client side APOC_cli_startAirdrop
-_type 				= _this select 0;
-_selectionNumber 	= _this select 1;
-_player 			= _this select 2;
+private ["_type","_selection","_player","_heliDirection"]; //Variables coming from command menu and client side APOC_cli_startAirdrop
+_type = _this select 0;
+_selectionNumber = _this select 1;
+_player = _this select 2;
+_heliDirection = _this select 3;
 
 diag_log format ["SERVER - Apoc's Airdrop Assistance - Player: %1, Drop Type: %2, Selection #: %3",name _player,_type,_selectionNumber];
 //hint format ["Well we've made it this far! %1, %2, %3,",_player,_type,_selectionNumber];
@@ -36,9 +37,8 @@ _grp = createGroup civilian;
 if(isNil("_grp2"))then{_grp2 = createGroup civilian;}else{_grp2 = _grp2;};
 _flyHeight = 350;
 _dropSpot = [(position _player select 0),(position _player select 1),_flyHeight];
-_heliDirection = random 360;
 _flyHeight = 200;  //Distance from ground that heli will fly at
-_heliStartDistance = 5000;
+_heliStartDistance = 2000;
 _spos=[(_dropSpot select 0) - (sin _heliDirection) * _heliStartDistance, (_dropSpot select 1) - (cos _heliDirection) * _heliStartDistance, (_flyHeight+200)];
 
 diag_log format ["AAA - Heli Spawned at %1", _spos];
@@ -53,7 +53,7 @@ _crew allowDamage false;
 
 _heli setCaptive true;
 
-_heliDistance = 5000;
+_heliDistance = 2000;
 _dir = ((_dropSpot select 0) - (_spos select 0)) atan2 ((_dropSpot select 1) - (_spos select 1));
 _flySpot = [(_dropSpot select 0) + (sin _dir) * _heliDistance, (_dropSpot select 1) + (cos _dir) * _heliDistance, _flyHeight];
 
@@ -145,10 +145,14 @@ _player setVariable ["bmoney", _newBalance, true];
 //  Now on to the fun stuff:
 
 diag_log format ["Apoc's Airdrop Assistance - Object at %1, Detach Up Next", position _object];  //A little log love to confirm the location of this new creature
+playSound3D ["a3\sounds_f\air\sfx\SL_rope_break.wss",_heli,false,getPosASL _heli,3,1,500];
 detach _object;  //WHEEEEEEEEEEEEE
 _objectPosDrop = position _object;
 _heli fire "CMFlareLauncher";
 _heli fire "CMFlareLauncher";
+
+sleep 2;
+playSound3D ["a3\sounds_f\sfx\radio\ambient_radio22.wss",_player,false,getPosASL _player,3,1,25];
 
 //Delete heli once it has proceeded to end point
 	[_heli,_grp,_flySpot,_dropSpot,_heliDistance] spawn {
