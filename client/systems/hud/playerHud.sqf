@@ -85,6 +85,7 @@ _displayTerritoryActivity =
 	[_topLeftIconText, _activityMessage]
 };
 
+_survivalSystem = ["A3W_survivalSystem"] call isConfigOn;
 _unlimitedStamina = ["A3W_unlimitedStamina"] call isConfigOn;
 _atmEnabled = ["A3W_atmEnabled"] call isConfigOn;
 
@@ -99,8 +100,6 @@ private ["_mapCtrls", "_mapCtrl"];
 
 while {true} do
 {
-	private ["_ui","_vitals","_hudVehicle","_health","_tempString","_yOffset","_vehicle"];
-
 	1000 cutRsc ["WastelandHud","PLAIN",1e10];
 	_ui = uiNameSpace getVariable "WastelandHud";
 	_vitals = _ui displayCtrl hud_status_idc;
@@ -135,7 +134,6 @@ while {true} do
 
 	// Icons in bottom right
 
-	_minimumBRs = 5;
 	_strArray = [];
 
 //	if (_atmEnabled) then { _strArray pushBack format ["%1 <img size='0.7' image='client\icons\suatmm_icon.paa'/>", [player getVariable ["bmoney", 0]] call fn_numbersText] };
@@ -147,38 +145,31 @@ while {true} do
 
 	_str = "";
 
-	for "_i" from 0 to (_minimumBRs - count _strArray) do
-	{
-		_str = _str + "<br/>";
-	};
+	{ _str = format ["%1%2<br/>", _str, _x] } forEach _strArray;
 
-	{
-		_str = _str + format ["%1%2", if (_forEachIndex > 0) then { "<br/>" } else { "" }, _x];
-	} forEach _strArray;
+	_yOffsetVitals = (count _strArray + 1) * 0.04;
+
+	_vitalsPos = ctrlPosition _vitals;
+	_vitalsPos set [1, safeZoneY + safeZoneH - _yOffsetVitals]; // x
+	_vitalsPos set [3, _yOffsetVitals]; // h
 
 	_vitals ctrlShow alive player;
 	_vitals ctrlSetStructuredText parseText _str;
+	_vitals ctrlSetPosition _vitalsPos;
 	_vitals ctrlCommit 0;
 
 	_tempString = "";
-	_yOffset = 0.26;
+	_yOffset = _yOffsetVitals + 0.04;
 
 	if (isStreamFriendlyUIEnabled) then
 	{
-		_tempString = format ["<t color='#A0FFFFFF'>A3Wasteland %1<br/>www.a3wasteland.com</t>", getText (configFile >> "CfgWorlds" >> worldName >> "description")];
-		_yOffset = 0.28;
-
-		_hudVehicle ctrlSetStructuredText parseText _tempString;
-
-		_x = safeZoneX + (safeZoneW * (1 - (0.42 / SafeZoneW)));
-		_y = safeZoneY + (safeZoneH * (1 - (_yOffset / SafeZoneH)));
-		_hudVehicle ctrlSetPosition [_x, _y, 0.4, 0.65];
+		_tempString = format ["<t color='#CCCCCCCC'>A3Wasteland %1<br/>a3wasteland.com</t>", getText (configFile >> "CfgWorlds" >> worldName >> "description")];
+		_yOffset = _yOffset + 0.08;
 	}
 	else
 	{
 		if (player != vehicle player) then
 		{
-			_yOffset = 0.24;
 			_vehicle = assignedVehicle player;
 
 			{
@@ -195,10 +186,12 @@ while {true} do
 		};
 	};
 
+	_hudVehiclePos = ctrlPosition _hudVehicle;
+	_hudVehiclePos set [1, safeZoneY + safeZoneH - _yOffset]; // x
+	_hudVehiclePos set [3, _yOffset - _yOffsetVitals]; // h
+
 	_hudVehicle ctrlSetStructuredText parseText _tempString;
-	_x = safeZoneX + (safeZoneW * (1 - (0.42 / SafeZoneW)));
-	_y = safeZoneY + (safeZoneH * (1 - (_yOffset / SafeZoneH)));
-	_hudVehicle ctrlSetPosition [_x, _y, 0.4, 0.65];
+	_hudVehicle ctrlSetPosition _hudVehiclePos;
 	_hudVehicle ctrlCommit 0;
 
 	// Territory system! Uses two new boxes in the top left of the HUD. We
@@ -282,7 +275,7 @@ while {true} do
 	// Global voice warning system
 	if (_globalVoiceWarnTimer > 0 && _globalVoiceMaxWarns > 0) then
 	{
-		if (!isNull findDisplay 55 && ctrlText (findDisplay 63 displayCtrl 101) == localize "str_channel_global") then
+		if (!isNull findDisplay 55 && currentChannel == 0 && !((getPlayerUID player) call isAdmin)) then
 		{
 			if (isNil "_globalVoiceTimestamp") then
 			{
