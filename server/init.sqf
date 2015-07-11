@@ -134,6 +134,7 @@ if (isServer) then
 		"A3W_hcObjCachingID",
 		"A3W_hcObjSaving",
 		"A3W_hcObjSavingID",
+		"A3W_supportersEnabled",
 		"APOC_coolDownTimer"
 	];
 
