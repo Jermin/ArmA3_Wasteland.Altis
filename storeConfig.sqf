@@ -74,20 +74,20 @@ rifleArray = compileFinal str
 	["Mk-I EMR Rifle (Khaki) [DLC]", "srifle_DMR_03_khaki_F", 1200],
 	["Mk-I EMR Rifle (Sand) [DLC]", "srifle_DMR_03_tan_F", 1200],
 	["Mk-I EMR Rifle (Woodland) [DLC]", "srifle_DMR_03_woodland_F", 1200],
-	["MAR-10 Rifle [DLC]", "srifle_DMR_02_F", 2700],
-	["MAR-10 Rifle (Camo) [DLC]", "srifle_DMR_02_camo_F", 3000],
-	["MAR-10 Rifle (Sand) [DLC]", "srifle_DMR_02_sniper_F", 3000],
-	["Cyrus Rifle [DLC]", "srifle_DMR_05_blk_F", 4000],
-	["Cyrus Rifle (Hex) [DLC]", "srifle_DMR_05_hex_F", 4300],
-	["Cyrus Rifle (Tan) [DLC]", "srifle_DMR_05_tan_f", 4300],
+	["MAR-10 Rifle [DLC]", "srifle_DMR_02_F", 1400],
+	["MAR-10 Rifle (Camo) [DLC]", "srifle_DMR_02_camo_F", 1600],
+	["MAR-10 Rifle (Sand) [DLC]", "srifle_DMR_02_sniper_F", 1600],
+	["Cyrus Rifle [DLC]", "srifle_DMR_05_blk_F", 2000],
+	["Cyrus Rifle (Hex) [DLC]", "srifle_DMR_05_hex_F", 2200],
+	["Cyrus Rifle (Tan) [DLC]", "srifle_DMR_05_tan_f", 2200],
 
 	// Sniper Rifles
-	["M320 LRR Sniper", "srifle_LRR_LRPS_F", 3500],
-	["M320 LRR Sniper (Camo)", "srifle_LRR_camo_LRPS_F", 4000],
-	["GM6 Lynx Sniper", "srifle_GM6_LRPS_F", 4500],
-	["GM6 Lynx Sniper (Camo)", "srifle_GM6_camo_LRPS_F", 5000],
-	["ASP-1 Kir Rifle [DLC]", "srifle_DMR_04_F", 4300],
-	["ASP-1 Kir Rifle (Tan) [DLC]", "srifle_DMR_04_Tan_F", 4500]
+	["M320 LRR Sniper", "srifle_LRR_LRPS_F", 1500],
+	["M320 LRR Sniper (Camo)", "srifle_LRR_camo_LRPS_F", 2000],
+	["GM6 Lynx Sniper", "srifle_GM6_LRPS_F", 2500],
+	["GM6 Lynx Sniper (Camo)", "srifle_GM6_camo_LRPS_F", 3000],
+	["ASP-1 Kir Rifle [DLC]", "srifle_DMR_04_F", 800],
+	["ASP-1 Kir Rifle (Tan) [DLC]", "srifle_DMR_04_Tan_F", 1000]
 ];
 
 lmgArray = compileFinal str
@@ -107,12 +107,12 @@ launcherArray = compileFinal str
 [
 	["RPG-42 Alamut", "launch_RPG32_F", 600],
 	["PCML", "launch_NLAW_F", 2000],
-	["Titan MPRL Compact (Tan)", "launch_Titan_short_F", 4000],
-	["Titan MPRL Compact (Brown)", "launch_O_Titan_short_F", 4000],
-	["Titan MPRL Compact (Olive)", "launch_I_Titan_short_F", 4000],
-	["Titan MPRL AA (Desert)", "launch_Titan_F", 4500],
-	["Titan MPRL AA (Hex)", "launch_O_Titan_F", 4500],
-	["Titan MPRL AA (Digi)", "launch_I_Titan_F", 4500]
+	["Titan MPRL Compact (Tan)", "launch_Titan_short_F", 3000],
+	["Titan MPRL Compact (Brown)", "launch_O_Titan_short_F", 3000],
+	["Titan MPRL Compact (Olive)", "launch_I_Titan_short_F", 3000],
+	["Titan MPRL AA (Desert)", "launch_Titan_F", 3500],
+	["Titan MPRL AA (Hex)", "launch_O_Titan_F", 3500],
+	["Titan MPRL AA (Digi)", "launch_I_Titan_F", 3500]
 ];
 
 allGunStoreFirearms = compileFinal str (call pistolArray + call smgArray + call rifleArray + call lmgArray + call launcherArray);
@@ -212,7 +212,7 @@ ammoArray = compileFinal str
 	["RPG-42 Anti-Tank Rocket", "RPG32_F", 250],              // Direct damage: high      | Splash damage: low    | Guidance: none
 	["RPG-42 High-Explosive Rocket", "RPG32_HE_F", 250],      // Direct damage: medium    | Splash damage: medium | Guidance: none
 	["PCML Anti-Tank Missile", "NLAW_F", 750],                // Direct damage: very high | Splash damage: low    | Guidance: laser, ground vehicles
-	["Titan Anti-Tank Missile", "Titan_AT", 2000],             // Direct damage: high      | Splash damage: low    | Guidance: mouse, laser, ground vehicles
+	["Titan Anti-Tank Missile", "Titan_AT", 1500],             // Direct damage: high      | Splash damage: low    | Guidance: mouse, laser, ground vehicles
 	["Titan Anti-Personnel Missile", "Titan_AP", 800],        // Direct damage: low       | Splash damage: high   | Guidance: mouse, laser
 	["Titan Anti-Air Missile", "Titan_AA", 1000],              // Direct damage: low       | Splash damage: medium | Guidance: aircraft
 	["40mm HE Grenade Round", "1Rnd_HE_Grenade_shell", 125],
@@ -289,9 +289,9 @@ accessoriesArray = compileFinal str
 	["Kahlia (Old) [DLC]", "optic_KHS_old", 250, "item"],
 	["LRPS", "optic_LRPS", 300, "item"],
 	["NVS", "optic_NVS", 1000, "item"],
-	["TWS", "optic_tws", 2000, "item"],
-	["TWS MG", "optic_tws_mg", 4000, "item"],
-	["Nightstalker", "optic_Nightstalker", 3000, "item"]
+	["TWS", "optic_tws", 1500, "item"],
+	["TWS MG", "optic_tws_mg", 1500, "item"],
+	["Nightstalker", "optic_Nightstalker", 1500, "item"]
 ];
 
 // If commented, means the color/camo isn't implemented or is a duplicate of another hat
@@ -416,15 +416,15 @@ uniformArray = compileFinal str
 	["Ghillie Suit (NATO)", "U_B_GhillieSuit", 300, "uni"],
 	["Ghillie Suit (CSAT)", "U_O_GhillieSuit", 300, "uni"],
 	["Ghillie Suit (AAF)", "U_I_GhillieSuit", 300, "uni"],
-	["Full Ghillie (Arid) (NATO)", "U_B_FullGhillie_ard", 2000, "uni"],
-	["Full Ghillie (Arid) (CSAT)", "U_O_FullGhillie_ard", 2000, "uni"],
-	["Full Ghillie (Arid) (AAF)", "U_I_FullGhillie_ard", 2000, "uni"],
-	["Full Ghillie (Lush) (NATO)", "U_B_FullGhillie_lsh", 2000, "uni"],
-	["Full Ghillie (Lush) (CSAT)", "U_O_FullGhillie_lsh", 2000, "uni"],
-	["Full Ghillie (Lush) (AAF)", "U_I_FullGhillie_lsh", 2000, "uni"],
-	["Full Ghillie (Semi-Arid) (NATO)", "U_B_FullGhillie_sard", 2000, "uni"],
-	["Full Ghillie (Semi-Arid) (CSAT)", "U_O_FullGhillie_sard", 2000, "uni"],
-	["Full Ghillie (Semi-Arid) (AAF)", "U_I_FullGhillie_sard", 2000, "uni"],
+	["Full Ghillie (Arid) (NATO)", "U_B_FullGhillie_ard", 1000, "uni"],
+	["Full Ghillie (Arid) (CSAT)", "U_O_FullGhillie_ard", 1000, "uni"],
+	["Full Ghillie (Arid) (AAF)", "U_I_FullGhillie_ard", 1000, "uni"],
+	["Full Ghillie (Lush) (NATO)", "U_B_FullGhillie_lsh", 1000, "uni"],
+	["Full Ghillie (Lush) (CSAT)", "U_O_FullGhillie_lsh", 1000, "uni"],
+	["Full Ghillie (Lush) (AAF)", "U_I_FullGhillie_lsh", 1000, "uni"],
+	["Full Ghillie (Semi-Arid) (NATO)", "U_B_FullGhillie_sard", 1000, "uni"],
+	["Full Ghillie (Semi-Arid) (CSAT)", "U_O_FullGhillie_sard", 1000, "uni"],
+	["Full Ghillie (Semi-Arid) (AAF)", "U_I_FullGhillie_sard", 1000, "uni"],
 	["Wetsuit (NATO)", "U_B_Wetsuit", 200, "uni"],
 	["Wetsuit (CSAT)", "U_O_Wetsuit", 200, "uni"],
 	["Wetsuit (AAF)", "U_I_Wetsuit", 200, "uni"],
@@ -506,6 +506,8 @@ vestArray = compileFinal str
 	["Carrier GL Rig (Green)", "V_PlateCarrierGL_rgr", -1, "vest"],
 	["Carrier GL Rig (Black)", "V_PlateCarrierGL_blk", -1, "vest"],
 	["Carrier GL Rig (MTP)", "V_PlateCarrierGL_mtp", -1, "vest"],
+	["CTRG Plate Carrier Rig Mk.1 (Light)", "V_PlateCarrierL_CTRG", -1, "vest"],
+	["CTRG Plate Carrier Rig Mk.2 (Heavy)", "V_PlateCarrierH_CTRG", -1, "vest"],
 	["Carrier Special Rig (Green)", "V_PlateCarrierSpec_rgr", -1, "vest"],
 	["Carrier Special Rig (Black)", "V_PlateCarrierSpec_blk", -1, "vest"],
 	["Carrier Special Rig (MTP)", "V_PlateCarrierSpec_mtp", -1, "vest"],
@@ -533,6 +535,8 @@ vestArray = compileFinal str
 	["Tactical Vest (Camo)", "V_TacVest_camo", -1, "vest"],
 	["Tactical Vest (Khaki)", "V_TacVest_khk", -1, "vest"],
 	["Tactical Vest (Olive)", "V_TacVest_oli", -1, "vest"],
+	["Tactical Vest (Police)", "V_TacVest_blk_POLICE", -1, "vest"],
+	["Tactical Vest (Stavrou)", "V_I_G_resistanceLeader_F", -1, "vest"],
 	["Raven Night Vest", "V_TacVestIR_blk", -1, "vest"],
 	["Vest (Press)", "V_Press_F", -1, "vest"]
 ];
@@ -832,14 +836,14 @@ helicoptersArray = compileFinal str
 	//["PO-30 Orca (Armed, Hex)", "O_Heli_Light_02_F", 15000, "vehicle"], // Armed Ka-60
 	["WY-55 Hellcat (Armed)", "I_Heli_light_03_F", 17500, "vehicle"], // Armed AW159
 	//["AH-99 Blackfoot", "B_Heli_Attack_01_F", 22500, "vehicle"], // RAH-66 with gunner
-	["Mi-48 Kajman (Hex)", "O_Heli_Attack_02_F", 25000, "vehicle"], // Mi-28 with gunner
-	["Mi-48 Kajman (Black)", "O_Heli_Attack_02_black_F", 26000, "vehicle"] // Mi-28 with gunner (black camo)
+	["Mi-48 Kajman (Hex)", "O_Heli_Attack_02_F", 50000, "vehicle"], // Mi-28 with gunner
+	["Mi-48 Kajman (Black)", "O_Heli_Attack_02_black_F", 51000, "vehicle"] // Mi-28 with gunner (black camo)
 ];
 
 planesArray = compileFinal str
 [
 	["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 30000, "vehicle"],
-	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 25000, "vehicle"]
+	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 50000, "vehicle"]
 	//["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 50000, "vehicle"],
 	//["To-199 Neophron CAS", "O_Plane_CAS_02_F", 50000, "vehicle"],
 	//["MQ4A Greyhawk ATGM UAV", "B_UAV_02_F", 30000, "vehicle"],
