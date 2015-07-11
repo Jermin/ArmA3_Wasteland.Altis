@@ -32,11 +32,11 @@ spawnActionHandle = (_this select 1) spawn
 		_baseMoney = ["A3W_startingMoney", 100] call getPublicVar;
 		player setVariable ["cmoney", _baseMoney, true];
 
-		if (["A3W_survivalSystem"] call isConfigOn) then
+		/*if (["A3W_survivalSystem"] call isConfigOn) then
 		{
 			[MF_ITEMS_CANNED_FOOD, 1] call mf_inventory_add;
 			[MF_ITEMS_WATER, 1] call mf_inventory_add;
-		};
+		};*/
 
 		[MF_ITEMS_REPAIR_KIT, 1] call mf_inventory_add;
 	};
