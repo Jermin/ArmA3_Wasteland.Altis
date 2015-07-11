@@ -203,40 +203,23 @@ switch (_supporterLevel) do {
 			_player addGoggles "G_Aviator";
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};	
-			case 12: // Evan
+			case 12: // Terrorrist
 		{
 			removeAllWeapons _player;
 			removeVest _player;
 			removeBackpack _player;
 			removeUniform _player;
 			removeHeadgear _player;
-			_player addHeadgear "H_HelmetSpecB_blk";
-			_player addBackpack "B_Carryall_khk";
-			_player addItemtoBackPack "Medikit";
-			_player addVest "V_PlateCarrierGL_blk";
-			_player forceAddUniform "U_I_G_resistanceLeader_F";
-			_player addWeapon "Rangefinder";
-			_player addItemToUniform "HandGrenade";
-			_player addItemToUniform "HandGrenade";
-			_player addItemToUniform "SmokeShellYellow";
-			_player addItemToUniform "SmokeShellYellow";
-			_player addItemToVest "10Rnd_93x64_DMR_05_Mag";
-			_player addItemToVest "10Rnd_93x64_DMR_05_Mag";
-			_player addWeapon "srifle_DMR_05_blk_F";
-			_player addPrimaryWeaponItem "muzzle_snds_93mmg";
-			_player addPrimaryWeaponItem "bipod_02_F_blk";
-			_player addPrimaryWeaponItem "optic_AMS";
-			_player addItemToUniform "9Rnd_45ACP_Mag";
-			_player addItemToUniform "9Rnd_45ACP_Mag";
-			_player addWeapon "hgun_ACPC2_F";
-			_player addItemToBackpack "RPG32_F";
-			_player addItemToBackpack "RPG32_F";
-			_player addWeapon "launch_RPG32_F";
-			_player addGoggles "G_Bandanna_beast";
-			_player addItemToVest "FirstAidKit";
-			_player addItemToVest "FirstAidKit";
-			(unitBackpack _player) addmagazineCargo ["10Rnd_93x64_DMR_05_Mag",4];
-			systemChat format["Welcome %1, You have a Gold Supporter Loadout!", name player];
+			_player addBackpack "B_Kitbag_cbr";
+			_player addVest "V_BandollierB_khk";
+			_player forceAddUniform "U_IG_Guerilla1_1";
+			for "_i" from 1 to 3 do {_player addItemToUniform "16Rnd_9x21_Mag";};
+			_player addItemToUniform "FirstAidKit";
+			_player addWeapon "hgun_Rook40_F";
+			_player addHandgunItem "muzzle_snds_L";
+			_player addHeadgear "H_Shemag_olive";
+			_player setObjectTextureGlobal  [0, _texDir + "woodtiger.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "woodtiger.paa"];
+			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};	
 	};
 
