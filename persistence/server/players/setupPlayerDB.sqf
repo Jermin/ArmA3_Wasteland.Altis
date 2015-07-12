@@ -66,7 +66,7 @@ fn_kickPlayerIfFlagged = "persistence\server\players\fn_kickPlayerIfFlagged.sqf"
 				{
 					_player setVariable ["bmoney", _x select 1, true];
 				};
-				if (_x select 0 == "supporterLevel") then
+				if (_x select 0 == "SupporterLevel") then
 				{
 					_player setVariable ["supporter", _x select 1, true];
 				};
