@@ -9,8 +9,7 @@
 
 // General settings
 A3W_teamPlayersMap = 1;            // Show all friendly players on the map at all times, regardless of difficulty level (0 = no, 1 = yes)
-A3W_globalVoiceWarnTimer = 1;      // Number of seconds for which global voice chat must be active before triggering a warning (0 = disabled)
-A3W_globalVoiceMaxWarns = 3;       // Number of global voice warnings after which the player will be killed and crashed (0 = disabled)
+A3W_disableGlobalVoice = 1;        // Auto-switch channel to Direct communication whenever broadcasting voice on global, unless being admin (0 = no, 1 = yes)
 A3W_uavControl = "group";          // Restrict connection to UAVs based on ownership ("owner", "group", "side")
 APOC_coolDownTimer = 1800;		   // APOC Air Drop Cool Down Time
 A3W_supportersEnabled = 1;		   // Enable/Disable Supporter Features
