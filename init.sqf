@@ -93,3 +93,4 @@ if (hasInterface || isServer) then
 	[] execVM "addons\lsd_nvg\init.sqf";
 	if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
 };
+	if (isServer) then {call compile preprocessFile "addons\extraSites\initBuildings.sqf";};
