@@ -259,7 +259,7 @@ class w_RscButtonBase {
 	w = 0.183825;
 	h = 0.104575;
 
-	color[] = {0.95, 0.95, 0.95, 1};
+	color[] = {0.45,0.005,0,1};
 	color2[] = {1, 1, 1, 0.4};
 	colorBackground[] = {0.75, 0.75, 0.75, 0.8};
 	colorbackground2[] = {1, 1, 1, 0.4};
@@ -341,9 +341,9 @@ class w_RscButton
 	text = "";
 	colorText[] = {1,1,1,.9};
 	colorDisabled[] = {0,0,0,1};
-	colorBackground[] = {0.2,0.41,0.78,1}; // normal
-	colorFocused[] = {0.14,0.25,0.49,1}; // pulse
-	colorBackgroundActive[] = {0.25,0.51,0.96,1}; // hover
+	colorBackground[] = {0.45,0.005,0,1}; // normal
+	colorFocused[] = {0.4,0.09,0,1}; // pulse
+	colorBackgroundActive[] = {0.4,0.09,0,1}; // hover
 	colorBackgroundDisabled[] = {0.3,0.3,0.3,1};
 	colorShadow[] = {0,0,0,1};
 	colorBorder[] = {0,0,0,1};

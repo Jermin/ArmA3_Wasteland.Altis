@@ -34,7 +34,7 @@ class vehshopd
 		class TopBar: IGUIBack
 		{
 			idc = -1;
-			colorBackground[] = {0.25, 0.51, 0.96, 0.8};
+			colorBackground[] = {0.45,0.005,0,1};
 
 			#define VehStoreTopBar_H (0.05 * SZ_SCALE)
 

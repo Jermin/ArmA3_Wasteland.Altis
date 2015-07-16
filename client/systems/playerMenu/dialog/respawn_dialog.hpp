@@ -38,7 +38,7 @@ class RespawnSelectionDialog
 			idc = -1;
 			colorText[] = {1, 1, 1, 1};
 			colorBackground[] = {0,0,0,0};
-			text = "#(argb,8,8,3)color(0.25,0.51,0.96,0.8)";
+			text = "#(argb,8,8,3)color(0.45,0.005,0,1)";
 
 			// relative to RspnMainBG
 			#define RspnTopBar_W RspnMainBG_W // match RspnMainBG width
