@@ -29,7 +29,7 @@ switch (_supporterLevel) do {
 			_player addWeapon "hgun_Rook40_F";
 			_player addHandgunItem "muzzle_snds_L";
 			_player addHeadgear "H_Beret_Colonel";
-			_player linkItem "ItemGPS";
+			//_player linkItem "ItemGPS";
 			_player setObjectTextureGlobal  [0, _texDir + "hex.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "hex.paa"];
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};			
@@ -50,7 +50,7 @@ switch (_supporterLevel) do {
 			_player addHandgunItem "muzzle_snds_L";
 			_player addGoggles "G_Shades_Red";
 			_player addHeadgear "H_Bandanna_surfer_grn";
-			_player linkItem "ItemGPS";
+			//_player linkItem "ItemGPS";
 			_player setObjectTextureGlobal  [0, _texDir + "camo_red.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "camo_red.paa"];
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};	
@@ -70,7 +70,7 @@ switch (_supporterLevel) do {
 			_player addWeapon "hgun_Rook40_F";
 			_player addHandgunItem "muzzle_snds_L";
 			_player addHeadgear "H_RacingHelmet_2_F";
-			_player linkItem "ItemGPS";
+			//_player linkItem "ItemGPS";
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};	
 		
@@ -89,7 +89,7 @@ switch (_supporterLevel) do {
 			_player addWeapon "hgun_Rook40_F";
 			_player addHandgunItem "muzzle_snds_L";
 			_player addHeadgear "H_PilotHelmetHeli_I";
-			_player linkItem "ItemGPS";
+			//_player linkItem "ItemGPS";
 			_player setObjectTextureGlobal  [0, _texDir + "woodtiger.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "woodtiger.paa"];
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};	
@@ -109,7 +109,7 @@ switch (_supporterLevel) do {
 			_player addWeapon "hgun_Rook40_F";
 			_player addHandgunItem "muzzle_snds_L";
 			_player addHeadgear "H_PilotHelmetFighter_O";
-			_player linkItem "ItemGPS";
+			//_player linkItem "ItemGPS";
 			_player setObjectTextureGlobal  [0, _texDir + "wooddark.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "wooddark.paa"];
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];		
 		};
@@ -129,7 +129,7 @@ switch (_supporterLevel) do {
 			_player addWeapon "hgun_Rook40_F";
 			_player addHandgunItem "muzzle_snds_L";
 			_player addGoggles "G_Bandanna_khk";
-			_player linkItem "ItemGPS";
+			//_player linkItem "ItemGPS";
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};	
 		
@@ -149,7 +149,7 @@ switch (_supporterLevel) do {
 			_player addWeapon "hgun_Rook40_F";
 			_player addHandgunItem "muzzle_snds_L";
 			_player addGoggles "G_Bandanna_khk";
-			_player linkItem "ItemGPS";
+			//_player linkItem "ItemGPS";
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};	
 
@@ -168,7 +168,7 @@ switch (_supporterLevel) do {
 			_player addWeapon "hgun_Rook40_F";
 			_player addHandgunItem "muzzle_snds_L";
 			_player addGoggles "G_Bandanna_khk";
-			_player linkItem "ItemGPS";
+			//_player linkItem "ItemGPS";
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};	
 		
@@ -188,7 +188,7 @@ switch (_supporterLevel) do {
 			_player addHandgunItem "muzzle_snds_L";
 			_player addGoggles "G_Tactical_Clear";
 			_player addHeadgear "H_Booniehat_khk";
-			_player linkItem "ItemGPS";
+			//_player linkItem "ItemGPS";
 			_player setObjectTextureGlobal  [0, _texDir + "sand.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "sand.paa"];
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};	
@@ -209,7 +209,7 @@ switch (_supporterLevel) do {
 			_player addHandgunItem "muzzle_snds_L";
 			_player addGoggles "G_Aviator";
 			_player addHeadgear "H_Beret_Colonel";
-			_player linkItem "ItemGPS";
+			//_player linkItem "ItemGPS";
 			_player setObjectTextureGlobal  [0, _texDir + "digi_wood.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "digi_wood.paa"];
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};	
@@ -229,7 +229,7 @@ switch (_supporterLevel) do {
 			_player addWeapon "hgun_Rook40_F";
 			_player addHandgunItem "muzzle_snds_L";
 			_player addGoggles "G_Aviator";
-			_player linkItem "ItemGPS";
+			//_player linkItem "ItemGPS";
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};	
 			case 13: // Terrorrist
@@ -247,7 +247,7 @@ switch (_supporterLevel) do {
 			_player addWeapon "hgun_Rook40_F";
 			_player addHandgunItem "muzzle_snds_L";
 			_player addHeadgear "H_Shemag_olive";
-			_player linkItem "ItemGPS";
+			//_player linkItem "ItemGPS";
 			_player setObjectTextureGlobal  [0, _texDir + "woodtiger.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "woodtiger.paa"];
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};	
