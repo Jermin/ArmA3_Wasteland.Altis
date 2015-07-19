@@ -99,7 +99,6 @@ switch (true) do
 		_vehicle removeMagazinesTurret ["38Rnd_80mm_rockets",[0]];
 		
 		_vehicle  addWeaponTurret ["rockets_Skyfire", [-1]];
-		sleep 0.5;
 		_vehicle addMagazineTurret ["38Rnd_80mm_rockets", [-1]];
 	};
 	
@@ -109,7 +108,6 @@ switch (true) do
 		_vehicle removeMagazinesTurret ["38Rnd_80mm_rockets",[0]];
 		
 		_vehicle  addWeaponTurret ["rockets_Skyfire", [-1]];
-		sleep 0.5;
 		_vehicle addMagazineTurret ["38Rnd_80mm_rockets", [-1]];
 	};
 };

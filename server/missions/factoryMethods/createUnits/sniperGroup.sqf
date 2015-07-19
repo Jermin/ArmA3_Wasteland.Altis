@@ -44,7 +44,8 @@ _man4 = _group createUnit ["C_man_polo_3_F", [_pos select 0, (_pos select 1) + 3
 _man4 addUniform "U_I_Ghilliesuit";
 _man4 addVest "V_PlateCarrierIA1_dgtl";
 _man4 addMagazine "20Rnd_762x51_Mag";
-_man4 addWeapon "srifle_EBR_SOS_F";
+_man4 addWeapon "srifle_EBR_F";
+_man4 addPrimaryWeaponItem "optic_AMS";
 _man4 addMagazine "20Rnd_762x51_Mag";
 _man4 addMagazine "20Rnd_762x51_Mag";
 _man4 addItem "Rangefinder";
@@ -54,7 +55,8 @@ _man5 = _group createUnit ["C_man_polo_3_F", [_pos select 0, (_pos select 1) + 3
 _man5 addUniform "U_I_Ghilliesuit";
 _man5 addVest "V_PlateCarrierIA1_dgtl";
 _man5 addMagazine "20Rnd_762x51_Mag";
-_man5 addWeapon "srifle_EBR_SOS_F";
+_man5 addWeapon "srifle_EBR_F";
+_man5 addPrimaryWeaponItem "optic_AMS";
 _man5 addMagazine "20Rnd_762x51_Mag";
 _man5 addMagazine "20Rnd_762x51_Mag";
 _man5 addItem "Rangefinder";
@@ -64,7 +66,8 @@ _man6 = _group createUnit ["C_man_polo_3_F", [_pos select 0, (_pos select 1) + 3
 _man6 addUniform "U_I_Ghilliesuit";
 _man6 addVest "V_PlateCarrierIA1_dgtl";
 _man6 addMagazine "20Rnd_762x51_Mag";
-_man6 addWeapon "srifle_EBR_SOS_F";
+_man6 addWeapon "srifle_EBR_F";
+_man6 addPrimaryWeaponItem "optic_AMS";
 _man6 addMagazine "20Rnd_762x51_Mag";
 _man6 addMagazine "20Rnd_762x51_Mag";
 _man6 addItem "Rangefinder";
