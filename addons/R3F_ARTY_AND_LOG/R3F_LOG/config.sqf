@@ -65,7 +65,8 @@ R3F_LOG_CFG_objets_heliportables =
 	"SDV_01_base_F",
 	"Boat_Civil_01_base_F",
 	"Boat_Armed_01_base_F",
-	"Land_Crane_F"
+	"Truck_F",
+	"Tank_F"
 ];
 
 
