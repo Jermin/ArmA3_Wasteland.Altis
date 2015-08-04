@@ -201,7 +201,7 @@ switch (_supporterLevel) do {
 			removeUniform _player;
 			removeHeadgear _player;
 			_player addBackpack "B_TacticalPack_ocamo";
-			_player addVest "V_TacVest_khk";
+			_player addVest "V_TacVest_camo";
 			_player forceAddUniform "U_O_OfficerUniform_ocamo";
 			for "_i" from 1 to 3 do {_player addItemToUniform "16Rnd_9x21_Mag";};
 			_player addItemToUniform "FirstAidKit";
@@ -210,7 +210,7 @@ switch (_supporterLevel) do {
 			_player addGoggles "G_Aviator";
 			_player addHeadgear "H_Beret_Colonel";
 			//_player linkItem "ItemGPS";
-			_player setObjectTextureGlobal  [0, _texDir + "digi_wood.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "digi_wood.paa"];
+			_player setObjectTextureGlobal  [0, _texDir + "digi_black.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "digi_black.paa"];
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};	
 		
@@ -249,6 +249,46 @@ switch (_supporterLevel) do {
 			_player addHeadgear "H_Shemag_olive";
 			//_player linkItem "ItemGPS";
 			_player setObjectTextureGlobal  [0, _texDir + "woodtiger.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "woodtiger.paa"];
+			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
+		};	
+			case 14: // master
+		{
+			removeAllWeapons _player;
+			removeVest _player;
+			removeBackpack _player;
+			removeUniform _player;
+			removeHeadgear _player;
+			_player addBackpack "B_TacticalPack_blk";
+			_player addVest "V_TacVest_blk";
+			_player forceAddUniform "U_B_CTRG_3";
+			for "_i" from 1 to 3 do {_player addItemToUniform "16Rnd_9x21_Mag";};
+			_player addItemToUniform "FirstAidKit";
+			_player addWeapon "hgun_Rook40_F";
+			//_player addHandgunItem "muzzle_snds_L";
+			_player addGoggles "G_Tactical_Clear";
+			_player addHeadgear "H_Cap_blk_CMMG";
+			//_player linkItem "ItemGPS";
+			_player setObjectTextureGlobal  [0, _texDir + "digi_black.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "digi_black.paa"];
+			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
+		};	
+			case 15: // spec 2
+		{
+			removeAllWeapons _player;
+			removeVest _player;
+			removeBackpack _player;
+			removeUniform _player;
+			removeHeadgear _player;
+			_player addBackpack "B_TacticalPack_rgr";
+			_player addVest "V_TacVest_rgr";
+			_player forceAddUniform "U_B_CTRG_3";
+			for "_i" from 1 to 3 do {_player addItemToUniform "16Rnd_9x21_Mag";};
+			_player addItemToUniform "FirstAidKit";
+			_player addWeapon "hgun_Rook40_F";
+			//_player addHandgunItem "muzzle_snds_L";
+			_player addGoggles "G_Shades_Red";
+			_player addHeadgear "H_Booniehat_grn";
+			//_player linkItem "ItemGPS";
+			_player setObjectTextureGlobal  [0, _texDir + "wooddark.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "wooddark.paa"];
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};	
 	};
