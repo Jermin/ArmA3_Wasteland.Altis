@@ -24,15 +24,15 @@ _setupObjects =
 
 	_vehicleClass =
 	[
-		"B_Truck_01_covered_F",
+		"B_Truck_01_ammo_F",
 		"B_Truck_01_fuel_F",
 		"B_Truck_01_medical_F",
 		"B_Truck_01_Repair_F",
-		"O_Truck_03_covered_F",
+		"O_Truck_03_ammo_F",
 		"O_Truck_03_fuel_F",
 		"O_Truck_03_medical_F",
 		"O_Truck_03_repair_F",
-		"I_Truck_02_covered_F",
+		"I_Truck_02_ammo_F",
 		"I_Truck_02_fuel_F",
 		"I_Truck_02_medical_F",
 		"I_Truck_02_box_F"
