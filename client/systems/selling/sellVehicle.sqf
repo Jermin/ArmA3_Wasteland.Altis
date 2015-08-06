@@ -33,7 +33,13 @@ _objName = getText (configFile >> "CfgVehicles" >> _objClass >> "displayName");
 	if (_vehicle distance _storeNPC > VEHICLE_MAX_SELLING_DISTANCE) exitWith
 	{
 		playSound "FD_CP_Not_Clear_F";
-		[format ['"%1" is further away than %2m from the store.', _objname, VEHICLE_MAX_SELLING_DISTANCE], "Error"] call  BIS_fnc_guiMessage;
+		[format [' The "%1" is further away than %2m from the store.', _objname, VEHICLE_MAX_SELLING_DISTANCE], "Error"] call  BIS_fnc_guiMessage;
+	};
+	
+		if !(player getVariable ["lastVehicleOwner", false]) exitWith
+	{
+		playSound "FD_CP_Not_Clear_F";
+		[format ['You are not the owner of the "%1"', _objName, VEHICLE_MAX_SELLING_DISTANCE], "Error"] call  BIS_fnc_guiMessage;
 	};
 	
 {	
@@ -42,32 +48,41 @@ _objName = getText (configFile >> "CfgVehicles" >> _objClass >> "displayName");
 	_price = _x select 2;
 	_price = (ceil ((_price / CHOPSHOP_PRICE_RELATIONSHIP) / 5)) * 5;
 	};
+	
+} forEach (call allVehStoreVehicles);
 
 	if (_type == "B_Plane_CAS_01_F" || _type == "O_Plane_CAS_02_F" || _type == "B_Heli_Attack_01_F") then
 	{	
-		_price = 25000;
+		_price = 50000;
 	};
 
 	if (_type == "O_Heli_Light_02_F") then
 	{	
-		_price = 15000;
+		_price = 25000;
 	};
-	
-} forEach (call allVehStoreVehicles);
 
 	if (!isNil "_price") then 
 	{
 		// Add total sell value to confirm message
-		_confirmMsg = format ["Selling %1 will give you $%2 for:<br/>", _objName, _price];
+		_confirmMsg = format ["Selling the %1 will give you $%2<br/>", _objName, _price];
 		_confirmMsg = _confirmMsg + format ["<br/><t font='EtelkaMonospaceProBold'>1</t> x %1", _objName];
 
 		// Display confirm message
 		if ([parseText _confirmMsg, "Confirm", "SELL", true] call BIS_fnc_guiMessage) then
 		{	
+		
+		sleep (1 + (random 4));
+		
+		if (_vehicle distance _storeNPC > VEHICLE_MAX_SELLING_DISTANCE) exitWith
+	{
+		playSound "FD_CP_Not_Clear_F";
+		[format ['The %1 has already been sold!', _objname, VEHICLE_MAX_SELLING_DISTANCE], "Error"] call  BIS_fnc_guiMessage;
+	};
+	
 			deleteVehicle _vehicle;
+			
 			player setVariable["cmoney",(player getVariable "cmoney")+_price,true];
-			_text = format ["%1 has been sold!", _objname];
-			[_text, 10] call mf_notify_client;
+			[format ['The %1 has been sold!', _objname, VEHICLE_MAX_SELLING_DISTANCE], "THANK YOU"] call  BIS_fnc_guiMessage;
 			
 		if (["A3W_playerSaving"] call isConfigOn) then
 		{

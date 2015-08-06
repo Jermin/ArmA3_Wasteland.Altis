@@ -11,7 +11,7 @@
 
 storeSellingHandle = _this spawn
 {
-#define CHOPSHOP_PRICE_RELATIONSHIP 1.5
+#define CHOPSHOP_PRICE_RELATIONSHIP 4
 #define VEHICLE_MAX_SELLING_DISTANCE 50
 
 private ["_vehicle","_type", "_price", "_confirmMsg", "_playerMoney", "_text"];
@@ -49,12 +49,12 @@ _objName = getText (configFile >> "CfgVehicles" >> _objClass >> "displayName");
 
 	if (_type == "B_Plane_CAS_01_F" || _type == "O_Plane_CAS_02_F" || _type == "B_Heli_Attack_01_F") then
 	{	
-		_price = 16500;
+		_price = 25000;
 	};
 
 	if (_type == "O_Heli_Light_02_F") then
 	{	
-		_price = 10000;
+		_price = 12500;
 	};
 
 	if (_price > _playerMoney) exitWith
@@ -72,7 +72,7 @@ _objName = getText (configFile >> "CfgVehicles" >> _objClass >> "displayName");
 		// Display confirm message
 		if ([parseText _confirmMsg, "Confirm", "SERVICE", true] call BIS_fnc_guiMessage) then
 		{	
-		
+		  sleep (1 + (random 4));
 		  _vehicle setVehicleAmmo 1;
 		  _vehicle setFuel 1;
 		  _vehicle setDamage 0;
