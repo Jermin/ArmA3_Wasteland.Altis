@@ -31,8 +31,8 @@ _price 			= (_selectionArray select _selectionNumber) select 2;
 
 /////// Let's spawn us  an AI helo to carry the cargo /////////////////////////////////////////////////
 
- _heliType = "B_Heli_Transport_03_unarmed_F";
- _center = createCenter civilian;
+_heliType = "B_Heli_Transport_03_unarmed_F";
+_center = createCenter civilian;
 _grp = createGroup civilian;
 if(isNil("_grp2"))then{_grp2 = createGroup civilian;}else{_grp2 = _grp2;};
 _flyHeight = 350;
@@ -97,6 +97,7 @@ _object = switch (_type) do {
 		_object setVariable ["A3W_purchasedStoreObject", true];
 		[_object, _selectionClass] call fn_refillbox;
 		_object attachTo [_heli, [0,0,-5]]; //Attach Object to the heli
+		_object allowDamage false;
 		_object
 	};
 	case "picnic":  //Beware of Bears!
