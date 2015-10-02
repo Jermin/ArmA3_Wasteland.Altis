@@ -974,7 +974,7 @@ colorsArray = compileFinal str
 			["Orange", "\A3\Soft_F_Kart\Kart_01\Data\Kart_01_base_orange_CO.paa"],
 			["Red", "\A3\Soft_F_Kart\Kart_01\Data\Kart_01_base_red_CO.paa"]
 		]
-	]
+	],
 	[ // MH-9 colors
 		"Heli_Light_01_base_F",
 		[
