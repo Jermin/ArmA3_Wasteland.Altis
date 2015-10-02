@@ -97,7 +97,6 @@ _object = switch (_type) do {
 		_object setVariable ["A3W_purchasedStoreObject", true];
 		[_object, _selectionClass] call fn_refillbox;
 		_object attachTo [_heli, [0,0,-5]]; //Attach Object to the heli
-		_object allowDamage false;
 		_object
 	};
 	case "picnic":  //Beware of Bears!
@@ -213,11 +212,17 @@ WaitUntil {((((position _object) select 2) < 1) || (isNil "_para"))};
 				case "Land_Sacks_goods_F": {
 					_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
 					_object2 setVariable ["food", 50, true];
+					_object2 setVariable ["R3F_LOG_Disabled", false, true];
+					_object2 setVariable ["allowDamage", true, true];
+					_object2 allowDamage true;
 					_object2
 				}; //A very big picnic, no?
 				case "Land_BarrelWater_F": {
 					_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
 					_object2 setVariable ["water",50, true];
+					_object2 setVariable ["R3F_LOG_Disabled", false, true];
+					_object2 setVariable ["allowDamage", true, true];
+					_object2 allowDamage true;
 					_object2
 				};
 			};

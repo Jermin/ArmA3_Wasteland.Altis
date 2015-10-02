@@ -28,7 +28,7 @@ APOC_AA_SupOptions =
 
 //"Menu Text",          "Food Type",                         Price,  "Drop type"]
 ["Food",                "Land_Sacks_goods_F",                5000,  "picnic"],
-["Water",               "Land_BarrelWater_F",                5000,  "picnic"],
+["Water",               "Land_BarrelWater_F",                5000,  "picnic"]
 
 //"Menu Text",          "Base carrier",                      Price,  "Drop type"]
 //["Base Building Kit",   "Land_Pod_Heli_Transport_04_box_F",  175000, "base"]

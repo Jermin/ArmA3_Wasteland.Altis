@@ -177,7 +177,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 
 			[_object, false] call vehicleSetup;
 			_object allowDamage _isDamageable;
-			_object setVariable ["allowDamage", _isDamageable];
+			_object setVariable ["allowDamage", _isDamageable, true];
 
 			switch (true) do
 			{
