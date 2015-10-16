@@ -96,6 +96,18 @@ class CfgNotifications
 	#include "client\CfgNotifications.hpp"
 };
 
+class CfgRemoteExec // applies only to clients
+{
+	class Functions
+	{
+		mode = 1; // 0 = block all, 1 = whitelist, 2 = allow all
+	};
+	class Commands
+	{
+		mode = 1;
+	};
+};
+
 class params
 {
 	class marker3D
