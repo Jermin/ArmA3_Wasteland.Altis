@@ -210,7 +210,7 @@ switch (_supporterLevel) do {
 			_player addGoggles "G_Aviator";
 			_player addHeadgear "H_Beret_Colonel";
 			//_player linkItem "ItemGPS";
-			_player setObjectTextureGlobal  [0, _texDir + "digi_black.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "digi_black.paa"];
+			_player setObjectTextureGlobal  [0, _texDir + "digi_wood.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "digi_black.paa"];
 			systemChat format["Welcome %1, You have a Silver Supporter Loadout!", name player];
 		};	
 		
