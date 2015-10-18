@@ -172,7 +172,7 @@ disableSerialization;
 			format["
 			<t shadow='1' shadowColor='#000000' color='%10'><img size='1.6'  shadowColor='#000000' image='client\icons\players.paa' color='%10'/> %2</t>
 			<t shadow='1' shadowColor='#000000' color='%11'><img size='1.0'  shadowColor='#000000' image='client\icons\health.paa' color='%11'/> %3%1</t> 
-			<t shadow='1' shadowColor='#000000' color='%10'><img size='1.0'  shadowColor='#000000' image='client\icons\money.paa' color='%10'/> $%4</t> 
+			<t shadow='1' shadowColor='#000000' color='%10'><img size='1.0'  shadowColor='#000000' image='client\icons\money2.paa' color='%10'/> $%4</t> 
 			<t shadow='1' shadowColor='#000000' color='%12'><img size='1.6'  shadowColor='#000000' image='client\icons\hunger.paa' color='%12'/> %5%1</t> 
 			<t shadow='1' shadowColor='#000000' color='%13'><img size='1.6'  shadowColor='#000000' image='client\icons\thirst.paa' color='%13'/> %6%1</t> 
 			<t shadow='1' shadowColor='#000000' color='%15'><img size='1.0'  shadowColor='#000000' image='client\icons\atm.paa' color='%10'/> $%9</t> 
