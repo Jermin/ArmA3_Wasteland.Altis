@@ -56,6 +56,8 @@ if (_packetName == "BIS_fnc_MP_packet") then
 			"BH_fnc_mkr3D",
 			"BH_fnc_mkr3D_VON"/*,
 			"JTS_FNC_SENT"*/ // PM Compact by JTS
+
+			// NOTE: You also need to whitelist individual functions in client\CfgRemoteExec_fnc.hpp
 		];
 
 		if (!_whitelisted) then

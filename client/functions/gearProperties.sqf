@@ -38,14 +38,14 @@ switch (_type) do
 		{
 			_containerClass = getText (configFile >> "CfgWeapons" >> vest player >> "ItemInfo" >> "containerClass");
 			_currentCapacity = getNumber (configFile >> "CfgVehicles" >> _containerClass >> "maximumLoad");
-			_currentArmor = getNumber (configFile >> "CfgWeapons" >> vest player >> "ItemInfo" >> "armor");
-			_currentPassthrough = getNumber (configFile >> "CfgWeapons" >> vest player >> "ItemInfo" >> "passThrough");
+			_currentArmor = getNumber (configFile >> "CfgWeapons" >> vest player >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Chest" >> "armor");
+			_currentPassthrough = getNumber (configFile >> "CfgWeapons" >> vest player >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Chest" >> >> "passThrough");
 		};
 
 		_containerClass = getText (configFile >> "CfgWeapons" >> _item >> "ItemInfo" >> "containerClass");
 		_newCapacity = getNumber (configFile >> "CfgVehicles" >> _containerClass >> "maximumLoad");
-		_newArmor = getNumber (configFile >> "CfgWeapons" >> _item >> "ItemInfo" >> "armor");
-		_newPassthrough = getNumber (configFile >> "CfgWeapons" >> _item >> "ItemInfo" >> "passThrough");
+		_newArmor = getNumber (configFile >> "CfgWeapons" >> _item >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Chest" >> "armor");
+		_newPassthrough = getNumber (configFile >> "CfgWeapons" >> _item >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Chest" >> "passThrough");
 	};
 	case "backpack":
 	{
@@ -60,12 +60,12 @@ switch (_type) do
 	{
 		if (headgear player != "") then
 		{
-			_currentArmor = getNumber (configFile >> "CfgWeapons" >> headgear player >> "ItemInfo" >> "armor");
-			_currentPassthrough = getNumber (configFile >> "CfgWeapons" >> headgear player >> "ItemInfo" >> "passThrough");
+			_currentArmor = getNumber (configFile >> "CfgWeapons" >> headgear player >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Head" >> "armor");
+			_currentPassthrough = getNumber (configFile >> "CfgWeapons" >> headgear player >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Head" >> "passThrough");
 		};
 
-		_newArmor = getNumber (configFile >> "CfgWeapons" >> _item >> "ItemInfo" >> "armor");
-		_newPassthrough = getNumber (configFile >> "CfgWeapons" >> _item >> "ItemInfo" >> "passThrough");
+		_newArmor = getNumber (configFile >> "CfgWeapons" >> _item >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Head" >> "armor");
+		_newPassthrough = getNumber (configFile >> "CfgWeapons" >> _item >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Head" >> "passThrough");
 	};
 };
 
