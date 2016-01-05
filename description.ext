@@ -108,18 +108,18 @@ class CfgRemoteExec // applies only to clients
 	};
 };
 
-class params
-{
-	class marker3D
-	{
-		title = "3D markers";
-		values[] = {0,1};
-		texts[] = {$STR_DISABLED,$STR_ENABLED};
-		default = 1;
-		isGlobal = 1;		
-		file = "addons\3D_Markers\3Dmarkers.sqf";
-	};
-};
+//class params
+//{
+//	class marker3D
+//	{
+//		title = "3D markers";
+//		values[] = {0,1};
+//		texts[] = {$STR_DISABLED,$STR_ENABLED};
+//		default = 1;
+//		isGlobal = 1;		
+//		file = "addons\3D_Markers\3Dmarkers.sqf";
+//	};
+//};
 
 class CfgSounds
 {
