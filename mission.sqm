@@ -3723,6 +3723,46 @@ class Mission
 			colorName="ColorBlack";
 		};
 	};
+	class Sensors
+	{
+		items=2;
+		class Item0
+		{
+			position[]={13408.181641,140.00875282,16350.78125]};
+			a=11000;
+			b=8000;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			age="UNKNOWN";
+			text="resitrctedAirspaceHeli";
+			name="resitrctedAirspaceHeli";
+			expCond="(vehicle player) in thislist && (vehicle player) isKindOf ""Helicopter"" && (getpos (vehicle player) select 2 > 250);";
+			expActiv="restrictedAirspaceHeli = [] execVM ""addons\restrictedAirspace\restrictedAirspaceHeli.sqf"";";
+			expDesactiv="terminate restrictedAirspaceHeli; titleText [""You have left the Restricted Airspace!"", ""PLAIN DOWN"", 3];";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={13408.181641,140.00875282,16350.78125};
+			a=11000;
+			b=8000;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			age="UNKNOWN";
+			text="resitrctedAirspaceJet";
+			name="resitrctedAirspaceJet";
+			expCond="(vehicle player) in thislist && (vehicle player) isKindOf ""Plane"" && (getpos (vehicle player) select 2 > 500);";
+			expActiv="restrictedAirspaceJet = [] execVM ""addons\restrictedAirspace\restrictedAirspaceJet.sqf"";";
+			expDesactiv="terminate restrictedAirspaceJet; titleText [""You have left the Restricted Airspace!"", ""PLAIN DOWN"", 3];";
+			class Effects
+			{
+			};
+		};
+	};
 };
 class Intro
 {
