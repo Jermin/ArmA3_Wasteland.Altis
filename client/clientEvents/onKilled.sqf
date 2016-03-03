@@ -47,9 +47,9 @@ createBodyMarker =
 
 if (_player == player) then
 {
-	closeDialog 2001; // Close Gunstore
-	closeDialog 2009; // Close Genstore
-	closeDialog 5285; // Close Vehstore
+	(findDisplay 2001) closeDisplay 0; // Close Gunstore
+	(findDisplay 2009) closeDisplay 0; // Close Genstore
+	(findDisplay 5285) closeDisplay 0; // Close Vehstore
 	uiNamespace setVariable ["BIS_fnc_guiMessage_status", false]; // close message boxes
 
 	// Load scoreboard in render scope

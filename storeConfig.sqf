@@ -580,9 +580,9 @@ genItemArray = compileFinal str
 	["UAV Terminal (NATO)", "B_UavTerminal", 500, "gps"],
 	["UAV Terminal (CSAT)", "O_UavTerminal", 500, "gps"],
 	["UAV Terminal (AAF)", "I_UavTerminal", 500, "gps"],
-	["Quadrotor UAV (NATO)", "B_UAV_01_backpack_F", 4500, "backpack"],
-	["Quadrotor UAV (CSAT)", "O_UAV_01_backpack_F", 4500, "backpack"],
-	["Quadrotor UAV (AAF)", "I_UAV_01_backpack_F", 4500, "backpack"],
+	["Quadrotor UAV (NATO)", "B_UAV_01_backpack_F", 9500, "backpack"],
+	["Quadrotor UAV (CSAT)", "O_UAV_01_backpack_F", 9500, "backpack"],
+	["Quadrotor UAV (AAF)", "I_UAV_01_backpack_F", 9500, "backpack"],
 	["Remote Designator Bag (NATO) [DLC]", "B_Static_Designator_01_weapon_F", 2500, "backpack"],
 	["Remote Designator Bag (CSAT) [DLC]", "O_Static_Designator_02_weapon_F", 2500, "backpack"],
 	["GPS", "ItemGPS", 100, "gps"],
@@ -841,7 +841,6 @@ helicoptersArray = compileFinal str
 	["WY-55 Hellcat (Armed)", "I_Heli_light_03_F", 17500, "vehicle"], // Armed AW159
 	//["AH-99 Blackfoot", "B_Heli_Attack_01_F", 22500, "vehicle"], // RAH-66 with gunner
 	["Mi-48 Kajman (Hex)", "O_Heli_Attack_02_F", 50000, "vehicle"], // Mi-28 with gunner
-	["Mi-48 Kajman (Black)", "O_Heli_Attack_02_black_F", 51000, "vehicle"] // Mi-28 with gunner (black camo)
 ];
 
 planesArray = compileFinal str
@@ -902,6 +901,8 @@ _kartDir = "\A3\soft_f_kart\Kart_01\Data\";
 _mh9Dir = "\A3\air_f\Heli_Light_01\Data\";
 _mohawkDir = "\A3\air_f_beta\Heli_Transport_02\Data\";
 _taruDir = "\A3\air_f_heli\Heli_Transport_04\Data\";
+_wreckDir = "\A3\structures_f\wrecks\data\";
+_gorgonDir = "\A3\armor_f_gamma\APC_Wheeled_03\data\";
 
 colorsArray = compileFinal str
 [
@@ -1034,6 +1035,49 @@ colorsArray = compileFinal str
 		"O_Heli_Transport_04_fuel_F",
 		[
 			["Black (Taru)", [[2, _taruDir + "heli_transport_04_fuel_black_co.paa"]]]
+		]
+	],
+	[ // Kajman paintjobs
+		"Heli_Attack_02_base_F",
+		[
+			["Black (Kajman)", [
+				[0, "\A3\air_f_beta\Heli_Attack_02\Data\heli_attack_02_body1_black_co.paa"],
+				[1, "\A3\air_f_beta\Heli_Attack_02\Data\heli_attack_02_body2_black_co.paa"]
+			]],
+			["Rusty (Kajman)", [
+				[0, _wreckDir + "wreck_heli_attack_02_body1_co.paa"],
+				[1, _wreckDir + "wreck_heli_attack_02_body2_co.paa"]
+			]],
+			["Mossy (Kajman)", [
+				[0, _wreckDir + "uwreck_heli_attack_02_body1_co.paa"],
+				[1, _wreckDir + "uwreck_heli_attack_02_body2_co.paa"]
+			]]
+		]
+	],
+	[ // Strider NATO color
+		"MRAP_03_base_F",
+		[
+			["NATO Tan (Strider)", [
+				[0, "\A3\soft_f_beta\MRAP_03\Data\mrap_03_ext_co.paa"],
+				[1, "\A3\data_f\vehicles\turret_co.paa"]
+			]]
+		]
+	],
+	[ // Gorgon NATO color
+		"APC_Wheeled_03_base_F",
+		[
+			["NATO Tan (Gorgon)", [
+				[0, _gorgonDir + "apc_wheeled_03_ext_co.paa"],
+				[1, _gorgonDir + "apc_wheeled_03_ext2_co.paa"],
+				[2, _gorgonDir + "rcws30_co.paa"],
+				[3, _gorgonDir + "apc_wheeled_03_ext_alpha_co.paa"]
+			]]
+		]
+	],
+	[ // Hatchback wreck paintjob
+		"Hatchback_01_base_F",
+		[
+			["Rusty (Hatchback)", [[0, _wreckDir + "civilcar_extwreck_co.paa"]]]
 		]
 	]
 ];
