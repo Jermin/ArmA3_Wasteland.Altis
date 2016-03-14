@@ -840,7 +840,7 @@ helicoptersArray = compileFinal str
 	//["PO-30 Orca (Armed, Hex)", "O_Heli_Light_02_F", 15000, "vehicle"], // Armed Ka-60
 	["WY-55 Hellcat (Armed)", "I_Heli_light_03_F", 17500, "vehicle"], // Armed AW159
 	//["AH-99 Blackfoot", "B_Heli_Attack_01_F", 22500, "vehicle"], // RAH-66 with gunner
-	["Mi-48 Kajman (Hex)", "O_Heli_Attack_02_F", 50000, "vehicle"], // Mi-28 with gunner
+	["Mi-48 Kajman (Hex)", "O_Heli_Attack_02_F", 50000, "vehicle"] // Mi-28 with gunner
 ];
 
 planesArray = compileFinal str
