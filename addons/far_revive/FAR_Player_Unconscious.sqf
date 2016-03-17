@@ -86,17 +86,17 @@ _unit spawn
 
 waitUntil {!isNil {_unit getVariable "FAR_killerSuspects"}};
 
-_unit allowDamage true;
+// Find killer
+_killer = _unit call FAR_findKiller;
+_unit setVariable ["FAR_killerPrimeSuspect", _killer];
+
 _unit setDamage 0.5;
+_unit allowDamage true;
 
 if (!isPlayer _unit) then
 {
 	{ _unit disableAI _x } forEach ["MOVE","FSM","TARGET","AUTOTARGET"];
 };
-
-// Find killer
-_killer = _unit call FAR_findKiller;
-_unit setVariable ["FAR_killerPrimeSuspect", _killer];
 
 // Injury message
 if (FAR_EnableDeathMessages && difficultyEnabled "deathMessages" && !isNil "_killer") then
@@ -202,18 +202,17 @@ _unit spawn
 		};
 	};
 
-	waitUntil
+	while {UNCONSCIOUS(_unit)} do
 	{
-		sleep 0.1;
 		_veh = vehicle _unit;
-		_unconscious = UNCONSCIOUS(_unit);
-		((isTouchingGround _veh || (getPos _veh) select 2 < 1) && {vectorMagnitude velocity _unit < 1}) || !_unconscious
-	};
 
-	if (_unconscious && _veh != _unit) then
-	{
-		unassignVehicle _unit;
-		moveOut _unit;
+		if (_veh != _unit && {(isTouchingGround _veh || (getPos _veh) select 2 < 1) && (vectorMagnitude velocity _unit < 1)}) then
+		{
+			moveOut _unit;
+			unassignVehicle _unit;
+		};
+
+		sleep 0.25;
 	};
 };
 
@@ -309,7 +308,7 @@ while {UNCONSCIOUS(_unit) && diag_tickTime < _bleedOut} do
 		};
 	};
 
-	if (ceil (_dmg * 100) < 50) then // assume healing by medic
+	if (_dmg <= 0.495) then // assume healing by medic
 	{
 		if (!STABILIZED(_unit)) then
 		{
@@ -342,9 +341,9 @@ while {UNCONSCIOUS(_unit) && diag_tickTime < _bleedOut} do
 
 	if (_unit == player) then
 	{
-		if (_dmg > 0.499 && isNil "_treatedBy") then
+		if (_dmg > 0.495 && isNil "_treatedBy") then
 		{
-			_time = (_bleedOut - diag_tickTime) call fn_formatTimer;
+			_time = ((_bleedOut - diag_tickTime) max 0) call fn_formatTimer;
 
 			_progBar progressSetPosition ((_bleedOut - diag_tickTime) / FAR_BleedOut);
 			_progText ctrlSetText _time;

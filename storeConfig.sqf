@@ -653,7 +653,7 @@ genObjectsArray = compileFinal str
 	["Base Re-Locker", "Land_Device_assembled_F", 25000, "object"],  //Cael817, SNAFU,Used for base operations <-- Destroyable
 	["Food sacks", "Land_Sacks_goods_F", 5000, "object"], // Added on player request
 	["Water Barrel", "Land_BarrelWater_F", 5000, "object"], // Added on player request
-	["Empty Ammo Crate", "Box_NATO_Ammo_F", 100, "ammocrate"],
+	["Camo Ammo Cache", "Box_FIA_Support_F", 250, "ammocrate"],
 	["Metal Barrel", "Land_MetalBarrel_F", 25, "object"],
 	["Toilet Box", "Land_ToiletBox_F", 25, "object"],
 	["Lamp Post (Harbour)", "Land_LampHarbour_F", 25, "object"],
@@ -834,7 +834,6 @@ helicoptersArray = compileFinal str
 
 
 	["UH-80 Ghost Hawk (Black)", "B_Heli_Transport_01_F", 7500, "vehicle"], // UH-60 Stealth with 2 side miniguns
-	["UH-80 Ghost Hawk (Green)", "B_Heli_Transport_01_camo_F", 8500, "vehicle"], // UH-60 Stealth with 2 side miniguns (green camo)
 	["AH-9 Pawnee", "B_Heli_Light_01_armed_F", 12000, "vehicle"], // Armed AH-6
 	//["PO-30 Orca (Armed, Black)", "O_Heli_Light_02_v2_F", 8000, "vehicle"], // Armed Ka-60
 	//["PO-30 Orca (Armed, Hex)", "O_Heli_Light_02_F", 15000, "vehicle"], // Armed Ka-60
@@ -1051,6 +1050,15 @@ colorsArray = compileFinal str
 			["Mossy (Kajman)", [
 				[0, _wreckDir + "uwreck_heli_attack_02_body1_co.paa"],
 				[1, _wreckDir + "uwreck_heli_attack_02_body2_co.paa"]
+			]]
+		]
+	],
+	[ // Ghost Hawk camo 
+		"Heli_Transport_01_base_F",
+		[
+			["Olive (Ghost Hawk)", [
+				[0, "\A3\air_f_beta\Heli_Transport_01\Data\heli_transport_01_ext01_blufor_co.paa"],
+				[1, "\A3\air_f_beta\Heli_Transport_01\Data\heli_transport_01_ext02_blufor_co.paa"]
 			]]
 		]
 	],
