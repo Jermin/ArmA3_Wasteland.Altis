@@ -299,5 +299,16 @@ while {true} do
 		} forEach _mapCtrls;
 	};
 
+	// Improve revealing and aimlocking of targetted vehicles
+	{
+		if (!isNull _x) then
+		{
+			if ((group player) knowsAbout _x < 4) then
+			{
+				(group player) reveal [_x, 4];
+			};
+		};
+	} forEach [cursorTarget, cursorObject];
+
 	uiSleep 1;
 };

@@ -146,7 +146,7 @@ player addEventHandler ["InventoryClosed",
 
 player addEventHandler ["HandleDamage", unitHandleDamage];
 
-if (["A3W_combatAbortDelay", 0] call getPublicVar > 0) then
+if (["A3W_remoteBombStoreRadius", 0] call getPublicVar > 0) then
 {
 	player addEventHandler ["Fired",
 	{
@@ -173,7 +173,10 @@ if (["A3W_combatAbortDelay", 0] call getPublicVar > 0) then
 			};
 		};
 	}];
+};
 
+if (["A3W_combatAbortDelay", 0] call getPublicVar > 0) then
+{
 	player addEventHandler ["FiredNear",
 	{
 		// Prevent aborting if event is not for placing an explosive
