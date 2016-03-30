@@ -47,7 +47,7 @@ if (["A3W_headshotNoRevive"] call isConfigOn && _fatalHit &&
 
 		_unit setVariable ["FAR_killerPrimeSuspect", _killer];
 
-		if (isPlayer _killer && {_killerSide != _unitSide || (!(_unitSide in [BLUFOR,OPFOR]) && _killerGroup != _unitGroup)}) then // check if enemy
+		if (isPlayer _killer && !([_killer, _unit] call A3W_fnc_isFriendly)) then // check if enemy
 		{
 			_skipRevive = true;
 			diag_log format ["HEADSHOT by [%1] with [%2]", _killer, _ammo];
@@ -85,7 +85,7 @@ else
 	// Allow revive if unit is dead and not in exploded vehicle
 	if (_fatalHit && alive vehicle _unit) then
 	{
-		[] spawn fn_deletePlayerData;
+		if (_unit == player && !isNil "fn_deletePlayerData") then { call fn_deletePlayerData };
 
 		if (!_skipRevive) then
 		{
@@ -94,18 +94,17 @@ else
 			_unit setFatigue 1;
 		};
 
-		if (!isNil "FAR_Player_Unconscious_thread" && {typeName FAR_Player_Unconscious_thread == "SCRIPT" && {!scriptDone FAR_Player_Unconscious_thread}}) then
-		{
-			terminate FAR_Player_Unconscious_thread;
-		};
+		terminate (_unit getVariable ["FAR_Player_Unconscious_thread", scriptNull]);
 
-		(findDisplay ReviveBlankGUI_IDD) closeDisplay 0;
-		(findDisplay ReviveGUI_IDD) closeDisplay 0;
+		if (_unit == player) then
+		{
+			(findDisplay ReviveBlankGUI_IDD) closeDisplay 0;
+			(findDisplay ReviveGUI_IDD) closeDisplay 0;
+		};
 
 		if (_skipRevive) exitWith {};
 
-		FAR_Player_Unconscious_thread = [_unit, _source] spawn FAR_Player_Unconscious;
-
+		_unit setVariable ["FAR_Player_Unconscious_thread", [_unit, _source] spawn FAR_Player_Unconscious];
 		_damage = 0.5;
 	};
 };
