@@ -9,9 +9,9 @@
 #define WHEEL_COLLISION_DMG_SCALE 0.08
 #define MRAP_MISSILE_DMG_SCALE 4.0 // Temporary fix for http://feedback.arma3.com/view.php?id=21743
 #define HELI_MISSILE_DMG_SCALE 1.0
-#define PLANE_MISSILE_DMG_SCALE 1.5
+#define PLANE_MISSILE_DMG_SCALE 1.0
 #define IFV_DMG_SCALE 1.0
-#define TANK_DMG_SCALE 1.0
+#define TANK_DMG_SCALE 1.3
 
 _vehicle = _this select 0;
 _selection = _this select 1;
