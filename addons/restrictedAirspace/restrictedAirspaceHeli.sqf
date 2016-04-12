@@ -5,7 +5,7 @@
 	@Edit by CRE4MPIE
 	@file Created: 7/2/2016
 */
-titleText ["You are entering restricted air space, please reduce altitude to below 250m!", "PLAIN DOWN", 3];
+titleText ["You are entering restricted air space, please reduce altitude to below 1000m!", "PLAIN DOWN", 3];
 playSound3D ["A3\Sounds_F\sfx\alarmcar.wss", player]; 
 sleep 5;
 titleText ["You have less than 30 seconds to comply...", "PLAIN DOWN", 3];

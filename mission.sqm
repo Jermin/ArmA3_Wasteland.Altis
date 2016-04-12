@@ -1740,7 +1740,7 @@ class Mission
 			{
 				name="resitrctedAirspaceHeli";
 				text="resitrctedAirspaceHeli";
-				condition="(vehicle player) in thislist && (vehicle player) isKindOf ""Helicopter"" && (getpos (vehicle player) select 2 > 350);";
+				condition="(vehicle player) in thislist && (vehicle player) isKindOf ""Helicopter"" && (getpos (vehicle player) select 2 > 1000);";
 				onActivation="restrictedAirspaceHeli = [] execVM ""addons\restrictedAirspace\restrictedAirspaceHeli.sqf"";";
 				onDeactivation="terminate restrictedAirspaceHeli; titleText [""You have left the Restricted Airspace!"", ""PLAIN DOWN"", 3];";
 				sizeA=11000;
@@ -1760,7 +1760,7 @@ class Mission
 			{
 				name="resitrctedAirspaceJet";
 				text="resitrctedAirspaceJet";
-				condition="(vehicle player) in thislist && (vehicle player) isKindOf ""Plane"" && (getpos (vehicle player) select 2 > 700);";
+				condition="(vehicle player) in thislist && (vehicle player) isKindOf ""Plane"" && (getpos (vehicle player) select 2 > 1000);";
 				onActivation="restrictedAirspaceJet = [] execVM ""addons\restrictedAirspace\restrictedAirspaceJet.sqf"";";
 				onDeactivation="terminate restrictedAirspaceJet; titleText [""You have left the Restricted Airspace!"", ""PLAIN DOWN"", 3];";
 				sizeA=11000;
