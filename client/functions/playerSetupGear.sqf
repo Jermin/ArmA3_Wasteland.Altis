@@ -4,11 +4,8 @@
 //	@file Name: playerSetupGear.sqf
 //	@file Author: [GoT] JoSchaap, AgentRev
 
-private ["_player", "_uniform", "_vest", "_headgear", "_goggles", "_supporterLevel"];
+private ["_player", "_uniform", "_vest", "_headgear", "_goggles"];
 _player = _this;
-
-_supportersEnabled = ["A3W_supportersEnabled"] call isConfigOn;
-_supporterLevel = player getVariable ["supporter", 0];
 
 // Clothing is now defined in "client\functions\getDefaultClothing.sqf"
 
@@ -45,10 +42,6 @@ _player addMagazine "6Rnd_45ACP_Cylinder";
 _player addMagazine "6Rnd_45ACP_Cylinder";
 _player addItem "FirstAidKit";
 _player selectWeapon "hgun_Pistol_heavy_02_F";
-
-// Loadouts here
-if (_supportersEnabled && _supporterLevel > 0) then
-{_this call supporters;};
 
 switch (true) do
 {
