@@ -50,6 +50,7 @@ _getInOut =
 	if (isPlayer _unit && owner _vehicle == owner _unit) then
 	{
 		_vehicle setVariable ["lastVehicleOwnerUID", getPlayerUID _unit, true];
+		_unit setVariable ["lastVehicleOwner", owner _vehicle == owner _unit, true];
 	};
 
 	_vehicle setVariable ["vehSaving_hoursUnused", 0];
