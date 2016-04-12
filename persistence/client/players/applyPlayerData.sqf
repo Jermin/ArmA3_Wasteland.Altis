@@ -54,7 +54,26 @@ else
 		case "Uniform":
 		{
 			// If uniform cannot be worn by player due to different team, try to convert it, else give default instead
-			player forceadduniform _value;
+			if (_value != "") then
+			{
+				if (player isUniformAllowed _value) then
+				{
+					player addUniform _value;
+				}
+				else
+				{
+					_newUniform = [player, _value] call uniformConverter;
+
+					if (player isUniformAllowed _newUniform) then
+					{
+						player addUniform _newUniform;
+					}
+					else
+					{
+						player addUniform ([player, "uniform"] call getDefaultClothing);
+					}
+				};
+			};
 		};
 		case "Vest": { if (_value != "") then { player addVest _value } };
 		case "Backpack":
