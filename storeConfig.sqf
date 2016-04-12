@@ -22,7 +22,8 @@ pistolArray = compileFinal str
 	["Rook-40 Pistol", "hgun_Rook40_F", 50],
 	["ACP-C2 Pistol", "hgun_ACPC2_F", 75],
 	["Zubr Revolver", "hgun_Pistol_heavy_02_F", 200],
-	["4-Five Pistol", "hgun_Pistol_heavy_01_F", 300]
+	["4-Five Pistol", "hgun_Pistol_heavy_01_F", 300],
+	["Starter Pistol", "hgun_Pistol_Signal_F", 500]
 ];
 
 smgArray = compileFinal str
@@ -176,7 +177,9 @@ ammoArray = compileFinal str
 [
 	["9mm 16Rnd Mag", "16Rnd_9x21_Mag", 10],
 	["9mm 30Rnd Mag", "30Rnd_9x21_Mag", 15],
-	[".45 ACP 6Rnd Cylinder", "6Rnd_45ACP_Cylinder", 5],
+	["10mm Flare Slug (Green)", "6Rnd_GreenSignal_F", 10],
+	["10mm Flare Slug (Red)", "6Rnd_RedSignal_F", 10],
+	[".45 ACP 6Rnd Cylinder", "6Rnd_45ACP_Cylinder", 10],
 	[".45 ACP 9Rnd Mag", "9Rnd_45ACP_Mag", 10],
 	[".45 ACP 11Rnd Mag", "11Rnd_45ACP_Mag", 15],
 	[".45 ACP 30Rnd Vermin Mag", "30Rnd_45ACP_MAG_SMG_01", 20],
