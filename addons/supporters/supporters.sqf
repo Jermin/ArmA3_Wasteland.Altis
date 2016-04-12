@@ -62,7 +62,7 @@ switch (_supporterLevel) do {
 
 				// Static Designator
 				"B_Static_Designator_01_weapon_F",
-				"O_Static_Designator_02_weapon_F"*//
+				"O_Static_Designator_02_weapon_F"*/
 				
 				],true] call BIS_fnc_addVirtualBackpackCargo;
 				
