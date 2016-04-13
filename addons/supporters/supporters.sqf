@@ -21,7 +21,52 @@ switch (_supporterLevel) do {
 			
 				_crate = "Box_East_Ammo_F";		
 				["Open",_crate] call BIS_fnc_arsenal;
-				[_crate,[true],true] call BIS_fnc_addVirtualMagazineCargo;
+
+				[_crate,[
+
+				// Megazines
+				"16Rnd_9x21_Mag",
+				"30Rnd_9x21_Mag",
+				"6Rnd_GreenSignal_F",
+				"6Rnd_RedSignal_F",
+
+				"6Rnd_45ACP_Cylinder",
+				"9Rnd_45ACP_Mag",
+				"11Rnd_45ACP_Mag",
+				"30Rnd_45ACP_MAG_SMG_01",
+				"30Rnd_45ACP_Mag_SMG_01_tracer_green",
+				"20Rnd_556x45_UW_mag",
+
+				"30Rnd_556x45_Stanag",
+				"30Rnd_556x45_Stanag_Tracer_Green",
+				"30Rnd_556x45_Stanag_Tracer_Yellow",
+				"30Rnd_556x45_Stanag_Tracer_Red",
+
+				"30Rnd_65x39_caseless_mag",
+				"30Rnd_65x39_caseless_mag_Tracer",
+				"30Rnd_65x39_caseless_green",
+				"30Rnd_65x39_caseless_green_mag_Tracer",
+
+				"10Rnd_762x54_Mag",
+				"20Rnd_762x51_Mag",
+				"RPG32_F",
+				"RPG32_HE_F",
+				"SmokeShell",
+				"MiniGrenade",
+				"1Rnd_Smoke_Grenade_shell",
+				"3Rnd_Smoke_Grenade_shell",
+				"UGL_FlareWhite_F",
+				"UGL_FlareGreen_F",
+				"UGL_FlareYellow_F",
+				"UGL_FlareRed_F",
+				"UGL_FlareCIR_F",
+				"3Rnd_UGL_FlareWhite_F",
+				"3Rnd_UGL_FlareGreen_F",
+				"3Rnd_UGL_FlareYellow_F",
+				"3Rnd_UGL_FlareRed_F",
+				"3Rnd_UGL_FlareCIR_F"
+				
+				],true] call BIS_fnc_addVirtualMagazineCargo;
 
 				[_crate,[
 
@@ -87,11 +132,11 @@ switch (_supporterLevel) do {
 				"arifle_Katiba_F",
 				"arifle_Katiba_C_F",
 				"arifle_Katiba_GL_F",
-				//"srifle_LRR_F",
-				//"srifle_LRR_camo_F",
+				/*"srifle_LRR_F",
+				"srifle_LRR_camo_F",
 				"srifle_DMR_02_F",
 				"srifle_DMR_02_camo_F",
-				"srifle_DMR_02_sniper_F",
+				"srifle_DMR_02_sniper_F",*/
 				"srifle_DMR_03_F",
 				"srifle_DMR_03_multicam_F",
 				"srifle_DMR_03_khaki_F",
