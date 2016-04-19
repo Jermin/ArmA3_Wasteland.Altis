@@ -31,17 +31,17 @@ _player unlinkItem "ItemGPS";
 if (hmd _player != "") then { _player unlinkItem hmd _player };
 
 // Add NVG
-_player linkItem "NVGoggles";
+_player addItem "NVGoggles";
 
 _player addBackpack "B_TacticalPack_oli";
 
-_player addMagazine "6Rnd_45ACP_Cylinder";
-_player addWeapon "hgun_Pistol_heavy_02_F";
-_player addMagazine "6Rnd_45ACP_Cylinder";
-_player addMagazine "6Rnd_45ACP_Cylinder";
-_player addMagazine "6Rnd_45ACP_Cylinder";
+_player addMagazine "9Rnd_45ACP_Mag";
+_player addWeapon "hgun_ACPC2_F";
+_player addMagazine "9Rnd_45ACP_Mag";
+_player addMagazine "9Rnd_45ACP_Mag";
+_player addMagazine "9Rnd_45ACP_Mag";
 _player addItem "FirstAidKit";
-_player selectWeapon "hgun_Pistol_heavy_02_F";
+_player selectWeapon "hgun_ACPC2_F";
 
 switch (true) do
 {
