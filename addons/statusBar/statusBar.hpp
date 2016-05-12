@@ -8,7 +8,7 @@ class RscWastelandStatusBar
 		movingEnable = 0;
 		objects[] = {};
 
-/*        class controlsBackground
+        class controlsBackground
         {
                 class statusBarImage
                 {
@@ -23,10 +23,10 @@ class RscWastelandStatusBar
 						colorBackground[]={0,0,0,0};
 						sizeEx = 0.4;
 						font = "PuristaSemibold";
-                        text = "addons\statusBar\icons\StatusBarBackground_ca2.paa";
+                        text = "addons\statusBar\icons\background.paa";
                 };
         };
-*/ 
+ 
         class controls
         {
                 class statusBarText
