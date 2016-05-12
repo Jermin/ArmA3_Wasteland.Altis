@@ -24,6 +24,13 @@ if (isPlayer _player) then
 	missionNamespace setVariable [_var, _val + _score];
 	publicVariable _var;
 
+	//duplicate score without added db data to show current server round score
+	_var = format ["A3W_playerScore_current_%1_%2", _column, getPlayerUID _player];
+	_val = missionNamespace getVariable [_var, 0];
+
+	missionNamespace setVariable [_var, _val + _score];
+	publicVariable _var;
+
 	// add kills and deaths to team score
 	if (_column == "playerKills" || _column == "deathCount") then
 	{

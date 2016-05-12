@@ -11,7 +11,7 @@ disableSerialization;
 
 _code =
 {
-	private ["_bluforColor", "_opforColor", "_indieColor", "_civColor", "_defColor", "_allPlayers", "_i", "_scoreOrdering", "_players", "_playerCount", "_playerIndex", "_iStart", "_id", "_index", "_entry", "_player", "_isPlayer", "_bgColor", "_entryBG", "_entryTColor", "_textColor", "_entryRank", "_entryName", "_entryPKills", "_entryAIKills", "_entryDeaths", "_entryRevives", "_entryCaptures", "_teams", "_grp", "_side", "_teamCount", "_playerTeam", "_playerTeamIndex", "_team", "_isPlayerTeam", "_isGroup", "_teamName", "_entryTerritories"];
+	private ["_bluforColor", "_opforColor", "_indieColor", "_civColor", "_defColor", "_allPlayers", "_i", "_scoreOrdering", "_players", "_playerCount", "_playerIndex", "_iStart", "_id", "_index", "_entry", "_player", "_isPlayer", "_bgColor", "_entryBG", "_entryTColor", "_textColor", "_entryRank", "_entryName", "_entryPKills", "_entryAIKills", "_entryDeaths", "_entryRevives", "_entryCaptures", "_entryAllKills", "_entryAllDeaths", "_entryKillDeath", "_teams", "_grp", "_side", "_teamCount", "_playerTeam", "_playerTeamIndex", "_team", "_isPlayerTeam", "_isGroup", "_teamName", "_entryTerritories"];
 
 	if (!alive player) then
 	{
@@ -37,7 +37,7 @@ _code =
 			};
 		};
 
-		_scoreOrdering = { ((([_x, "playerKills"] call fn_getScore) - ([_x, "teamKills"] call fn_getScore)) * 1000) + ([_x, "aiKills"] call fn_getScore) };
+		_scoreOrdering = { ((([_x, "current_playerKills"] call fn_getScore) - ([_x, "teamKills"] call fn_getScore)) * 1000) + ([_x, "current_aiKills"] call fn_getScore) };
 		_players = [_allPlayers, [], _scoreOrdering, "DESCEND"] call BIS_fnc_sortBy;
 		_playerCount = count _players;
 		_playerIndex = _players find player;
@@ -96,24 +96,40 @@ _code =
 				_entryName ctrlSetTextColor _textColor;
 
 				_entryPKills = _display displayCtrl scoreGUI_PListEntry_PKills(_id);
-				_entryPKills ctrlSetText str (([_player, "playerKills"] call fn_getScore) - ([_player, "teamKills"] call fn_getScore));
+				_entryPKills ctrlSetText str (([_player, "current_playerKills"] call fn_getScore) - ([_player, "current_teamKills"] call fn_getScore));
 				_entryPKills ctrlSetTextColor _textColor;
 
 				_entryAIKills = _display displayCtrl scoreGUI_PListEntry_AIKills(_id);
-				_entryAIKills ctrlSetText str ([_player, "aiKills"] call fn_getScore);
+				_entryAIKills ctrlSetText str ([_player, "current_aiKills"] call fn_getScore);
 				_entryAIKills ctrlSetTextColor _textColor;
 
 				_entryDeaths = _display displayCtrl scoreGUI_PListEntry_Deaths(_id);
-				_entryDeaths ctrlSetText str ([_player, "deathCount"] call fn_getScore);
+				_entryDeaths ctrlSetText str ([_player, "current_deathCount"] call fn_getScore);
 				_entryDeaths ctrlSetTextColor _textColor;
 
 				_entryRevives = _display displayCtrl scoreGUI_PListEntry_Revives(_id);
-				_entryRevives ctrlSetText str ([_player, "reviveCount"] call fn_getScore);
+				_entryRevives ctrlSetText str ([_player, "current_reviveCount"] call fn_getScore);
 				_entryRevives ctrlSetTextColor _textColor;
 
 				_entryCaptures = _display displayCtrl scoreGUI_PListEntry_Captures(_id);
-				_entryCaptures ctrlSetText str ([_player, "captureCount"] call fn_getScore);
+				_entryCaptures ctrlSetText str ([_player, "current_captureCount"] call fn_getScore);
 				_entryCaptures ctrlSetTextColor _textColor;
+
+				_entryAllKills = _display displayCtrl scoreGUI_PListEntry_AllKills(_id);
+				_entryAllKills ctrlSetText str (([_player, "playerKills"] call fn_getScore) - ([_player, "teamKills"] call fn_getScore));
+				_entryAllKills ctrlSetTextColor _textColor;
+
+				_entryAllDeaths = _display displayCtrl scoreGUI_PListEntry_AllDeaths(_id);
+				_entryAllDeaths ctrlSetText str ([_player, "deathCount"] call fn_getScore);
+				_entryAllDeaths ctrlSetTextColor _textColor;
+
+				_entryKillDeath = _display displayCtrl scoreGUI_PListEntry_KillDeath(_id);
+				if(([_player, "playerKills"] call fn_getScore) == 0 || ([_player, "deathCount"] call fn_getScore) == 0)then{
+					_entryKillDeath ctrlSetText str (0);
+				}else{
+					_entryKillDeath ctrlSetText str ((floor (((([_player, "playerKills"] call fn_getScore) - ([_player, "teamKills"] call fn_getScore)) / ([_player, "deathCount"] call fn_getScore)) * 100)) / 100);
+				};
+				_entryKillDeath ctrlSetTextColor _textColor;
 
 				_entry ctrlShow true;
 			}
