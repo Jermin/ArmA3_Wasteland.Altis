@@ -32,6 +32,7 @@ _boxList =
 		_box = createVehicle [_boxClass, _safePos, [], 0, "NONE"];
 		_box allowDamage false;
 		_box setVariable ["R3F_LOG_disabled",false,true];
+		_box setVariable ["allowDamage", false, true];
 
 		// Clear prexisting cargo first
 		clearMagazineCargoGlobal _box;
