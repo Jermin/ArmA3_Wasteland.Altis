@@ -65,7 +65,7 @@ _objName = getText (configFile >> "CfgVehicles" >> _objClass >> "displayName");
 	
 } forEach (call allVehStoreVehicles);
 
-	if (_type == "B_Plane_CAS_01_F" || _type == "O_Plane_CAS_02_F" || _type == "B_Heli_Attack_01_F") then
+	/*if (_type == "B_Plane_CAS_01_F" || _type == "O_Plane_CAS_02_F" || _type == "B_Heli_Attack_01_F") then
 	{	
 		_price = 50000;
 	};
@@ -73,7 +73,7 @@ _objName = getText (configFile >> "CfgVehicles" >> _objClass >> "displayName");
 	if (_type == "O_Heli_Light_02_F") then
 	{	
 		_price = 25000;
-	};
+	};*/
 
 	if (!isNil "_price") then 
 	{

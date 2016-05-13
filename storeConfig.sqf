@@ -812,7 +812,8 @@ tanksArray = compileFinal str
 	["M2A1 Slammer", "B_MBT_01_cannon_F", 20000, "vehicle"],
 	["M2A4 Slammer HMG", "B_MBT_01_TUSK_F", 22000, "vehicle"], // Commander gun variant
 	["T-100 Varsuk", "O_MBT_02_cannon_F", 24000, "vehicle"],
-	["MBT-52 Kuma", "I_MBT_03_cannon_F", 27000, "vehicle"]
+	["MBT-52 Kuma", "I_MBT_03_cannon_F", 27000, "vehicle"],
+	["M5 Sandstorm MLRS", "B_MBT_01_mlrs_F", 500000, "vehicle"]
 	//["M4 Scorcher", "B_MBT_01_arty_F", 50000, "vehicle"]
 ];
 
@@ -838,10 +839,10 @@ helicoptersArray = compileFinal str
 
 	["UH-80 Ghost Hawk (Black)", "B_Heli_Transport_01_F", 7500, "vehicle"], // UH-60 Stealth with 2 side miniguns
 	["AH-9 Pawnee", "B_Heli_Light_01_armed_F", 12000, "vehicle"], // Armed AH-6
-	//["PO-30 Orca (Armed, Black)", "O_Heli_Light_02_v2_F", 8000, "vehicle"], // Armed Ka-60
-	//["PO-30 Orca (Armed, Hex)", "O_Heli_Light_02_F", 15000, "vehicle"], // Armed Ka-60
+	["PO-30 Orca (Armed, Black)", "O_Heli_Light_02_v2_F", 30000, "vehicle"], // Armed Ka-60
+	["PO-30 Orca (Armed, Hex)", "O_Heli_Light_02_F", 31000, "vehicle"], // Armed Ka-60
 	["WY-55 Hellcat (Armed)", "I_Heli_light_03_F", 17500, "vehicle"], // Armed AW159
-	//["AH-99 Blackfoot", "B_Heli_Attack_01_F", 22500, "vehicle"], // RAH-66 with gunner
+	["AH-99 Blackfoot", "B_Heli_Attack_01_F", 100000, "vehicle"], // RAH-66 with gunner
 	["Mi-48 Kajman (Hex)", "O_Heli_Attack_02_F", 50000, "vehicle"] // Mi-28 with gunner
 ];
 
@@ -849,8 +850,8 @@ planesArray = compileFinal str
 [
 	["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 30000, "vehicle"],
 	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 50000, "vehicle"],
-	//["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 50000, "vehicle"],
-	//["To-199 Neophron CAS", "O_Plane_CAS_02_F", 50000, "vehicle"],
+	["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 100000, "vehicle"],
+	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 80000, "vehicle"],
 	//["MQ4A Greyhawk ATGM UAV", "B_UAV_02_F", 30000, "vehicle"],
 	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_CAS_F", 30000, "vehicle"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than ATGMs
 	//["K40 Ababil-3 ATGM UAV (CSAT)", "O_UAV_02_F", 30000, "vehicle"],

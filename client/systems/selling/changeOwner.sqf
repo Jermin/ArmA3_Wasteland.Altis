@@ -42,7 +42,7 @@ _price = 500;
 	};	
 } forEach (call allVehStoreVehicles);
 
-	if (_type == "B_Plane_CAS_01_F" || _type == "O_Plane_CAS_02_F" || _type == "B_Heli_Attack_01_F") then
+	/*if (_type == "B_Plane_CAS_01_F" || _type == "O_Plane_CAS_02_F" || _type == "B_Heli_Attack_01_F") then
 	{	
 		_price = 16500;
 	};
@@ -50,7 +50,7 @@ _price = 500;
 	if (_type == "O_Heli_Light_02_F") then
 	{	
 		_price = 10000;
-	};
+	};*/
 
 	if (!isNil "_price") then 
 	{
