@@ -230,7 +230,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					_object setRepairCargo 10;
 				};
 
-				case (_object isKindOf "B_Plane_CAS_01_F"):
+				/*case (_object isKindOf "B_Plane_CAS_01_F"):
 				{
 					_object setVehicleAmmoDef 0;
 					_object addMagazine "1000Rnd_Gatling_30mm_Plane_CAS_01_F";
@@ -252,7 +252,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					_object addMagazine "20Rnd_Rocket_03_AP_F";
 					_object addMagazine "2Rnd_Bomb_03_F";
 					_object addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1]];
-				};
+				};*/
 					
 				case (_object isKindOf "B_UAV_02_F"):
 				{
