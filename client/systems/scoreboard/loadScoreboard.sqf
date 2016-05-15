@@ -37,7 +37,7 @@ _code =
 			};
 		};
 
-		_scoreOrdering = { ((([_x, "current_playerKills"] call fn_getScore) - ([_x, "teamKills"] call fn_getScore)) * 1000) + ([_x, "current_aiKills"] call fn_getScore) };
+		_scoreOrdering = { ((([_x, "current_playerKills"] call fn_getScore) - ([_x, "current_teamKills"] call fn_getScore)) * 1000) + ([_x, "current_aiKills"] call fn_getScore) };
 		_players = [_allPlayers, [], _scoreOrdering, "DESCEND"] call BIS_fnc_sortBy;
 		_playerCount = count _players;
 		_playerIndex = _players find player;
