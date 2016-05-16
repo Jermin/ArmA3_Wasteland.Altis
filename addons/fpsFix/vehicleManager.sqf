@@ -35,7 +35,7 @@ A3W_vehicleManagerEventCode =
 A3W_incomingMissileCode =
 {
 	_vehicle = _this select 0;
-	if (player in (crew _vehicle) && (alive player)) then { playsound "alarm";};
+	if (player in (crew _vehicle) && (alive player)) then { playsound "alarm_tone";};
 } call mf_compile;
 
 A3W_vehicleManager =
