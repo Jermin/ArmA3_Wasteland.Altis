@@ -13,7 +13,7 @@ A3W_disableGlobalVoice = 1;        // Auto-switch channel to Direct communicatio
 A3W_uavControl = "group";          // Restrict connection to UAVs based on ownership ("owner", "group", "side")
 APOC_coolDownTimer = 1800;		   // APOC Air Drop Cool Down Time
 A3W_supportersEnabled = 1;		   // Enable/Disable Supporter Features
-A3W_disableUavFeed = 0;            // Force disable UAV PIP feed to prevent thermal camera abuse (0 = no, 1 = yes)
+A3W_disableUavFeed = 1;            // Force disable UAV PIP feed to prevent thermal camera abuse (0 = no, 1 = yes)
 
 // Time settings
 A3W_startHour = 10;                // In-game hour at mission start (0 to 23) - time is saved and restored between server restarts if A3W_timeSaving = 1
