@@ -252,7 +252,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					_object addMagazine "20Rnd_Rocket_03_AP_F";
 					_object addMagazine "2Rnd_Bomb_03_F";
 					_object addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1]];
-				};*/
+				};
 					
 				case (_object isKindOf "B_UAV_02_F"):
 				{
@@ -276,7 +276,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					_object addMagazine ["6Rnd_LG_scalpel", 3];
 					_object addMagazine ["Laserdesignator_mounted", [-1]];
 					_object addMagazineTurret ["60Rnd_CMFlare_Chaff_Magazine", [-1]];
-				};
+				};*/
 
 				case ({_object isKindOf _x} count ["B_Truck_01_Repair_F", "O_Truck_02_box_F", "O_Truck_03_repair_F", "I_Truck_02_box_F"] > 0):
 				{
