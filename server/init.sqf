@@ -164,6 +164,7 @@ if (isServer) then
 		"A3W_hcObjSavingID",
 		"A3W_supportersEnabled",
 		"APOC_coolDownTimer",
+		"A3W_disableBuiltInThermal",
 		"A3W_headshotNoRevive"
 	];
 
