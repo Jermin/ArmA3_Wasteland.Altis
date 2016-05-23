@@ -54,6 +54,8 @@ if (isServer) then
 			if (_unit call A3W_fnc_isUnconscious) then
 			{
 				[_unit] spawn dropPlayerItems;
+				[_uid, "deathCount", 1] call fn_addScore;
+				[_unit, objNull, objNull, true] call A3W_fnc_registerKillScore;
 			}
 			else
 			{
@@ -308,7 +310,7 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _timeSavingOn || _
 			{
 				waitUntil {scriptDone _this};
 
-				addMissionEventHandler ["PlayerConnected", { (_this select [1,3]) spawn fn_kickPlayerIfFlagged }];
+				addMissionEventHandler ["PlayerConnected", { _this spawn fn_kickPlayerIfFlagged }];
 
 				// force check for non-JIP players
 				{ waitUntil {!isNull player}; [player] remoteExec ["A3W_fnc_checkPlayerFlag", 2] } remoteExec ["call", -2];
