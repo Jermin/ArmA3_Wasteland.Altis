@@ -211,14 +211,16 @@ _code =
 
 				_teamName = if (_isGroup) then
 				{
-					format ["%1's group", name leader _team]
+					_teamCnt = count units _team;
+					format ["%1's group - ( %2 )", name leader _team, _teamCnt]
 				}
 				else
 				{
+					_teamCnt = _team countSide _allPlayers;
 					switch (_team) do
 					{
-						case BLUFOR: { "BLUFOR" };
-						case OPFOR:  { "OPFOR" };
+						case BLUFOR: { format ["BLUFOR - ( %1 )", _teamCnt] };
+						case OPFOR:  { format ["OPFOR - ( %1 )", _teamCnt] };
 						default      { "Aliens" };
 					};
 				};
