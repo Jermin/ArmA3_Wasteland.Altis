@@ -670,6 +670,7 @@ allStoreGear = compileFinal str (call headArray + call uniformArray + call vestA
 genObjectsArray = compileFinal str
 [
 	//["Base Re-Locker", "Land_Portable_generator_F", 100000, "object"],  //Cael817, SNAFU,Used for base operations <-- Non destroyable
+	["Winner's Podium", "Land_WinnersPodium_01_F", 250, "object"],
 	["Base Re-Locker", "Land_Device_assembled_F", 25000, "object"],  //Cael817, SNAFU,Used for base operations <-- Destroyable
 	["Food sacks", "Land_Sacks_goods_F", 5000, "object"], // Added on player request
 	["Water Barrel", "Land_BarrelWater_F", 5000, "object"], // Added on player request
@@ -869,11 +870,11 @@ planesArray = compileFinal str
 	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 50000, "vehicle"],
 	["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 100000, "vehicle"],
 	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 80000, "vehicle"],
-	["MQ4A Greyhawk ATGM UAV", "B_UAV_02_F", 50000, "vehicle"],
+	//["MQ4A Greyhawk ATGM UAV", "B_UAV_02_F", 50000, "vehicle"],
 	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_CAS_F", 30000, "vehicle"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than ATGMs
-	["K40 Ababil-3 ATGM UAV (CSAT)", "O_UAV_02_F", 50000, "vehicle"],
+	//["K40 Ababil-3 ATGM UAV (CSAT)", "O_UAV_02_F", 50000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (CSAT)", "O_UAV_02_CAS_F", 30000, "vehicle"],
-	["K40 Ababil-3 ATGM UAV (AAF)", "I_UAV_02_F", 50000, "vehicle"],
+	//["K40 Ababil-3 ATGM UAV (AAF)", "I_UAV_02_F", 50000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 30000, "vehicle"]
 ];
 

@@ -253,6 +253,7 @@ R3F_LOG_CFG_objets_transportables =
 	["Land_Grave_dirt_F", 4],
 	["Land_Grave_forest_F", 4],
 	["Land_Grave_rocks_F", 4],
+	["Land_WinnersPodium_01_F", 4],
 	["Land_Device_assembled_F", 10] //Re Locker
 ];
 
