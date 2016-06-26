@@ -29,7 +29,7 @@ if ((_isUnit && {isPlayer _player}) || {!_isUnit && !(_player in ["","0"])}) the
 	publicVariable _var;
 
 	//duplicate score without added db data to show current server round score
-	_var = format ["A3W_playerScore_current_%1_%2", _column, getPlayerUID _player];
+	_var = format ["A3W_playerScore_current_%1_%2", _column, _uid];
 	_val = missionNamespace getVariable [_var, 0];
 
 	missionNamespace setVariable [_var, _val + _score];
