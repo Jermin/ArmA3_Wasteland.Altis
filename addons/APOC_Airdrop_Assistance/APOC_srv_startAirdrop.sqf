@@ -78,6 +78,11 @@ _object = switch (_type) do {
 	{
 		_objectSpawnPos = [(_spos select 0), (_spos select 1), (_spos select 2) - 5];
 		_object = createVehicle [_selectionClass, _objectSpawnPos, [], 0, "None"];
+		if ({_object isKindOf _x} count ["B_Heli_Light_01_F", "B_Heli_Light_01_armed_F"] > 0) then {
+		  	_object addweapon "CMFlareLauncher";
+			_object addmagazine "60Rnd_CMFlare_Chaff_Magazine";
+			reload _object;
+		};
 		diag_log format ["Apoc's Airdrop Assistance - Object Spawned at %1", position _object];
 		_object setVariable ["A3W_purchasedStoreObject", true];
 		_object setVariable ["A3W_purchasedVehicle", true, true];
