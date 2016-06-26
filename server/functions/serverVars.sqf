@@ -38,11 +38,10 @@ lightMilitaryVehicles =
 	"O_Quadbike_01_F",
 	"I_Quadbike_01_F",
 	"I_G_Quadbike_01_F",
-	"O_Truck_02_covered_F",
 	//"I_Truck_02_covered_F",
 	//"O_Truck_02_transport_F",
 	//"I_Truck_02_transport_F",
-	//"I_G_Offroad_01_armed_F",
+	"I_G_Offroad_01_armed_F",
 	"B_Truck_01_transport_F",
 	"B_Truck_01_covered_F"
 ];
@@ -62,16 +61,16 @@ mediumMilitaryVehicles =
 //Water Vehicles - Random Spawns
 waterVehicles =
 [
-	"B_Lifeboat",
-	"O_Lifeboat",
+//	"B_Lifeboat",
+//	"O_Lifeboat",
 //	"C_Rubberboat",
 //	"B_SDV_01_F",
 //	"O_SDV_01_F",
 //	"I_SDV_01_F",
-//	"B_Boat_Transport_01_F",
-//	"O_Boat_Transport_01_F",
-//	"I_Boat_Transport_01_F",
-//	"I_G_Boat_Transport_01_F",
+	"B_Boat_Transport_01_F",
+	"O_Boat_Transport_01_F",
+	"I_Boat_Transport_01_F",
+	"I_G_Boat_Transport_01_F",
 	"B_Boat_Armed_01_minigun_F",
 	"O_Boat_Armed_01_hmg_F",
 	"I_Boat_Armed_01_minigun_F",
