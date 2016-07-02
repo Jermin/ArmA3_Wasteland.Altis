@@ -242,6 +242,8 @@ switch (_supporterLevel) do {
 				"V_RebreatherIA",
 				"V_PlateCarrier1_rgr",
 				"V_PlateCarrier1_blk",
+				"V_PlateCarrier2_rgr",
+				"V_PlateCarrier2_blk",
 				"V_PlateCarrier3_rgr",
 				"V_PlateCarrierGL_rgr",
 				"V_PlateCarrierGL_blk",
