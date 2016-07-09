@@ -342,5 +342,6 @@ while {true} do
 		};
 	};
 
+	enableEnvironment true;
 	uiSleep 1;
 };

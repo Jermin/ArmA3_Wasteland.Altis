@@ -68,27 +68,27 @@ rifleArray = compileFinal str
 	["Mk18 ABR Rifle", "srifle_EBR_F", 750],
 
 	// DLC
-	["Mk14 Rifle (Camo) [DLC]", "srifle_DMR_06_camo_F", 1000],
-	["Mk14 Rifle (Olive) [DLC]", "srifle_DMR_06_olive_F", 1000],
-	["Mk-I EMR Rifle [DLC]", "srifle_DMR_03_F", 1200],
-	["Mk-I EMR Rifle (Camo) [DLC]", "srifle_DMR_03_multicam_F", 1200],
-	["Mk-I EMR Rifle (Khaki) [DLC]", "srifle_DMR_03_khaki_F", 1200],
-	["Mk-I EMR Rifle (Sand) [DLC]", "srifle_DMR_03_tan_F", 1200],
-	["Mk-I EMR Rifle (Woodland) [DLC]", "srifle_DMR_03_woodland_F", 1200],
-	["MAR-10 Rifle [DLC]", "srifle_DMR_02_F", 1400],
-	["MAR-10 Rifle (Camo) [DLC]", "srifle_DMR_02_camo_F", 1600],
-	["MAR-10 Rifle (Sand) [DLC]", "srifle_DMR_02_sniper_F", 1600],
-	["Cyrus Rifle [DLC]", "srifle_DMR_05_blk_F", 2000],
-	["Cyrus Rifle (Hex) [DLC]", "srifle_DMR_05_hex_F", 2200],
-	["Cyrus Rifle (Tan) [DLC]", "srifle_DMR_05_tan_f", 2200],
+	["Mk14 Rifle (Camo)", "srifle_DMR_06_camo_F", 1000],
+	["Mk14 Rifle (Olive)", "srifle_DMR_06_olive_F", 1000],
+	["Mk-I EMR Rifle", "srifle_DMR_03_F", 1200],
+	["Mk-I EMR Rifle (Camo)", "srifle_DMR_03_multicam_F", 1200],
+	["Mk-I EMR Rifle (Khaki)", "srifle_DMR_03_khaki_F", 1200],
+	["Mk-I EMR Rifle (Sand)", "srifle_DMR_03_tan_F", 1200],
+	["Mk-I EMR Rifle (Woodland)", "srifle_DMR_03_woodland_F", 1200],
+	["MAR-10 Rifle", "srifle_DMR_02_F", 1400],
+	["MAR-10 Rifle (Camo)", "srifle_DMR_02_camo_F", 1600],
+	["MAR-10 Rifle (Sand)", "srifle_DMR_02_sniper_F", 1600],
+	["Cyrus Rifle", "srifle_DMR_05_blk_F", 2000],
+	["Cyrus Rifle (Hex)", "srifle_DMR_05_hex_F", 2200],
+	["Cyrus Rifle (Tan)", "srifle_DMR_05_tan_f", 2200],
 
 	// Sniper Rifles
 	["M320 LRR Sniper", "srifle_LRR_LRPS_F", 1500],
 	["M320 LRR Sniper (Camo)", "srifle_LRR_camo_LRPS_F", 2000],
 	["GM6 Lynx Sniper", "srifle_GM6_LRPS_F", 2500],
 	["GM6 Lynx Sniper (Camo)", "srifle_GM6_camo_LRPS_F", 3000],
-	["ASP-1 Kir Rifle [DLC]", "srifle_DMR_04_F", 800],
-	["ASP-1 Kir Rifle (Tan) [DLC]", "srifle_DMR_04_Tan_F", 1000]
+	["ASP-1 Kir Rifle", "srifle_DMR_04_F", 800],
+	["ASP-1 Kir Rifle (Tan)", "srifle_DMR_04_Tan_F", 1000]
 ];
 
 lmgArray = compileFinal str
@@ -443,15 +443,15 @@ uniformArray = compileFinal str
 	["Light Ghillie (NATO)", "U_B_GhillieSuit", 300, "uni"],
 	["Light Ghillie (CSAT)", "U_O_GhillieSuit", 300, "uni"],
 	["Light Ghillie (AAF)", "U_I_GhillieSuit", 300, "uni"],
-	["Full Ghillie (Arid) [DLC]", "U_B_FullGhillie_ard", 1000, "uni"],
-	["Full Ghillie (Arid) [DLC]", "U_O_FullGhillie_ard", 1000, "uni"],
-	["Full Ghillie (Arid) [DLC]", "U_I_FullGhillie_ard", 1000, "uni"],
-	["Full Ghillie (Lush) [DLC]", "U_B_FullGhillie_lsh", 1000, "uni"],
-	["Full Ghillie (Lush) [DLC]", "U_O_FullGhillie_lsh", 1000, "uni"],
-	["Full Ghillie (Lush) [DLC]", "U_I_FullGhillie_lsh", 1000, "uni"],
-	["Full Ghillie (Semi-Arid) [DLC]", "U_B_FullGhillie_sard", 1000, "uni"],
-	["Full Ghillie (Semi-Arid) [DLC]", "U_O_FullGhillie_sard", 1000, "uni"],
-	["Full Ghillie (Semi-Arid) [DLC]", "U_I_FullGhillie_sard", 1000, "uni"],
+	["Full Ghillie (Arid)", "U_B_FullGhillie_ard", 1000, "uni"],
+	["Full Ghillie (Arid)", "U_O_FullGhillie_ard", 1000, "uni"],
+	["Full Ghillie (Arid)", "U_I_FullGhillie_ard", 1000, "uni"],
+	["Full Ghillie (Lush)", "U_B_FullGhillie_lsh", 1000, "uni"],
+	["Full Ghillie (Lush)", "U_O_FullGhillie_lsh", 1000, "uni"],
+	["Full Ghillie (Lush)", "U_I_FullGhillie_lsh", 1000, "uni"],
+	["Full Ghillie (Semi-Arid)", "U_B_FullGhillie_sard", 1000, "uni"],
+	["Full Ghillie (Semi-Arid)", "U_O_FullGhillie_sard", 1000, "uni"],
+	["Full Ghillie (Semi-Arid)", "U_I_FullGhillie_sard", 1000, "uni"],
 	["Survival Fatigues (NATO)", "U_B_survival_uniform", 200, "uni"],
 	["Default Uniform (NATO)", "U_B_CombatUniform_mcam", 25, "uni"],
 	["Default Uniform (CSAT)", "U_O_OfficerUniform_ocamo", 25, "uni"],
@@ -605,8 +605,8 @@ genItemArray = compileFinal str
 	["Quadrotor UAV (NATO)", "B_UAV_01_backpack_F", 9500, "backpack"],
 	["Quadrotor UAV (CSAT)", "O_UAV_01_backpack_F", 9500, "backpack"],
 	["Quadrotor UAV (AAF)", "I_UAV_01_backpack_F", 9500, "backpack"],
-	["Remote Designator Bag (NATO) [DLC]", "B_Static_Designator_01_weapon_F", 2500, "backpack"],
-	["Remote Designator Bag (CSAT) [DLC]", "O_Static_Designator_02_weapon_F", 2500, "backpack"],
+	["Remote Designator Bag (Sand)", "B_Static_Designator_01_weapon_F", 2500, "backpack"],
+	["Remote Designator Bag (Hex)", "O_Static_Designator_02_weapon_F", 2500, "backpack"],
 	["GPS", "ItemGPS", 100, "gps"],
 	["First Aid Kit", "FirstAidKit", 25, "item"],
 	["Medikit", "Medikit", 150, "item"],
@@ -752,51 +752,57 @@ allGenStoreVanillaItems = compileFinal str (call genItemArray + call genObjectsA
 //Text name, classname, buy cost, spawn type, sell price (selling not implemented) or spawning color
 landArray = compileFinal str
 [
-	["Kart", "C_Kart_01_F", 200, "vehicle"],
+	// SKIPSAVE = will not be autosaved until first manual force save, good for cheap vehicles that usually get abandoned
 
-	["Quadbike (Civilian)", "C_Quadbike_01_F", 150, "vehicle"],
-	["Quadbike (NATO)", "B_Quadbike_01_F", 200, "vehicle"],
-	["Quadbike (CSAT)", "O_Quadbike_01_F", 200, "vehicle"],
-	["Quadbike (AAF)", "I_Quadbike_01_F", 200, "vehicle"],
-	["Quadbike (FIA)", "B_G_Quadbike_01_F", 200, "vehicle"],
+	["Kart", "C_Kart_01_F", 200, "vehicle", "SKIPSAVE"],
 
-	["Hatchback", "C_Hatchback_01_F", 400, "vehicle"],
-	["Hatchback Sport", "C_Hatchback_01_sport_F", 700, "vehicle"],
-	["SUV", "C_SUV_01_F", 750, "vehicle"],
-	["Offroad", "C_Offroad_01_F", 750, "vehicle"],
-	["Offroad Camo", "B_G_Offroad_01_F", 800, "vehicle"],
-	["Offroad Repair", "C_Offroad_01_repair_F", 1500, "vehicle"],
-	["Offroad HMG", "B_G_Offroad_01_armed_F", 2500, "vehicle"],
+	["Quadbike (Civilian)", "C_Quadbike_01_F", 150, "vehicle", "SKIPSAVE"],
+	["Quadbike (NATO)", "B_Quadbike_01_F", 200, "vehicle", "SKIPSAVE"],
+	["Quadbike (CSAT)", "O_Quadbike_01_F", 200, "vehicle", "SKIPSAVE"],
+	["Quadbike (AAF)", "I_Quadbike_01_F", 200, "vehicle", "SKIPSAVE"],
+	["Quadbike (FIA)", "B_G_Quadbike_01_F", 200, "vehicle", "SKIPSAVE"],
 
-	["Truck", "C_Van_01_transport_F", 250, "vehicle"],
-	["Truck (Camo)", "B_G_Van_01_transport_F", 300, "vehicle"],
-	["Truck Box", "C_Van_01_box_F", 300, "vehicle"],
-	["Fuel Truck", "C_Van_01_fuel_F", 2000, "vehicle"],
-	["Fuel Truck (Camo)", "B_G_Van_01_fuel_F", 2100, "vehicle"],
+	["Hatchback", "C_Hatchback_01_F", 400, "vehicle", "SKIPSAVE"],
+	["Hatchback Sport", "C_Hatchback_01_sport_F", 700, "vehicle", "SKIPSAVE"],
+	["SUV", "C_SUV_01_F", 750, "vehicle", "SKIPSAVE"],
+
+	["MB 4WD", "C_Offroad_02_unarmed_F", 1000, "vehicle", "SKIPSAVE"],
+	["MB 4WD (Guerilla)", "I_C_Offroad_02_unarmed_F", 900, "vehicle", "SKIPSAVE"],
+
+	["Offroad", "C_Offroad_01_F", 750, "vehicle", "SKIPSAVE"],
+	["Offroad Camo", "B_G_Offroad_01_F", 800, "vehicle", "SKIPSAVE"],
+	["Offroad Repair", "C_Offroad_01_repair_F", 1500, "vehicle", "SKIPSAVE"],
+	["Offroad HMG", "B_G_Offroad_01_armed_F", 2500, "vehicle", "SKIPSAVE"],
+
+	["Truck", "C_Van_01_transport_F", 250, "vehicle", "SKIPSAVE"],
+	["Truck (Camo)", "B_G_Van_01_transport_F", 300, "vehicle", "SKIPSAVE"],
+	["Truck Box", "C_Van_01_box_F", 300, "vehicle", "SKIPSAVE"],
+	["Fuel Truck", "C_Van_01_fuel_F", 2000, "vehicle", "SKIPSAVE"],
+	["Fuel Truck (Camo)", "B_G_Van_01_fuel_F", 2100, "vehicle", "SKIPSAVE"],
 
 	["HEMTT Tractor", "B_Truck_01_mover_F", 2000, "vehicle"],
+	["HEMTT Resupply", "B_Truck_01_ammo_F", 11000, "vehicle"],
+	//["HEMTT Box", "B_Truck_01_box_F", 4000, "vehicle"],
 	["HEMTT Transport", "B_Truck_01_transport_F", 3000, "vehicle"],
 	["HEMTT Covered", "B_Truck_01_covered_F", 4000, "vehicle"],
-	["HEMTT Box", "B_Truck_01_box_F", 4000, "vehicle"],
 	["HEMTT Fuel", "B_Truck_01_fuel_F", 5000, "vehicle"],
 	["HEMTT Medical", "B_Truck_01_medical_F", 6000, "vehicle"],
 	["HEMTT Repair", "B_Truck_01_Repair_F", 7500, "vehicle"],
-	["HEMTT Ammo", "B_Truck_01_ammo_F", 11000, "vehicle"],
 
 	["Tempest Device", "O_Truck_03_device_F", 2500, "vehicle"],
+	["Tempest Resupply", "O_Truck_03_ammo_F", 11000, "vehicle"],
 	["Tempest Transport", "O_Truck_03_transport_F", 3000, "vehicle"],
 	["Tempest Covered", "O_Truck_03_covered_F", 4000, "vehicle"],
 	["Tempest Fuel", "O_Truck_03_fuel_F", 5000, "vehicle"],
 	["Tempest Medical", "O_Truck_03_medical_F", 6000, "vehicle"],
 	["Tempest Repair", "O_Truck_03_repair_F", 7500, "vehicle"],
-	["Tempest Ammo", "O_Truck_03_ammo_F", 11000, "vehicle"],
 
+	["Zamak Resupply", "I_Truck_02_ammo_F", 10000, "vehicle"],
 	["Zamak Transport", "I_Truck_02_transport_F", 2000, "vehicle"],
 	["Zamak Covered", "I_Truck_02_covered_F", 3000, "vehicle"],
 	["Zamak Fuel", "I_Truck_02_fuel_F", 4000, "vehicle"],
 	["Zamak Medical", "I_Truck_02_medical_F", 6000, "vehicle"],
 	["Zamak Repair", "I_Truck_02_box_F", 7000, "vehicle"],
-	["Zamak Ammo", "I_Truck_02_ammo_F", 10000, "vehicle"],
 
 	["UGV Stomper (NATO)", "B_UGV_01_F", 3000, "vehicle"],
 	["UGV Stomper RCWS (NATO)", "B_UGV_01_rcws_F", 15000, "vehicle"],
@@ -808,13 +814,13 @@ landArray = compileFinal str
 
 armoredArray = compileFinal str
 [
-	["Hunter", "B_MRAP_01_F", 2000, "vehicle"],
+	["Hunter", "B_MRAP_01_F", 2000, "vehicle", "SKIPSAVE"],
 	["Hunter HMG", "B_MRAP_01_hmg_F", 7500, "vehicle"],
 	["Hunter GMG", "B_MRAP_01_gmg_F", 7500, "vehicle"],
-	["Ifrit", "O_MRAP_02_F", 2000, "vehicle"],
+	["Ifrit", "O_MRAP_02_F", 2000, "vehicle", "SKIPSAVE"],
 	["Ifrit HMG", "O_MRAP_02_hmg_F", 7500, "vehicle"],
 	["Ifrit GMG", "O_MRAP_02_gmg_F", 7500, "vehicle"],
-	["Strider", "I_MRAP_03_F", 2000, "vehicle"],
+	["Strider", "I_MRAP_03_F", 2000, "vehicle", "SKIPSAVE"],
 	["Strider HMG", "I_MRAP_03_hmg_F", 7500, "vehicle"],
 	["Strider GMG", "I_MRAP_03_gmg_F", 7500, "vehicle"],
 	["MSE-3 Marid", "O_APC_Wheeled_02_rcws_F", 10000, "vehicle"],
@@ -846,16 +852,16 @@ helicoptersArray = compileFinal str
 	["PO-30 Orca (Black)", "O_Heli_Light_02_unarmed_F", 4500, "vehicle"], // Ka-60
 	["WY-55 Hellcat (Green)", "I_Heli_light_03_unarmed_F", 4500, "vehicle"], // AW159
 	["CH-49 Mohawk", "I_Heli_Transport_02_F", 5500, "vehicle"], // AW101
-	["CH-46 Huron (Armed) [DLC]", "B_Heli_Transport_03_F", 15000, "vehicle"], 
-	["CH-46 Huron (Black) [DLC]", "B_Heli_Transport_03_unarmed_F", 10000, "vehicle"], 
-	["Mi-290 Taru (Crane) [DLC]", "O_Heli_Transport_04_F", 4500, "vehicle"], 
-	["Mi-290 Taru (Box) [DLC]", "O_Heli_Transport_04_box_F", 7500, "vehicle"],
-	["Mi-290 Taru (Transport) [DLC]", "O_Heli_Transport_04_covered_F", 7500, "vehicle"], 
-	["Mi-290 Taru (Ammo) [DLC]", "O_Heli_Transport_04_ammo_F", 10000, "vehicle"], 
-	["Mi-290 Taru (Bench) [DLC]", "O_Heli_Transport_04_bench_F", 6000, "vehicle"], 
-	["Mi-290 Taru (Fuel) [DLC]", "O_Heli_Transport_04_fuel_F", 6000, "vehicle"], 
-	["Mi-290 Taru (Medical) [DLC]", "O_Heli_Transport_04_medevac_F", 6000, "vehicle"], 
-	["Mi-290 Taru (Repair) [DLC]", "O_Heli_Transport_04_repair_F", 6000, "vehicle"],  
+	["CH-46 Huron (Armed)", "B_Heli_Transport_03_F", 15000, "vehicle"], 
+	["CH-46 Huron (Black)", "B_Heli_Transport_03_unarmed_F", 10000, "vehicle"], 
+	["Mi-290 Taru (Crane)", "O_Heli_Transport_04_F", 4500, "vehicle"], 
+	["Mi-290 Taru (Box)", "O_Heli_Transport_04_box_F", 7500, "vehicle"],
+	["Mi-290 Taru (Transport)", "O_Heli_Transport_04_covered_F", 7500, "vehicle"], 
+	["Mi-290 Taru (Ammo)", "O_Heli_Transport_04_ammo_F", 10000, "vehicle"], 
+	["Mi-290 Taru (Bench)", "O_Heli_Transport_04_bench_F", 6000, "vehicle"], 
+	["Mi-290 Taru (Fuel)", "O_Heli_Transport_04_fuel_F", 6000, "vehicle"], 
+	["Mi-290 Taru (Medical)", "O_Heli_Transport_04_medevac_F", 6000, "vehicle"], 
+	["Mi-290 Taru (Repair)", "O_Heli_Transport_04_repair_F", 6000, "vehicle"],  
 
 	["UH-80 Ghost Hawk (Black)", "B_Heli_Transport_01_F", 7500, "vehicle"], // UH-60 Stealth with 2 side miniguns
 	["AH-9 Pawnee", "B_Heli_Light_01_armed_F", 12000, "vehicle"], // Armed AH-6
@@ -874,30 +880,30 @@ planesArray = compileFinal str
 	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 80000, "vehicle"],
 	//["MQ4A Greyhawk ATGM UAV", "B_UAV_02_F", 50000, "vehicle"],
 	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_CAS_F", 30000, "vehicle"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than ATGMs
-	//["K40 Ababil-3 ATGM UAV (CSAT)", "O_UAV_02_F", 50000, "vehicle"],
-	["K40 Ababil-3 Bomber UAV (CSAT)", "O_UAV_02_CAS_F", 30000, "vehicle"],
-	//["K40 Ababil-3 ATGM UAV (AAF)", "I_UAV_02_F", 50000, "vehicle"],
-	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 30000, "vehicle"]
+	//["K40 Ababil-3 ATGM UAV, "O_UAV_02_F", 50000, "vehicle"],
+	["K40 Ababil-3 Bomber UAV", "O_UAV_02_CAS_F", 30000, "vehicle"],
+	//["K40 Ababil-3 ATGM UAV", "I_UAV_02_F", 50000, "vehicle"],
+	["K40 Ababil-3 Bomber UAV", "I_UAV_02_CAS_F", 30000, "vehicle"]
 ];
 
 boatsArray = compileFinal str
 [
-	["Rescue Boat", "C_Rubberboat", 500, "boat"],
-	["Rescue Boat (NATO)", "B_Lifeboat", 500, "boat"],
-	["Rescue Boat (CSAT)", "O_Lifeboat", 500, "boat"],
-	["Assault Boat (NATO)", "B_Boat_Transport_01_F", 600, "boat"],
-	["Assault Boat (CSAT)", "O_Boat_Transport_01_F", 600, "boat"],
-	["Assault Boat (AAF)", "I_Boat_Transport_01_F", 600, "boat"],
-	["Assault Boat (FIA)", "B_G_Boat_Transport_01_F", 600, "boat"],
-	["Motorboat", "C_Boat_Civil_01_F", 1000, "boat"],
-	["Motorboat Rescue", "C_Boat_Civil_01_rescue_F", 900, "boat"],
-	["Motorboat Police", "C_Boat_Civil_01_police_F", 1100, "boat"],
-	["Speedboat HMG (CSAT)", "O_Boat_Armed_01_hmg_F", 4000, "boat"],
-	["Speedboat Minigun (NATO)", "B_Boat_Armed_01_minigun_F", 4000, "boat"],
-	["Speedboat Minigun (AAF)", "I_Boat_Armed_01_minigun_F", 4000, "boat"],
-	["SDV Submarine (NATO)", "B_SDV_01_F", 1000, "submarine"],
-	["SDV Submarine (CSAT)", "O_SDV_01_F", 1000, "submarine"],
-	["SDV Submarine (AAF)", "I_SDV_01_F", 1000, "submarine"]
+	["Rescue Boat", "C_Rubberboat", 500, "boat", "SKIPSAVE"],
+	["Rescue Boat (NATO)", "B_Lifeboat", 500, "boat", "SKIPSAVE"],
+	["Rescue Boat (CSAT)", "O_Lifeboat", 500, "boat", "SKIPSAVE"],
+	["Assault Boat (NATO)", "B_Boat_Transport_01_F", 600, "boat", "SKIPSAVE"],
+	["Assault Boat (CSAT)", "O_Boat_Transport_01_F", 600, "boat", "SKIPSAVE"],
+	["Assault Boat (AAF)", "I_Boat_Transport_01_F", 600, "boat", "SKIPSAVE"],
+	["Assault Boat (FIA)", "B_G_Boat_Transport_01_F", 600, "boat", "SKIPSAVE"],
+	["Motorboat", "C_Boat_Civil_01_F", 1000, "boat", "SKIPSAVE"],
+	["Motorboat Rescue", "C_Boat_Civil_01_rescue_F", 900, "boat", "SKIPSAVE"],
+	["Motorboat Police", "C_Boat_Civil_01_police_F", 1100, "boat", "SKIPSAVE"],
+	["Speedboat HMG (CSAT)", "O_Boat_Armed_01_hmg_F", 4000, "boat", "SKIPSAVE"],
+	["Speedboat Minigun (NATO)", "B_Boat_Armed_01_minigun_F", 4000, "boat", "SKIPSAVE"],
+	["Speedboat Minigun (AAF)", "I_Boat_Armed_01_minigun_F", 4000, "boat", "SKIPSAVE"],
+	["SDV Submarine (NATO)", "B_SDV_01_F", 1000, "submarine", "SKIPSAVE"],
+	["SDV Submarine (CSAT)", "O_SDV_01_F", 1000, "submarine", "SKIPSAVE"],
+	["SDV Submarine (AAF)", "I_SDV_01_F", 1000, "submarine", "SKIPSAVE"]
 ];
 
 allVehStoreVehicles = compileFinal str (call landArray + call armoredArray + call tanksArray + call helicoptersArray + call planesArray + call boatsArray);
@@ -1059,6 +1065,12 @@ colorsArray = compileFinal str
 		"Heli_Transport_01_base_F",
 		[
 			["Green (Ghost Hawk)", ["Green"]]
+		]
+	],
+	[ // Zamak Hex paintjob
+		"Truck_02_base_F",
+		[
+			["Hex (Zamak)", ["Opfor"]]
 		]
 	],
 	[ // Strider NATO color
