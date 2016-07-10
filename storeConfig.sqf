@@ -766,9 +766,6 @@ landArray = compileFinal str
 	["Hatchback Sport", "C_Hatchback_01_sport_F", 700, "vehicle", "SKIPSAVE"],
 	["SUV", "C_SUV_01_F", 750, "vehicle", "SKIPSAVE"],
 
-	["MB 4WD", "C_Offroad_02_unarmed_F", 1000, "vehicle", "SKIPSAVE"],
-	["MB 4WD (Guerilla)", "I_C_Offroad_02_unarmed_F", 900, "vehicle", "SKIPSAVE"],
-
 	["Offroad", "C_Offroad_01_F", 750, "vehicle", "SKIPSAVE"],
 	["Offroad Camo", "B_G_Offroad_01_F", 800, "vehicle", "SKIPSAVE"],
 	["Offroad Repair", "C_Offroad_01_repair_F", 1500, "vehicle", "SKIPSAVE"],
