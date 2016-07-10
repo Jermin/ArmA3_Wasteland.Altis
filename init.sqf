@@ -29,8 +29,8 @@ X_Client = false;
 X_JIP = false;
 
 CHVD_allowTerrain = false;
-CHVD_maxView = 3000; // Set maximum view distance (default: 12000)
-CHVD_maxObj = 3000; // Set maximimum object view distance (default: 12000)
+CHVD_maxView = 4500; // Set maximum view distance (default: 12000)
+CHVD_maxObj = 4500; // Set maximimum object view distance (default: 12000)
 
 // versionName = ""; // Set in STR_WL_WelcomeToWasteland in stringtable.xml
 
