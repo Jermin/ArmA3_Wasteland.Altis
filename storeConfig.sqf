@@ -844,23 +844,26 @@ tanksArray = compileFinal str
 
 helicoptersArray = compileFinal str
 [
+	["M-900 Civilian", "C_Heli_Light_01_civil_F", 2000, "vehicle"], // MH-6, no flares
 	["MH-9 Hummingbird", "B_Heli_Light_01_F", 3000, "vehicle"], // MH-6
-	["M-900", "C_Heli_Light_01_civil_F", 2000, "vehicle"],
 	["PO-30 Orca (Black)", "O_Heli_Light_02_unarmed_F", 4500, "vehicle"], // Ka-60
 	["WY-55 Hellcat (Green)", "I_Heli_light_03_unarmed_F", 4500, "vehicle"], // AW159
 	["CH-49 Mohawk", "I_Heli_Transport_02_F", 5500, "vehicle"], // AW101
-	["CH-46 Huron (Armed)", "B_Heli_Transport_03_F", 15000, "vehicle"], 
-	["CH-46 Huron (Black)", "B_Heli_Transport_03_unarmed_F", 10000, "vehicle"], 
-	["Mi-290 Taru (Crane)", "O_Heli_Transport_04_F", 4500, "vehicle"], 
-	["Mi-290 Taru (Box)", "O_Heli_Transport_04_box_F", 7500, "vehicle"],
-	["Mi-290 Taru (Transport)", "O_Heli_Transport_04_covered_F", 7500, "vehicle"], 
-	["Mi-290 Taru (Ammo)", "O_Heli_Transport_04_ammo_F", 10000, "vehicle"], 
-	["Mi-290 Taru (Bench)", "O_Heli_Transport_04_bench_F", 6000, "vehicle"], 
-	["Mi-290 Taru (Fuel)", "O_Heli_Transport_04_fuel_F", 6000, "vehicle"], 
-	["Mi-290 Taru (Medical)", "O_Heli_Transport_04_medevac_F", 6000, "vehicle"], 
-	["Mi-290 Taru (Repair)", "O_Heli_Transport_04_repair_F", 6000, "vehicle"],  
 
-	["UH-80 Ghost Hawk (Black)", "B_Heli_Transport_01_F", 7500, "vehicle"], // UH-60 Stealth with 2 side miniguns
+	["Mi-290 Taru (Resupply)", "O_Heli_Transport_04_ammo_F", 4500, "vehicle"],
+	["Mi-290 Taru (Crane)", "O_Heli_Transport_04_F", 4500, "vehicle"], // CH-54
+	["Mi-290 Taru (Box)", "O_Heli_Transport_04_box_F", 7500, "vehicle"],
+	["Mi-290 Taru (Fuel)", "O_Heli_Transport_04_fuel_F", 6000, "vehicle"],
+	["Mi-290 Taru (Bench)", "O_Heli_Transport_04_bench_F", 6000, "vehicle"],
+	["Mi-290 Taru (Transport)", "O_Heli_Transport_04_covered_F", 7500, "vehicle"],
+
+	["Mi-290 Taru (Medical)", "O_Heli_Transport_04_medevac_F",6000, "vehicle"],
+	["Mi-290 Taru (Repair)", "O_Heli_Transport_04_repair_F", 6000, "vehicle"],
+	
+	["CH-67 Huron (Black)", "B_Heli_Transport_03_unarmed_F", 10000, "vehicle"], // CH-47
+	["CH-67 Huron (Armed)", "B_Heli_Transport_03_F", 15000, "vehicle"], // CH-47 with 2 side miniguns
+
+	["UH-80 Ghost Hawk", "B_Heli_Transport_01_F", 7500, "vehicle"], // UH-60 Stealth with 2 side miniguns
 	["AH-9 Pawnee", "B_Heli_Light_01_armed_F", 12000, "vehicle"], // Armed AH-6
 	["PO-30 Orca (Armed, Black)", "O_Heli_Light_02_v2_F", 15000, "vehicle"], // Armed Ka-60
 	["PO-30 Orca (Armed, Hex)", "O_Heli_Light_02_F", 30000, "vehicle"], // Armed Ka-60
@@ -1064,10 +1067,11 @@ colorsArray = compileFinal str
 			["Green (Ghost Hawk)", ["Green"]]
 		]
 	],
-	[ // Zamak Hex paintjob
+	[ // Zamak paintjobs
 		"Truck_02_base_F",
 		[
-			["Hex (Zamak)", ["Opfor"]]
+			["Hex (Zamak)", ["Opfor"]],
+			["Orange (Zamak)", ["Orange"]]
 		]
 	],
 	[ // Strider NATO color
