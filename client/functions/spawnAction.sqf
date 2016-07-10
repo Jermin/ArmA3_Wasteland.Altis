@@ -33,7 +33,7 @@ spawnActionHandle = (_this select 1) spawn
 		_baseMoney = ["A3W_startingMoney", 100] call getPublicVar;
 		switch (_supporterLevel) do
 		{
-			case 1: { player setVariable ["cmoney", _baseMoney + 1000, true]; [MF_ITEMS_CANNED_FOOD, 2] call mf_inventory_add; [MF_ITEMS_WATER, 2] call mf_inventory_add; [MF_ITEMS_SPAWN_BEACON, 1] call mf_inventory_add; };
+			case 1: { player setVariable ["cmoney", _baseMoney + 1000, true]; [MF_ITEMS_SPAWN_BEACON, 1] call mf_inventory_add; };
 			default { player setVariable ["cmoney", _baseMoney, true]; };
 		};
 
