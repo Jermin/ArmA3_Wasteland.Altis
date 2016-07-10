@@ -134,12 +134,14 @@ _setupObjects =
 		// Mi-48 Kajman
 		case (_vehicle isKindOf "Heli_Attack_02_base_F"):
 		{
-			/* _vehicle setVehicleAmmo 0;
+			_vehicle setVehicleAmmo 0;
 
 			// Custom load
 			_vehicle addMagazine "250Rnd_30mm_HE_shells";
 			_vehicle addMagazine ["38Rnd_80mm_rockets", 20];
-			_vehicle addmagazine ["8Rnd_LG_scalpel", 2]; */
+			_vehicle addmagazine ["8Rnd_LG_scalpel", 2]; 
+
+			// ============== Above is obsolete ==================
 
 			_vehicle removeWeaponTurret ["rockets_Skyfire",[0]];
 			_vehicle removeMagazinesTurret ["38Rnd_80mm_rockets",[0]];
