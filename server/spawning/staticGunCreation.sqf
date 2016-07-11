@@ -10,7 +10,7 @@
 if (!isServer) exitWith {};
 
 _objPos = _this select 0;
-_Objtype = staticWeaponsList select (random (count staticWeaponsList - 1));
+_Objtype = staticWeaponsList call fn_selectRandomNested;
 _obj = createVehicle [_Objtype,_objPos,[], 50,"None"];
 _obj setVariable ["R3F_LOG_disabled",false,true];
 
