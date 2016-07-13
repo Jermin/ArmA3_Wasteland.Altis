@@ -134,7 +134,9 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 			_object setVariable ["R3F_LOG_Disabled", false, true];
 			_object setVariable ["ownerName", name _player, true];
 
-			if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") > 0) then
+			private _isUAV = (round getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") > 0);
+
+			if (_isUAV) then
 			{
 				//assign AI to the vehicle so it can actually be used
 				createVehicleCrew _object;
@@ -183,7 +185,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 				// _object spawn cleanVehicleWreck;
 				_object setVariable ["A3W_purchasedVehicle", true, true];
 
-				if (["A3W_vehicleLocking"] call isConfigOn) then
+				if (["A3W_vehicleLocking"] call isConfigOn && !_isUAV) then
 				{
 					[_object, 2] call A3W_fnc_setLockState; // Lock
 				};
@@ -200,7 +202,8 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 
 			clearBackpackCargoGlobal _object;
 
-			switch (true) do
+			// don't need this anymore at all
+			/*switch (true) do
 			{
 				case ({_object isKindOf _x} count ["Box_NATO_AmmoVeh_F", "Box_East_AmmoVeh_F", "Box_IND_AmmoVeh_F"] > 0):
 				{
@@ -301,7 +304,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 				{
 					_object setRepairCargo 25;
 				};
-			};
+			};*/
 
 			if (_skipSave) then
 			{

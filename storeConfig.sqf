@@ -970,7 +970,7 @@ armoredArray = compileFinal str
 
 tanksArray = compileFinal str
 [
-	//["CRV-6e Bobcat", "B_APC_Tracked_01_CRV_F", 12500, "vehicle"],
+	["CRV-6e Bobcat (Resupply)", "B_APC_Tracked_01_CRV_F", 12500, "vehicle"],
 	["IFV-6c Panther", "B_APC_Tracked_01_rcws_F", 11000, "vehicle"],
 	["FV-720 Mora", "I_APC_tracked_03_cannon_F", 13000, "vehicle"],
 	["BTR-K Kamysh", "O_APC_Tracked_02_cannon_F", 18000, "vehicle"],
