@@ -97,6 +97,20 @@ switch (_boxType) do
 			["itm", ["muzzle_snds_B", ["muzzle_snds_338_black", "muzzle_snds_338_green", "muzzle_snds_338_sand"], ["muzzle_snds_93mmg", "muzzle_snds_93mmg_tan"]], RANDOM_BETWEEN(1,4)]
 		];
 	};
+	case "airdrop_DLC_Rifles_apex":
+	{
+		_boxItems =
+		[
+			// Item type, Item class(es), # of items, # of magazines per weapon
+			["wep", ["arifle_SPAR_01_khk_F", "arifle_CTAR_GL_blk_F", "arifle_AK12_F", "arifle_SPAR_03_khk_F"], 4,4],
+			["bac", ["B_Carryall_khk", "B_Bergen_tna_F"], RANDOM_BETWEEN(2,5)],
+			["itm", ["V_PlateCarrierIAGL_dgtl", "V_PlateCarrierSpec_tna_F", "V_PlateCarrier1_tna_F"], RANDOM_BETWEEN(4,8)],
+			["itm", ["bipod_01_F_blk", "bipod_01_F_khk"], 3],
+			["itm", ["optic_ERCO_khk_F","optic_AMS","optic_tws","optic_KHS_blk"], RANDOM_BETWEEN(3,5)],
+			["itm", "ItemGPS", RANDOM_BETWEEN(0,1)],
+			["itm", ["muzzle_snds_B_khk_F", "muzzle_snds_58_wdm_F", "muzzle_snds_58_blk_F"], RANDOM_BETWEEN(3,5)]
+		];
+	};
 	case "airdrop_DLC_Rifles":
 	{
 		_boxItems =

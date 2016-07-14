@@ -21,6 +21,7 @@ APOC_AA_SupOptions =
 ["Diving Gear",         "Diving_Gear",                       30000,  "supply"],
 ["Ammo Drop",           "Ammo_Drop",                         35000,  "supply"],
 ["Assault Rifles",      "mission_USSpecial",                 25000,  "supply"],
+["DLC Rifles (APEX)",   "airdrop_DLC_Rifles_apex",           35000,  "supply"],
 ["DLC Rifles",          "airdrop_DLC_Rifles",                35000,  "supply"],
 ["DLC LMGs",            "airdrop_DLC_LMGs",                  35000,  "supply"],
 ["Sniper Rifles",       "airdrop_Snipers",                   40000,  "supply"],
