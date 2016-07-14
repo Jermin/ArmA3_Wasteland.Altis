@@ -252,7 +252,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					_object setRepairCargo 10;
 				};
 
-				/*case (_object isKindOf "B_Plane_CAS_01_F"):
+				case (_object isKindOf "B_Plane_CAS_01_F"):
 				{
 					_object setVehicleAmmoDef 0;
 					_object addMagazine "1000Rnd_Gatling_30mm_Plane_CAS_01_F";
@@ -298,7 +298,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					_object addMagazine ["6Rnd_LG_scalpel", 3];
 					_object addMagazine ["Laserdesignator_mounted", [-1]];
 					_object addMagazineTurret ["60Rnd_CMFlare_Chaff_Magazine", [-1]];
-				};*/
+				};
 
 				case ({_object isKindOf _x} count ["B_Truck_01_Repair_F", "O_Truck_02_box_F", "O_Truck_03_repair_F", "I_Truck_02_box_F"] > 0):
 				{
