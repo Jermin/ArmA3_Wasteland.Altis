@@ -81,7 +81,7 @@ vehicleWeapons =
 	["arifle_MXC_F", "arifle_MX_F", "arifle_MX_GL_F", "arifle_MXM_F"],
 	["srifle_EBR_F", "srifle_DMR_01_F"],
 	["arifle_MX_SW_F", "LMG_Mk200_F", "LMG_Zafir_F"],
-	["launch_RPG32_F", "HandGrenade", "MiniGrenade"]
+	"launch_RPG32_F"
 ];
 
 vehicleAddition =
@@ -105,6 +105,8 @@ vehicleAddition =
 	"Medikit",
 	"Medikit",
 	"FirstAidKit",
+	"HandGrenade",
+	"MiniGrenade",
 	"ToolKit"
 ];
 
