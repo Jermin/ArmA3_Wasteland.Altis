@@ -13,7 +13,9 @@ params
 	["_killer", objNull, [objNull,""]], // killer unit or name string
 	["_friendlyFire", false, [false]], // friendly fire boolean, determines if teamkill message needs to be used
 	["_aiKiller", false, [false]], // AI killer boolean, ignored if mode = 0
-	["_cause", "", [""]] // cause of death string, ignored if mode = 0
+	["_cause", "", [""]], // cause of death string, ignored if mode = 0
+	["_v", objNull, [objNull,""]], // victim unit, ignored if mode = 0
+	["_k", objNull, [objNull,""]] // killer unit, ignored if mode = 0
 ];
 
 scopeName "fn_deathMessage";
@@ -59,7 +61,7 @@ if (_mode isEqualTo 0) then
 	private _killerName = if (alive _killer || isPlayer _killer) then { name _killer } else { "" };
 	_aiKiller = (!isNull _killer && !isPlayer _killer && isNil {_killer getVariable "cmoney"});
 
-	[1, _victimName, _killerName, _friendlyFire, _aiKiller, _cause] remoteExecCall ["A3W_fnc_deathMessage"];
+	[1, _victimName, _killerName, _friendlyFire, _aiKiller, _cause, _victim, _killer] remoteExecCall ["A3W_fnc_deathMessage"];
 }
 else
 {
@@ -109,4 +111,110 @@ else
 	};
 
 	systemChat _message;
+
+	private ["_weapon", "_distance", "_dyntxt"];
+
+	if (_cause == "headshot") then {
+	  if (_killer != "") then {
+		if (!_friendlyFire && local _v) then {
+
+			_dyntxt = "";
+			_distance = round (_v distance _k);
+			_weapon = currentWeapon _k;
+
+			//if killer is not vehicle
+			_txt = (gettext (configFile >> 'cfgWeapons' >> _weapon >> 'displayName'));
+			_pic = (gettext (configFile >> 'cfgWeapons' >> _weapon >> 'picture'));
+			_vehicleKillerType = typeOf(vehicle _k);
+
+			//if killer is a vehicle type, then we get vehicle picture
+			{
+				if(_vehicleKillerType isKindOf _x)exitWith{
+					_pic = (gettext (configFile >> 'CfgVehicles' >> _vehicleKillerType >> 'picture'));
+					//and if he was in a driver position of the vehicle, we get vehicle displayName aswell
+					if(_k isEqualTo (driver(vehicle _k)))then{
+						_txt = (gettext (configFile >> 'CfgVehicles' >> _vehicleKillerType >> 'displayName'));
+					};
+				};
+			}count ["LandVehicle","Air","Ship"];
+
+			//if weapon is a horn classname, then the killer was also driver, so we get vehicle displayName instead of weapon displayName
+			if(_weapon in ["Horn","MiniCarHorn","SportCarHorn","TruckHorn2","TruckHorn","BikeHorn","CarHorn","TruckHorn3"])then{
+				_txt = (gettext (configFile >> 'CfgVehicles' >> _vehicleKillerType >> 'displayName'));
+			};
+
+			_dyntxt = format["
+			<t size='0.75'align='left'shadow='1'color='#5882FA'>%1</t>
+			<t size='0.5'align='left'shadow='1'>  headshot  </t>
+			<t size='0.75'align='left'shadow='1'color='#c70000'>%2</t><br/>
+			<t size='0.45'align='left'shadow='1'> with: </t>
+			<t size='0.5'align='left'shadow='1'color='#FFCC00'>%3</t>
+			<t size='0.45'align='left'shadow='1'> - Distance: </t>
+			<t size='0.5'align='left'shadow='1'color='#FFCC00'>%4m</t><br/>
+			<img size='2.5'align='left'shadow='1'image='%5'/>
+			",
+			_killer,
+			_victim,
+			_txt,
+			_distance,
+			_pic
+			];
+
+			[_dyntxt,[safezoneX + 0.01 * safezoneW,2.0],[safezoneY + 0.01 * safezoneH,0.3],15,0.5] spawn BIS_fnc_dynamicText;
+		};
+	  };
+	};
+
+	if !(_cause in ["headshot", "slay", "bleedout", "suicide", "drown", "forcekill"]) then {
+	  if (_killer != "") then {
+	    if (!_friendlyFire) then {
+	      if (local _v) then {
+
+			_dyntxt = "";
+			_distance = round (_v distance _k);
+			_weapon = currentWeapon _k;
+
+			//if killer is not vehicle
+			_txt = (gettext (configFile >> 'cfgWeapons' >> _weapon >> 'displayName'));
+			_pic = (gettext (configFile >> 'cfgWeapons' >> _weapon >> 'picture'));
+			_vehicleKillerType = typeOf(vehicle _k);
+
+			//if killer is a vehicle type, then we get vehicle picture
+			{
+				if(_vehicleKillerType isKindOf _x)exitWith{
+					_pic = (gettext (configFile >> 'CfgVehicles' >> _vehicleKillerType >> 'picture'));
+					//and if he was in a driver position of the vehicle, we get vehicle displayName aswell
+					if(_k isEqualTo (driver(vehicle _k)))then{
+						_txt = (gettext (configFile >> 'CfgVehicles' >> _vehicleKillerType >> 'displayName'));
+					};
+				};
+			}count ["LandVehicle","Air","Ship"];
+
+			//if weapon is a horn classname, then the killer was also driver, so we get vehicle displayName instead of weapon displayName
+			if(_weapon in ["Horn","MiniCarHorn","SportCarHorn","TruckHorn2","TruckHorn","BikeHorn","CarHorn","TruckHorn3"])then{
+				_txt = (gettext (configFile >> 'CfgVehicles' >> _vehicleKillerType >> 'displayName'));
+			};
+
+			_dyntxt = format["
+			<t size='0.75'align='left'shadow='1'color='#5882FA'>%1</t>
+			<t size='0.5'align='left'shadow='1'>  killed  </t>
+			<t size='0.75'align='left'shadow='1'color='#c70000'>%2</t><br/>
+			<t size='0.45'align='left'shadow='1'> with: </t>
+			<t size='0.5'align='left'shadow='1'color='#FFCC00'>%3</t>
+			<t size='0.45'align='left'shadow='1'> - Distance: </t>
+			<t size='0.5'align='left'shadow='1'color='#FFCC00'>%4m</t><br/>
+			<img size='2.5'align='left'shadow='1'image='%5'/>
+			",
+			_killer,
+			_victim,
+			_txt,
+			_distance,
+			_pic
+			];
+
+			[_dyntxt,[safezoneX + 0.01 * safezoneW,2.0],[safezoneY + 0.01 * safezoneH,0.3],15,0.5] spawn BIS_fnc_dynamicText;
+		};
+	    };
+	  };
+	};
 };

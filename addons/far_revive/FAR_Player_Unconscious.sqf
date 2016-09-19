@@ -126,7 +126,7 @@ if (FAR_EnableDeathMessages && (round difficultyOption "deathMessages" > 0 || ["
 
 			if (!isNull _killer && {(isPlayer _killer || FAR_Debugging) && _killer != _victim}) then
 			{
-				_msgArr append [toArray name _killer, [_killer, _victim] call A3W_fnc_isFriendly];
+				_msgArr append [toArray name _killer, [_killer, _victim] call A3W_fnc_isFriendly, _killer];
 			};
 
 			[_victim, _msgArr] spawn

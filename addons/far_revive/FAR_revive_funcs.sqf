@@ -277,7 +277,7 @@ FAR_public_EH =
 
 		case "FAR_deathMessage":
 		{
-			_value params [["_unit",objNull,[objNull]], ["_unitName",[],[[]]], ["_killerName",[],[[]]], ["_friendlyFire",false,[false]]];
+			_value params [["_unit",objNull,[objNull]], ["_unitName",[],[[]]], ["_killerName",[],[[]]], ["_friendlyFire",false,[false]], ["_killer",objNull,[objNull]]];
 
 			if (alive _unit && !(_unitName isEqualTo [])) then
 			{
@@ -288,6 +288,56 @@ FAR_public_EH =
 				else
 				{
 					systemChat format ["%1 injured %2%3", toString _killerName, toString _unitName, [""," (friendly fire)"] select _friendlyFire];
+
+					private ["_weapon", "_distance", "_dyntxt"];
+
+					if (!_friendlyFire && local _unit) then {
+
+						_dyntxt = "";
+						_distance = round (_unit distance _killer);
+						_weapon = currentWeapon _killer;
+
+						//if killer is not vehicle
+						_txt = (gettext (configFile >> 'cfgWeapons' >> _weapon >> 'displayName'));
+						_pic = (gettext (configFile >> 'cfgWeapons' >> _weapon >> 'picture'));
+						_vehicleKillerType = typeOf(vehicle _killer);
+
+						//if killer is a vehicle type, then we get vehicle picture
+						{
+							if(_vehicleKillerType isKindOf _x)exitWith{
+								_pic = (gettext (configFile >> 'CfgVehicles' >> _vehicleKillerType >> 'picture'));
+								//and if he was in a driver position of the vehicle, we get vehicle displayName aswell
+								if(_killer isEqualTo (driver(vehicle _killer)))then{
+									_txt = (gettext (configFile >> 'CfgVehicles' >> _vehicleKillerType >> 'displayName'));
+								};
+							};
+						}count ["LandVehicle","Air","Ship"];
+
+						//if weapon is a horn classname, then the killer was also driver, so we get vehicle displayName instead of weapon displayName
+						if(_weapon in ["Horn","MiniCarHorn","SportCarHorn","TruckHorn2","TruckHorn","BikeHorn","CarHorn","TruckHorn3"])then{
+							_txt = (gettext (configFile >> 'CfgVehicles' >> _vehicleKillerType >> 'displayName'));
+						};
+
+						_dyntxt = format["
+						<t size='0.75'align='left'shadow='1'color='#5882FA'>%1</t>
+						<t size='0.5'align='left'shadow='1'>  injured  </t>
+						<t size='0.75'align='left'shadow='1'color='#c70000'>%2</t><br/>
+						<t size='0.45'align='left'shadow='1'> with: </t>
+						<t size='0.5'align='left'shadow='1'color='#FFCC00'>%3</t>
+						<t size='0.45'align='left'shadow='1'> - Distance: </t>
+						<t size='0.5'align='left'shadow='1'color='#FFCC00'>%4m</t><br/>
+						<img size='2.5'align='left'shadow='1'image='%5'/>
+						",
+						toString _killerName,
+						toString _unitName,
+						_txt,
+						_distance,
+						_pic
+						];
+
+						[_dyntxt,[safezoneX + 0.01 * safezoneW,2.0],[safezoneY + 0.01 * safezoneH,0.3],15,0.5] spawn BIS_fnc_dynamicText;
+
+					};
 				};
 			};
 		};
