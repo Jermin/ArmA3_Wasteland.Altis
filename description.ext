@@ -74,7 +74,7 @@ briefing = 0; // if 0, skip Continue button
 
 #include "addons\BoS\dialog\BoS_mainMenu.hpp"
 #include "addons\UniformPainter\dialog\UniformPainter_mainMenu.hpp"
-#include "addons\VehiclePainter\dialog\VehiclePainter_mainMenu.hpp"
+//#include "addons\VehiclePainter\dialog\VehiclePainter_mainMenu.hpp"	// Disabled due to occupy boat button
 #include "addons\AF_Keypad\AF_KP_defines.hpp"
 #include "addons\AF_Keypad\AF_KP_dialogs.hpp"
 #include "addons\parking\list_simple_menu.hpp"

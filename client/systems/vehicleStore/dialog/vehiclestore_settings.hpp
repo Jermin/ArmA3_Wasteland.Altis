@@ -214,7 +214,7 @@ class vehshopd
 			h = 0.040 * SZ_SCALE;
 		};
 		
-		class StoreButton6: w_RscButton
+		/*class StoreButton6: w_RscButton
 		{
 			idc = vehshop_button6;
 			action = "closeDialog 0;[] execVM 'addons\VehiclePainter\VehiclePainter_Check.sqf'";
@@ -225,7 +225,7 @@ class vehshopd
 			y = VehStoreMainBG_Y + (0.325 * SZ_SCALE);
 			w = 0.1173 * SZ_SCALE;
 			h = 0.040 * SZ_SCALE;
-		};
+		};*/
 	};
 };
 
