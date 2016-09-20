@@ -55,6 +55,7 @@ _setupObjects =
 		_soldier moveInCargo [_vehicle, 0];
 		_vehicle setVehicleLock "UNLOCKED";  // force vehicles to be unlocked
 		_vehicle setVariable ["R3F_LOG_disabled", false, true]; // force vehicles to be unlocked
+		_vehicle setVariable ["A3W_skipAutoSave", true, true];
 		_vehicle
 	};	
 	
@@ -79,6 +80,7 @@ _setupObjects =
 		_soldier moveInGunner _vehicle;
 		_vehicle setVehicleLock "UNLOCKED";  // force vehicles to be unlocked
 		_vehicle setVariable ["R3F_LOG_disabled", false, true]; // force vehicles to be unlocked
+		_vehicle setVariable ["A3W_skipAutoSave", true, true];
 		_vehicle
 	};
 
@@ -101,6 +103,7 @@ _setupObjects =
 		_soldier moveInCargo [_vehicle, 0];
 		_vehicle setVehicleLock "UNLOCKED";  // force vehicles to be unlocked
 		_vehicle setVariable ["R3F_LOG_disabled", false, true]; // force vehicles to be unlocked
+		_vehicle setVariable ["A3W_skipAutoSave", true, true];
 		_vehicle
 	};
 
