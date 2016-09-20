@@ -23,7 +23,7 @@ civilianVehicles =
 //Light Military Vehicle List - Random Spawns
 lightMilitaryVehicles =
 [
-	["I_G_Offroad_01_F", "I_G_Offroad_01_armed_F"], ["B_Truck_01_transport_F", "B_Truck_01_covered_F"]
+	["B_G_Offroad_01_F", "B_G_Offroad_01_armed_F"], ["B_Truck_01_transport_F", "O_Truck_03_transport_F"]
 ];
 
 //Medium Military Vehicle List - Random Spawns
