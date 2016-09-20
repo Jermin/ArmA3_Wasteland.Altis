@@ -122,16 +122,7 @@ switch (true) do
 			_vehicle addMagazineTurret ["300Rnd_20mm_shells", [-1]];
 		};
 	};
-	case (_class isKindOf "O_Heli_Attack_02_F"):
-	{
-		_vehicle removeWeaponTurret ["rockets_Skyfire",[0]];
-		_vehicle removeMagazinesTurret ["38Rnd_80mm_rockets",[0]];
-		
-		_vehicle  addWeaponTurret ["rockets_Skyfire", [-1]];
-		_vehicle addMagazineTurret ["38Rnd_80mm_rockets", [-1]];
-	};
-	
-	case (_class isKindOf "O_Heli_Attack_02_black_F"):
+	case ({_class isKindOf _x} count ["O_Heli_Attack_02_F", "O_T_VTOL_02_infantry_F"] > 0):
 	{
 		_vehicle removeWeaponTurret ["rockets_Skyfire",[0]];
 		_vehicle removeMagazinesTurret ["38Rnd_80mm_rockets",[0]];
