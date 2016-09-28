@@ -323,7 +323,7 @@ switch (_supporterLevel) do {
 				"V_HarnessO_ghex_F",
 				"V_HarnessOGL_brn",
 				"V_HarnessOGL_gry",
-				"V_HarnessOGL_ghex_F"
+				"V_HarnessOGL_ghex_F",
 				"V_HarnessOSpec_brn",
 				"V_HarnessOSpec_gry",
 				"V_BandollierB_blk",
@@ -458,7 +458,7 @@ switch (_supporterLevel) do {
 				"U_I_CombatUniform",
 				"U_B_CombatUniform_mcam_tshirt",
 				"U_B_CombatUniform_mcam_vest",
-				"U_B_T_Soldier_SL_F"
+				"U_B_T_Soldier_SL_F",
 				"U_B_T_Soldier_F",
 				"U_B_T_Soldier_AR_F",
 				"U_B_SpecopsUniform_sgg",
