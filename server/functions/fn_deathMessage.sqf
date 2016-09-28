@@ -112,15 +112,38 @@ else
 
 	systemChat _message;
 
-	private ["_weapon", "_distance", "_dyntxt"];
+	private ["_weapon", "_distance", "_disttxt", "_killercolor", "_dyntxt"];
 
 	if (_cause == "headshot") then {
 	  if (_killer != "") then {
 		if (!_friendlyFire && local _v) then {
 
+			_disttxt = "";
+			_killercolor = "";
 			_dyntxt = "";
 			_distance = round (_v distance _k);
 			_weapon = currentWeapon _k;
+
+			switch (str (side _k)) do { 
+				case "WEST" : {  _killercolor = "#004486" };
+				case "EAST" : {  _killercolor = "#6d0004" };
+				case "GUER" : {  _killercolor = "#016d00" };
+				default {  _killercolor = "#ca2bd8" };
+			};
+
+			switch (true) do { 
+				case (_distance < 100)) : {  _disttxt = "Less than 100" }; 
+				case (_distance < 200)) : {  _disttxt = "Over 100" };
+				case (_distance < 300)) : {  _disttxt = "Over 200" };
+				case (_distance < 400)) : {  _disttxt = "Over 300" };
+				case (_distance < 500)) : {  _disttxt = "Over 400" };
+				case (_distance < 600)) : {  _disttxt = "Over 500" };
+				case (_distance < 700)) : {  _disttxt = "Over 600" };
+				case (_distance < 800)) : {  _disttxt = "Over 700" };
+				case (_distance < 900)) : {  _disttxt = "Over 800" };
+				case (_distance < 1000)) : {  _disttxt = "Over 900" };
+				default {  _disttxt = str _distance }; 
+			};
 
 			//if killer is not vehicle
 			_txt = (gettext (configFile >> 'cfgWeapons' >> _weapon >> 'displayName'));
@@ -144,19 +167,18 @@ else
 			};
 
 			_dyntxt = format["
-			<t size='0.75'align='left'shadow='1'color='#5882FA'>%1</t>
-			<t size='0.5'align='left'shadow='1'>  headshot  </t>
-			<t size='0.75'align='left'shadow='1'color='#c70000'>%2</t><br/>
+			<t size='0.5'align='left'shadow='1'> You were headshot by  </t>
+			<t size='0.75'align='left'shadow='1'color='%1'>%2</t><br/>
 			<t size='0.45'align='left'shadow='1'> with: </t>
 			<t size='0.5'align='left'shadow='1'color='#FFCC00'>%3</t>
 			<t size='0.45'align='left'shadow='1'> - Distance: </t>
 			<t size='0.5'align='left'shadow='1'color='#FFCC00'>%4m</t><br/>
 			<img size='2.5'align='left'shadow='1'image='%5'/>
 			",
+			_killercolor,
 			_killer,
-			_victim,
 			_txt,
-			_distance,
+			_disttxt,
 			_pic
 			];
 
@@ -170,9 +192,32 @@ else
 	    if (!_friendlyFire) then {
 	      if (local _v) then {
 
+			_disttxt = "";
+			_killercolor = "";
 			_dyntxt = "";
 			_distance = round (_v distance _k);
 			_weapon = currentWeapon _k;
+
+			switch (str (side _k)) do { 
+				case "WEST" : {  _killercolor = "#004486" };
+				case "EAST" : {  _killercolor = "#6d0004" };
+				case "GUER" : {  _killercolor = "#016d00" };
+				default {  _killercolor = "#ca2bd8" };
+			};
+
+			switch (true) do { 
+				case (_distance < 100)) : {  _disttxt = "Less than 100" }; 
+				case (_distance < 200)) : {  _disttxt = "Over 100" };
+				case (_distance < 300)) : {  _disttxt = "Over 200" };
+				case (_distance < 400)) : {  _disttxt = "Over 300" };
+				case (_distance < 500)) : {  _disttxt = "Over 400" };
+				case (_distance < 600)) : {  _disttxt = "Over 500" };
+				case (_distance < 700)) : {  _disttxt = "Over 600" };
+				case (_distance < 800)) : {  _disttxt = "Over 700" };
+				case (_distance < 900)) : {  _disttxt = "Over 800" };
+				case (_distance < 1000)) : {  _disttxt = "Over 900" };
+				default {  _disttxt = str _distance }; 
+			};
 
 			//if killer is not vehicle
 			_txt = (gettext (configFile >> 'cfgWeapons' >> _weapon >> 'displayName'));
@@ -196,19 +241,18 @@ else
 			};
 
 			_dyntxt = format["
-			<t size='0.75'align='left'shadow='1'color='#5882FA'>%1</t>
-			<t size='0.5'align='left'shadow='1'>  killed  </t>
-			<t size='0.75'align='left'shadow='1'color='#c70000'>%2</t><br/>
+			<t size='0.5'align='left'shadow='1'> You were killed by  </t>
+			<t size='0.75'align='left'shadow='1'color='%1'>%2</t><br/>
 			<t size='0.45'align='left'shadow='1'> with: </t>
 			<t size='0.5'align='left'shadow='1'color='#FFCC00'>%3</t>
 			<t size='0.45'align='left'shadow='1'> - Distance: </t>
 			<t size='0.5'align='left'shadow='1'color='#FFCC00'>%4m</t><br/>
 			<img size='2.5'align='left'shadow='1'image='%5'/>
 			",
+			_killercolor,
 			_killer,
-			_victim,
 			_txt,
-			_distance,
+			_disttxt,
 			_pic
 			];
 
