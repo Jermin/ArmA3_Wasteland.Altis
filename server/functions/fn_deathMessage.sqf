@@ -132,16 +132,16 @@ else
 			};
 
 			switch (true) do { 
-				case (_distance < 100)) : {  _disttxt = "Less than 100" }; 
-				case (_distance < 200)) : {  _disttxt = "Over 100" };
-				case (_distance < 300)) : {  _disttxt = "Over 200" };
-				case (_distance < 400)) : {  _disttxt = "Over 300" };
-				case (_distance < 500)) : {  _disttxt = "Over 400" };
-				case (_distance < 600)) : {  _disttxt = "Over 500" };
-				case (_distance < 700)) : {  _disttxt = "Over 600" };
-				case (_distance < 800)) : {  _disttxt = "Over 700" };
-				case (_distance < 900)) : {  _disttxt = "Over 800" };
-				case (_distance < 1000)) : {  _disttxt = "Over 900" };
+				case (_distance < 100) : {  _disttxt = "Less than 100" }; 
+				case (_distance < 200) : {  _disttxt = "Over 100" };
+				case (_distance < 300) : {  _disttxt = "Over 200" };
+				case (_distance < 400) : {  _disttxt = "Over 300" };
+				case (_distance < 500) : {  _disttxt = "Over 400" };
+				case (_distance < 600) : {  _disttxt = "Over 500" };
+				case (_distance < 700) : {  _disttxt = "Over 600" };
+				case (_distance < 800) : {  _disttxt = "Over 700" };
+				case (_distance < 900) : {  _disttxt = "Over 800" };
+				case (_distance < 1000) : {  _disttxt = "Over 900" };
 				default {  _disttxt = str _distance }; 
 			};
 
@@ -206,16 +206,16 @@ else
 			};
 
 			switch (true) do { 
-				case (_distance < 100)) : {  _disttxt = "Less than 100" }; 
-				case (_distance < 200)) : {  _disttxt = "Over 100" };
-				case (_distance < 300)) : {  _disttxt = "Over 200" };
-				case (_distance < 400)) : {  _disttxt = "Over 300" };
-				case (_distance < 500)) : {  _disttxt = "Over 400" };
-				case (_distance < 600)) : {  _disttxt = "Over 500" };
-				case (_distance < 700)) : {  _disttxt = "Over 600" };
-				case (_distance < 800)) : {  _disttxt = "Over 700" };
-				case (_distance < 900)) : {  _disttxt = "Over 800" };
-				case (_distance < 1000)) : {  _disttxt = "Over 900" };
+				case (_distance < 100) : {  _disttxt = "Less than 100" }; 
+				case (_distance < 200) : {  _disttxt = "Over 100" };
+				case (_distance < 300) : {  _disttxt = "Over 200" };
+				case (_distance < 400) : {  _disttxt = "Over 300" };
+				case (_distance < 500) : {  _disttxt = "Over 400" };
+				case (_distance < 600) : {  _disttxt = "Over 500" };
+				case (_distance < 700) : {  _disttxt = "Over 600" };
+				case (_distance < 800) : {  _disttxt = "Over 700" };
+				case (_distance < 900) : {  _disttxt = "Over 800" };
+				case (_distance < 1000) : {  _disttxt = "Over 900" };
 				default {  _disttxt = str _distance }; 
 			};
 
