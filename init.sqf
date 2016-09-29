@@ -99,7 +99,8 @@ if (hasInterface || isServer) then
 	[] execVM "addons\JumpMF\init.sqf";
 	[] execVM "addons\outlw_magRepack\MagRepack_init.sqf";
 	[] execVM "addons\laptop\init.sqf";							// Addon for hack laptop mission
-	[] execVM "addons\zlt_fastrope\zlt_fastrope.sqf";
+	[] execVM "addons\AdvancedRappelling\AR_AdvancedRappelling\functions\fn_advancedRappellingInit.sqf";
+	[] execVM "addons\AdvancedRappelling\AUR_AdvancedUrbanRappelling\functions\fn_advancedUrbanRappellingInit.sqf";
 	[] execVM "addons\AF_Keypad\AF_KP_vars.sqf";				// Keypad for base locking
 	[] execVM "addons\APOC_Airdrop_Assistance\init.sqf";		// Airdrop
 	[] execVM "addons\HvT\HvT.sqf"; 							// High Value Target
