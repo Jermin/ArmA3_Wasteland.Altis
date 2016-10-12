@@ -8,7 +8,7 @@ class EditorData
 	toggles=6;
 	class ItemIDProvider
 	{
-		nextID=433;
+		nextID=443;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2;
+		nextID=26;
 	};
 	class Camera
 	{
-		pos[]={14517.74,28.344734,5794.0269};
-		dir[]={-0.029113516,-0.33855194,0.94050032};
-		up[]={-0.01047504,0.94094759,0.33839113};
-		aside[]={0.99952447,4.7344656e-008,0.030940793};
+		pos[]={20797.063,43.438057,6809.854};
+		dir[]={-0.75149095,-0.56127542,-0.34685871};
+		up[]={-0.50963062,0.82760775,-0.23522568};
+		aside[]={-0.41909277,7.8289304e-007,0.90799105};
 	};
 };
 binarizationWanted=0;
@@ -98,7 +98,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="A3Wasteland Altis v1.3b"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
+		briefingName="A3Wasteland Altis v1.3b";
 		overviewText="Wasteland survival sandbox by Team Wasteland - visit A3Wasteland.com for more details";
 		resistanceWest=0;
 		timeOfChanges=3e+038;
@@ -117,7 +117,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=259;
+		items=267;
 		class Item0
 		{
 			dataType="Group";
@@ -4708,7 +4708,7 @@ class Mission
 			fillName="DiagGrid";
 			a=60;
 			b=50;
-			angle=113.57082;
+			angle=113.57079;
 			id=349;
 		};
 		class Item192
@@ -5477,8 +5477,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3575.3025,12.993915,12800.407};
-				angles[]={0,5.2822738,0};
+				position[]={3372.8,4.1435494,13210};
+				angles[]={0,0.87739444,0};
 			};
 			side="Empty";
 			flags=4;
@@ -5488,7 +5488,7 @@ class Mission
 			};
 			id=408;
 			type="Land_Atm_02_F";
-			atlOffset=0.15870571;
+			atlOffset=0.0003900528;
 		};
 		class Item251
 		{
@@ -5513,8 +5513,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={25618.539,22.301409,21353.535};
-				angles[]={0,2.3768661,0};
+				position[]={25771.801,22.117319,21378};
+				angles[]={0,3.9430907,0};
 			};
 			side="Empty";
 			flags=4;
@@ -5524,15 +5524,14 @@ class Mission
 			};
 			id=410;
 			type="Land_Atm_02_F";
-			atlOffset=0.14756012;
 		};
 		class Item253
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9507.6455,119.6947,15937.184};
-				angles[]={0,0.076195836,0};
+				position[]={9289.5,121.91822,15871.5};
+				angles[]={0,1.2241913,0};
 			};
 			side="Empty";
 			flags=4;
@@ -5542,15 +5541,14 @@ class Mission
 			};
 			id=411;
 			type="Land_Atm_02_F";
-			atlOffset=0.092948914;
 		};
 		class Item254
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={21647.672,15.167987,7676.3281};
-				angles[]={0,4.0311179,0};
+				position[]={20720.4,32.294155,7231.5};
+				angles[]={0,4.1787896,0};
 			};
 			side="Empty";
 			flags=4;
@@ -5560,15 +5558,14 @@ class Mission
 			};
 			id=412;
 			type="Land_Atm_02_F";
-			atlOffset=-0.14465332;
 		};
 		class Item255
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={16774.918,19.767099,12594.562};
-				angles[]={0,4.7172933,0};
+				position[]={16706,19.956833,12779};
+				angles[]={0,0.64486426,0};
 			};
 			side="Empty";
 			flags=4;
@@ -5578,7 +5575,6 @@ class Mission
 			};
 			id=413;
 			type="Land_Atm_02_F";
-			atlOffset=0.066820145;
 		};
 		class Item256
 		{
@@ -5603,7 +5599,7 @@ class Mission
 			name="VanillaLayer";
 			class Entities
 			{
-				items=16;
+				items=18;
 				class Item0
 				{
 					dataType="Marker";
@@ -5620,7 +5616,7 @@ class Mission
 					name="Parking1_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=36.060291;
+					angle=36.060287;
 					id=417;
 				};
 				class Item2
@@ -5704,21 +5700,23 @@ class Mission
 				class Item10
 				{
 					dataType="Marker";
-					position[]={10743.5,20.083309,12136};
+					position[]={11739,20,11843.5};
 					name="Parking6";
 					type="Empty";
 					colorName="ColorBlack";
 					id=426;
+					atlOffset=-2.8480053;
 				};
 				class Item11
 				{
 					dataType="Marker";
-					position[]={10787.5,18.213291,12150};
+					position[]={11733,18.5,11874.5};
 					name="Parking6_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=215.59126;
+					angle=215.59106;
 					id=427;
+					atlOffset=-4.5400047;
 				};
 				class Item12
 				{
@@ -5755,12 +5753,34 @@ class Mission
 					name="Parking8_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=200.78294;
+					angle=200.78293;
 					id=431;
+				};
+				class Item16
+				{
+					dataType="Marker";
+					position[]={9154.4043,4.4303825e+012,21645.678};
+					name="Parking9";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=238.78671;
+					id=440;
+					atlOffset=4.4303825e+012;
+				};
+				class Item17
+				{
+					dataType="Marker";
+					position[]={9178.5,5.0225257e+011,21620.5};
+					name="Parking9_spawn";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=238.16312;
+					id=441;
+					atlOffset=5.0225257e+011;
 				};
 			};
 			id=415;
-			atlOffset=-51.881287;
+			atlOffset=1.358722e+012;
 		};
 		class Item258
 		{
@@ -5768,6 +5788,144 @@ class Mission
 			name="CustomLayer";
 			id=432;
 			atlOffset=185.97;
+		};
+		class Item259
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4563.5,300.97351,21384.5};
+				angles[]={0,2.2546029,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this] call A3W_fnc_setupMissionATM";
+			};
+			id=433;
+			type="Land_Atm_02_F";
+		};
+		class Item260
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9434.5,125.49993,20286.5};
+				angles[]={0,4.3471136,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this] call A3W_fnc_setupMissionATM";
+			};
+			id=434;
+			type="Land_Atm_02_F";
+		};
+		class Item261
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3972,6.3174539,15069.8};
+				angles[]={0,0.1600816,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this] call A3W_fnc_setupMissionATM";
+			};
+			id=435;
+			type="Land_Atm_02_F";
+			atlOffset=0.43599987;
+		};
+		class Item262
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11534,21.00881,9434};
+				angles[]={0,4.0873795,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this] call A3W_fnc_setupMissionATM";
+			};
+			id=436;
+			type="Land_Atm_02_F";
+		};
+		class Item263
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={18103,26.61145,15263.5};
+				angles[]={0,5.5360985,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this] call A3W_fnc_setupMissionATM";
+			};
+			id=437;
+			type="Land_Atm_02_F";
+		};
+		class Item264
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={22953.5,6.2534728,18875.5};
+				angles[]={0,0.61801493,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this] call A3W_fnc_setupMissionATM";
+			};
+			id=438;
+			type="Land_Atm_02_F";
+			atlOffset=4.7683716e-007;
+		};
+		class Item265
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={26719.5,21.810789,24601};
+				angles[]={0,5.4236379,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this] call A3W_fnc_setupMissionATM";
+			};
+			id=439;
+			type="Land_Atm_02_F";
+		};
+		class Item266
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={20788.5,37.286148,6806.5};
+				angles[]={0,4.2569594,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this] call A3W_fnc_setupMissionATM";
+			};
+			id=442;
+			type="Land_Atm_02_F";
+			atlOffset=0.23874664;
 		};
 	};
 };
