@@ -7,7 +7,7 @@
 if (!isServer) exitwith {};
 #include "patrolMissionDefines.sqf";
 
-private ["_convoyVeh","_veh1","_veh2","_veh3","_veh4","_veh5","_veh6","_createVehicle1","_createVehicle2","_createVehicle3","_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_cash", "_box1", "_box2", "_box3"];
+private ["_convoyVeh","_veh1","_veh2","_veh3","_veh4","_veh5","_veh6","_createVehicle1","_createVehicle2","_createVehicle3","_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_cash", "_box1", "_box2", "_box3", , "_randomBox", "_randomBox2", "_randomBox3"];
 
 _setupVars =
 {
@@ -173,19 +173,23 @@ _successExec =
 		_cash setVariable["owner","world",true];
 	};
 
+	_randomBox = selectRandom ["mission_USLaunchers","mission_Main_A3snipers","airdrop_DLC_LMGs","airdrop_DLC_Rifles_apex"];
+	_randomBox2 = selectRandom ["mission_USSpecial2","airdrop_Snipers","airdrop_DLC_Rifles","airdrop_Launchers"];
+	_randomBox3 = selectRandom ["mission_Main_A3snipers","airdrop_DLC_Rifles"];
+
 	_box1 = "Box_East_Wps_F" createVehicle getMarkerPos _marker;
-    [_box1,"mission_USLaunchers"] call fn_refillbox;
+    [_box1,_randomBox] call fn_refillbox;
 	_box1 allowDamage false;
 	
 	_box2 = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
-    [_box2,"mission_USSpecial2"] call fn_refillbox;
+    [_box2,_randomBox2] call fn_refillbox;
 	_box2 allowDamage false;
 	
 	_box3 = "Box_NATO_Support_F" createVehicle getMarkerPos _marker;
-    [_box3,"mission_Main_A3snipers"] call fn_refillbox;
+    [_box3,_randomBox3] call fn_refillbox;
 	_box3 allowDamage false;
 
-	_successHintMessage = "The patrol has been stopped, the money, crates and vehicles are yours to take.";
+	_successHintMessage = "The patrol has been stopped. The money, crates and vehicles are yours to take.";
 };
 
 _this call patrolMissionProcessor;
