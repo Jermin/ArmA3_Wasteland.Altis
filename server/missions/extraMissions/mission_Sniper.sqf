@@ -25,7 +25,7 @@ _setupObjects =
 	_aiGroup setCombatMode "RED";
 	_aiGroup setBehaviour "COMBAT";
 	
-	_missionHintText = format ["A Sniper Nest has been spotted. Head to the marked area and take them out! Be careful they are fully armed and dangerous!", sideMissionColor];
+	_missionHintText = "A Sniper Nest has been spotted. Head to the marked area and take them out! Be careful they are fully armed and dangerous!";
 };
 
 _waitUntilMarkerPos = nil;

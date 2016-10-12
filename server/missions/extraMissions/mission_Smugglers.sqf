@@ -53,7 +53,7 @@ _setupObjects =
 	
 	_missionPicture = getText (configFile >> "CfgVehicles" >> _smugglerVeh >> "picture");
 	
-	_missionHintText = format ["A group of smugglers have been spotted. Stop the deal and take their weapons and drugs.", mainMissionColor];
+	_missionHintText = "A group of smugglers have been spotted. Stop the deal and take their weapons and drugs.";
 };
 	
 _waitUntilMarkerPos = nil;
