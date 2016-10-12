@@ -11,7 +11,7 @@ private ["_convoyVeh","_veh1","_veh2","_veh3","_veh4","_veh5","_veh6","_createVe
 
 _setupVars =
 {
-	_missionType = "Military Patrol";
+	_missionType = "Airfield Patrol";
 	_locationsArray = PatrolConvoyPaths;
 };
 
@@ -23,8 +23,9 @@ _setupObjects =
 	// Pick the vehicles for the patrol. Only one set at the moment. Will add more later.
 	_convoyVeh = 
 	[	
-		["I_G_Offroad_01_F","O_MBT_02_cannon_F","I_MRAP_03_F","O_APC_Tracked_02_AA_F","I_MBT_03_cannon_F","I_G_Offroad_01_F"],
-		["I_G_Offroad_01_F","O_MBT_02_cannon_F","I_MRAP_03_F","O_APC_Tracked_02_AA_F","I_MBT_03_cannon_F","I_G_Offroad_01_F"]
+		["B_T_LSV_01_unarmed_F","O_MBT_02_cannon_F","I_MRAP_01_F","O_APC_Tracked_02_AA_F","I_MBT_03_cannon_F","B_T_LSV_01_unarmed_F"],
+		["I_G_Offroad_01_F","B_MBT_01_cannon_F","O_MRAP_02_F","B_APC_Tracked_01_AA_F","I_APC_Wheeled_03_cannon_F","I_G_Offroad_01_F"],
+		["O_T_LSV_02_unarmed_F","B_MBT_01_TUSK_F","B_MRAP_03_F","B_APC_Tracked_01_AA_F","B_APC_Wheeled_01_cannon_F","O_T_LSV_02_unarmed_F"]
 	] call BIS_fnc_selectRandom;
 	
 	_veh1 = _convoyVeh select 0;
@@ -147,7 +148,7 @@ _setupObjects =
 	_vehicleName2 = getText (configFile >> "CfgVehicles" >> _veh4 >> "displayName");
 	_vehicleName3 = getText (configFile >> "CfgVehicles" >> _veh5 >> "displayName");
 	
-	_missionHintText = format ["A convoy containing at least a <t color='%4'>%1</t>, a <t color='%4'>%2</t> and a <t color='%4'>%3</t> is patrolling a high value location! Stop the patrol and capture the goods and money!", _vehicleName, _vehicleName2, _vehicleName3, patrolMissionColor];
+	_missionHintText = format ["A convoy containing at least a <t color='%4'>%1</t>, a <t color='%4'>%2</t> and a <t color='%4'>%3</t> is patrolling an airfield! Stop the patrol and capture the goods and money!", _vehicleName, _vehicleName2, _vehicleName3, patrolMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
