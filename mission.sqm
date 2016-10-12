@@ -98,8 +98,8 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="A3Wasteland Altis v1.3b";
-		overviewText="Wasteland survival sandbox by Team Wasteland - visit A3Wasteland.com for more details";
+		briefingName="ESPC Wasteland PvP Armord Warfare - arma.espc.asia";
+		overviewText="A3Wasteland by Team Wasteland - customized by ESPC";
 		resistanceWest=0;
 		timeOfChanges=3e+038;
 		startWeather=0;

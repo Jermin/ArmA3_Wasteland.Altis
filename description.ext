@@ -22,11 +22,11 @@ class Header
 	minPlayers=1;
 	maxPlayers=146; // 144 players, 2 headless clients
 };
-author="ARMA.ESPC.ASIA & AgentRev - A3Wasteland.com"; // it would be if you could keep "A3Wasteland.com" in the name, like "YourName and A3Wasteland.com" :)
-onLoadName = "A3Wasteland Altis"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
-onLoadMission = "Wasteland is a harsh survival sandbox where two teams and independent players fight for survival.";
-overviewText = "Wasteland is a harsh survival sandbox where two teams and independent players fight for survival.";
-overviewTextLocked = "Wasteland is a harsh survival sandbox where two teams and independent players fight for survival.";
+author="AgentRev - A3Wasteland.com | Customized by ESPC";
+onLoadName = "ESPC Wasteland Altis";
+onLoadMission = "Team up with other players, establish your base and wipe out other teams.";
+overviewText = "Team up with other players, establish your base and wipe out other teams.";
+overviewTextLocked = "Team up with other players, establish your base and wipe out other teams.";
 overviewPicture = "mapConfig\Loading.jpg";
 loadScreen = "mapConfig\Loading.jpg";
 briefing = 0; // if 0, skip Continue button
