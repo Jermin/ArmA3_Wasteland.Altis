@@ -25,7 +25,7 @@ APOC_AA_SupOptions =
 ["DLC Rifles",          "airdrop_DLC_Rifles",                35000,  "supply"],
 ["DLC LMGs",            "airdrop_DLC_LMGs",                  35000,  "supply"],
 ["Sniper Rifles",       "airdrop_Snipers",                   40000,  "supply"],
-["Launchers",           "mission_USLaunchers",               40000,  "supply"],
+["Launchers",           "airdrop_Launchers",               	 40000,  "supply"],
 
 //"Menu Text",          "Food Type",                         Price,  "Drop type"]
 ["Food",                "Land_Sacks_goods_F",                5000,  "picnic"],

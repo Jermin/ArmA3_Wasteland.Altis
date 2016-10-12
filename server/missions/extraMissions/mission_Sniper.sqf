@@ -7,7 +7,7 @@
 if (!isServer) exitwith {};
 #include "extraMissionDefines.sqf";
 
-private ["_positions", "_boxes1", "_currBox1", "_box1"];
+private ["_positions", "_box1", "_box2", "_missionPos", "_randomBox", "_randomBox2"];
 
 _setupVars =
 {
@@ -20,12 +20,12 @@ _setupVars =
 _setupObjects =
 {
 	_aiGroup = createGroup CIVILIAN;
-	[_aiGroup,_missionPos] spawn createsniperGroup;
+	[_aiGroup,_missionPos] call createsniperGroup;
 
 	_aiGroup setCombatMode "RED";
 	_aiGroup setBehaviour "COMBAT";
 	
-	_missionHintText = format ["A Sniper Nest has been spotted. Head to the marked area and Take them out! Be careful they are fully armed and dangerous!", extraMissionColor];
+	_missionHintText = format ["A Sniper Nest has been spotted. Head to the marked area and take them out! Be careful they are fully armed and dangerous!", sideMissionColor];
 };
 
 _waitUntilMarkerPos = nil;
@@ -40,14 +40,19 @@ _failedExec =
 _successExec =
 {
 	// Mission completed
+	_randomBox = selectRandom ["mission_USLaunchers","mission_Main_A3snipers","airdrop_DLC_LMGs","airdrop_DLC_Rifles_apex"];
+	_randomBox2 = selectRandom ["mission_USSpecial","airdrop_Snipers","airdrop_DLC_Rifles","airdrop_Launchers"];
+	_box1 = createVehicle ["Box_East_WpsSpecial_F", _missionPos, [], 2, "None"];
+	_box1 setDir random 360;
+	[_box1, _randomBox] call fn_refillbox;
 	
-	_boxes1 = ["Box_East_WpsSpecial_F","Box_IND_WpsSpecial_F"];
-	_currBox1 = _boxes1 call BIS_fnc_selectRandom;
-	_box1 = createVehicle [_currBox1, _lastPos, [], 2, "None"];
-	_box1 allowDamage false;
-	_box1 setVariable ["R3F_LOG_disabled", false, true];
+	_box2 = createVehicle ["Box_IND_WpsSpecial_F", _missionPos, [], 2, "None"];
+	_box2 setDir random 360;
+	[_box2, _randomBox2] call fn_refillbox;
 
-	_successHintMessage = format ["The snipers are dead! Well Done!"];
+	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2];
+	
+	_successHintMessage = format ["The snipers are dead. Well Done."];
 };
 
 _this call extraMissionProcessor;

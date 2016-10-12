@@ -45,6 +45,9 @@ createGroup2= [_path, "createUnits\Group2.sqf"] call mf_compile;
 createGroup3= [_path, "createUnits\Group3.sqf"] call mf_compile;
 createGroup4= [_path, "createUnits\Group4.sqf"] call mf_compile;
 createGroup5= [_path, "createUnits\Group5.sqf"] call mf_compile;
+createCustomGroup3 = [_path, "createUnits\customGroup3.sqf"] call mf_compile;
+addDefensiveMines = [_path, "createUnits\addDefensiveMines.sqf"] call mf_compile;
+createCustomGroup4 = [_path, "createUnits\customGroup4.sqf"] call mf_compile;
 
 //Function Compiles
 _path = "server\functions";
@@ -81,6 +84,7 @@ punishTeamKiller = [_path, "punishTeamKiller.sqf"] call mf_compile;
 refillPrimaryAmmo = [_path, "refillPrimaryAmmo.sqf"] call mf_compile;
 respawnEventServer = [_path, "respawnEventServer.sqf"] call mf_compile;
 setMissionSkill = [_path, "setMissionSkill.sqf"] call mf_compile;
+setMissionSkillConvoy = [_path, "setMissionSkillConvoy.sqf"] call mf_compile;
 spawnStoreObject = [_path, "spawnStoreObject.sqf"] call mf_compile;
 teamKillUnlock = [_path, "teamKillUnlock.sqf"] call mf_compile;
 teamSwitchLock = [_path, "teamSwitchLock.sqf"] call mf_compile;
