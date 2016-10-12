@@ -40,6 +40,7 @@ _player addWeapon "SMG_01_F";
 _player addMagazine "30Rnd_45ACP_Mag_SMG_01_tracer_green";
 _player addMagazine "30Rnd_45ACP_Mag_SMG_01_tracer_green";
 _player addMagazine "30Rnd_45ACP_Mag_SMG_01_tracer_green";
+_player addPrimaryWeaponItem "muzzle_snds_acp";
 _player addMagazine "9Rnd_45ACP_Mag";
 _player addWeapon "hgun_ACPC2_F";
 _player addMagazine "9Rnd_45ACP_Mag";
