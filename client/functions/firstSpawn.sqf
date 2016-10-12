@@ -8,6 +8,7 @@
 
 client_firstSpawn = true;
 
+[] execVM "addons\scripts\infoPage.sqf";
 [] execVM "client\functions\welcomeMessage.sqf";
 
 // if this is the first spawn start the timer

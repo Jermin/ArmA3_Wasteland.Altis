@@ -55,19 +55,19 @@ switch (true) do
 	};
 	
 	// Holster - unholster weapon (H key)
-	case (_key == 35):
+	// A3 v1.58 bug, holstering handgun while crouched causes infinite anim loop
+	case (_key in A3W_customKeys_holster):
 	{
-		if (vehicle player == player && currentWeapon player != "") then
+		
+		if (currentweapon player != "" && (stance player != 'CROUCH' || currentWeapon player != handgunWeapon player)) then	
 		{
-			curWep_h = currentWeapon player;
 			player action ["SwitchWeapon", player, player, 100];
+			["You holstered your weapon!", 5] call mf_notify_client;
 		}
 		else
 		{
-			if (curWep_h in [primaryWeapon player,secondaryWeapon player,handgunWeapon player]) then
-			{
-				player selectWeapon curWep_h;
-			};
+			player action ["SwitchWeapon", player, player, 0];
+			["You Unholster your weapon!", 5] call mf_notify_client;
 		};
 	};
 };
@@ -112,11 +112,12 @@ if (!_handled && _key in actionKeys "GetOut") then
 	{
 		if (_veh isKindOf 'Air' && !(_veh isKindOf 'ParachuteBase')) then
 		{
-			[] spawn
+			[[], fn_emergencyEject] execFSM "call.fsm";
+			/*[] spawn
 			{
 				if !(["Are you sure you want to eject?", "Confirm", true, true] call BIS_fnc_guiMessage) exitWith {};
 				[[], fn_emergencyEject] execFSM "call.fsm";
-			};
+			};*/
 		};
 	};
 };

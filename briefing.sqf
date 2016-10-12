@@ -497,7 +497,7 @@ player createDiaryRecord ["infos",
 <br/>" + NKEYNAME(41) + " (open player menu)
 <br/>" + NKEYNAME(207) + " (toggle earplugs)
 <br/>" + NKEYNAME(199) + ", " + NKEYNAME(219) + ", " + NKEYNAME(220) + " (toggle player names)
-<br/>Ctrl + " + AKEYNAME("GetOut") + " (emergency eject)
+<br/>" + AKEYNAME("GetOut") + " (emergency eject)
 <br/>" + AKEYNAME("GetOver") + " (open parachute)
 <br/>Shift + " + NKEYNAME(201) + " / " + NKEYNAME(209) + " (adjust nightvision)
 <br/>" + NKEYNAME(22) + " (admin menu)
