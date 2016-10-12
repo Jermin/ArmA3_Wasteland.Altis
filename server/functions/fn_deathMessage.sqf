@@ -188,7 +188,7 @@ else
 	};
 
 	if !(_cause in ["headshot", "slay", "bleedout", "suicide", "drown", "forcekill"]) then {
-	  if (_killer != "") then {
+	  if (!_aiKiller && {_killer != ""}) then {
 	    if (!_friendlyFire) then {
 	      if (local _v) then {
 
