@@ -9,7 +9,8 @@
 client_firstSpawn = true;
 
 [] execVM "addons\scripts\infoPage.sqf";
-[] execVM "client\functions\welcomeMessage.sqf";
+// [] execVM "client\functions\welcomeMessage.sqf";
+[] execVM "addons\TOParmaInfo\loadTOParmaInfo.sqf";
 
 // if this is the first spawn start the timer
 if(format["%1",firstspawn] == format["%1","1"]) then {

@@ -205,5 +205,13 @@ class playerSettings {
 			x = 0.02; y = 0.57;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
+
+		class TTparmaInfoButton : w_RscButton {
+		idc = -1;
+		text = "ESPC Information";
+		onButtonClick = "[] execVM 'addons\TOParmaInfo\loadTOParmaInfo.sqf'";
+		x = 0.225; y = 0.2;
+		w = 0.225; h = 0.033 * safezoneH;
+		};
 	};
 };
