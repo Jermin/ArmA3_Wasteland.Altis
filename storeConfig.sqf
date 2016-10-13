@@ -988,9 +988,9 @@ armoredArray = compileFinal str
 [
 	["Prowler (Doorless)", "B_CTRG_LSV_01_light_F", 1500, "vehicle", "SKIPSAVE"],
 	["Prowler", "B_T_LSV_01_unarmed_F", 2000, "vehicle", "SKIPSAVE"],
-	["Prowler HMG", "B_T_LSV_01_armed_F", 6000, "vehicle", "SKIPSAVE"],
+	["Prowler HMG", "B_T_LSV_01_armed_F", 6000, "vehicle"],
 	["Qilin", "O_T_LSV_02_unarmed_F", 2000, "vehicle", "SKIPSAVE"],
-	["Qilin Minigun", "O_T_LSV_02_armed_F", 6000, "vehicle", "SKIPSAVE"],
+	["Qilin Minigun", "O_T_LSV_02_armed_F", 6000, "vehicle"],
 
 	["Hunter", "B_MRAP_01_F", 2000, "vehicle", "SKIPSAVE"],
 	["Hunter HMG", "B_MRAP_01_hmg_F", 7500, "vehicle"],
