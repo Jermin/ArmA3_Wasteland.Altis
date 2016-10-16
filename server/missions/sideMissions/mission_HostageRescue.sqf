@@ -22,7 +22,12 @@ _setupObjects =
 
 	//delete existing base parts and vehicles at location
 	_baseToDelete = nearestObjects [_missionPos, ["All"], 25];
-	{ deleteVehicle _x } forEach _baseToDelete; 
+	{
+		if (_x getVariable ["ownerUID", ""] == "") then
+		{
+			deleteVehicle _x;
+		};
+	} forEach _baseToDelete;
 
 	_camonet = createVehicle ["Land_Shed_06_F", [_missionPos select 0, _missionPos select 1], [], 0, "CAN COLLIDE"];
 	_camonet allowdamage false;
