@@ -12,12 +12,7 @@ private ["_player", "_corpse"];
 playerSetupComplete = false;
 playerSpawning = true;
 
-_supportersEnabled = ["A3W_supportersEnabled"] call isConfigOn;
-_supporterLevel = player getVariable ["supporter", 0];
-
-if !(_supportersEnabled && _supporterLevel > 0) then
-{9999 cutText ["", "BLACK", 0.01]};
-
+9999 cutText ["", "BLACK", 0.01];
 9123 cutRsc ["RscEmpty", "PLAIN"];
 
 _player = _this select 0;

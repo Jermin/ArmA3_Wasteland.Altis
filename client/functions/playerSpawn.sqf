@@ -9,9 +9,6 @@
 
 playerSpawning = true;
 
-_supportersEnabled = ["A3W_supportersEnabled"] call isConfigOn;
-_supporterLevel = player getVariable ["supporter", 0];
-
 //Teamkiller Kick
 if (!isNil "pvar_teamKillList" && {playerSide in [BLUFOR,OPFOR]}) then
 {
@@ -64,11 +61,6 @@ if (!isNil "pvar_teamSwitchList" && playerSide in [BLUFOR,OPFOR]) then
 if (isNil "playerData_alive" || !isNil "playerData_resetPos") then
 {
 	[player, "AmovPknlMstpSnonWnonDnon"] call switchMoveGlobal;
-
-	//Supporter Stuff
-	if (_supportersEnabled && _supporterLevel > 0) then
-	{_this call supporters;
-	};
 
 	9999 cutText ["Loading...", "BLACK", 0.01];
 

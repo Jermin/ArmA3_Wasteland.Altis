@@ -76,7 +76,7 @@ if (_packetName == "BIS_fnc_MP_packet") then
 				"BH_fnc_",
 				"APOC_srv_",
 				//"BIS_fnc_arsenal",
-				"bis_fnc_setidentity",
+				//"bis_fnc_setidentity",
 				"BIS_fnc_dynamicText"
 			];
 		};

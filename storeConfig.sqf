@@ -399,6 +399,9 @@ accessoriesArray = compileFinal str
 // If commented, means the color/camo isn't implemented or is a duplicate of another hat
 headArray = compileFinal str
 [
+	
+	["Special Purpose Helmet (Hex)", "H_HelmetO_ViperSP_hex_F", 3000, "hat"],
+	["Special Purpose Helmet (G Hex)", "H_HelmetO_ViperSP_ghex_F", 3000, "hat"],
 	["Gas Mask (NATO)", "H_CrewHelmetHeli_B", 1000, "hat"],
 	["Gas Mask (CSAT)", "H_CrewHelmetHeli_O", 1000, "hat"],
 	["Gas Mask (AAF)", "H_CrewHelmetHeli_I", 1000, "hat"],
@@ -779,6 +782,9 @@ genItemArray = compileFinal str
 	["Compact NVG (Hex)", "O_NVGoggles_hex_F", 300, "nvg"],
 	["Compact NVG (G Hex)", "O_NVGoggles_ghex_F", 300, "nvg"],
 	["Compact NVG (Urban)", "O_NVGoggles_urb_F", 300, "nvg"],
+	["ENVG-II (Black)", "NVGogglesB_blk_F", 2000, "hat"],
+	["ENVG-II (Green)", "NVGogglesB_grn_F", 2000, "hat"],
+	["ENVG-II (Grey)", "NVGogglesB_gry_F", 2000, "hat"],
 	["Binoculars", "Binocular", 50, "binoc"],
 	["Rangefinder", "Rangefinder", 150, "binoc"],
 	["Laser Designator (Sand)", "Laserdesignator", 1000, "binoc", "noDLC"], // Increase price to 2500 if A3W_disableBuiltInThermal = 0

@@ -31,10 +31,11 @@ spawnActionHandle = (_this select 1) spawn
 	{
 		// Deal with money here
 		_baseMoney = ["A3W_startingMoney", 100] call getPublicVar;
-		switch (_supporterLevel) do
-		{
-			case 1: { player setVariable ["cmoney", _baseMoney + 1000, true]; [MF_ITEMS_SPAWN_BEACON, 1] call mf_inventory_add; };
-			default { player setVariable ["cmoney", _baseMoney, true]; };
+		
+		if (_supporterLevel > 1) then {
+		  player setVariable ["cmoney", _baseMoney + 3000, true];
+		} else {
+		  player setVariable ["cmoney", _baseMoney, true];
 		};
 
 		/*if (["A3W_survivalSystem"] call isConfigOn) then
