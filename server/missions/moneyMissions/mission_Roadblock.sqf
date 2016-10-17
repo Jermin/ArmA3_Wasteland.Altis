@@ -23,7 +23,7 @@ _setupObjects =
 {
 
 	//delete existing base parts and vehicles at location
-	_baseToDelete = nearestObjects [_missionPos, ["All"], 25];
+	_baseToDelete = nearestObjects [_missionPos, ["ALL"], 25] select {_x getVariable ["ownerUID", ""] == ""};
 	{ deleteVehicle _x } forEach _baseToDelete;
 
 	_bargate = createVehicle ["Land_BarGate_F", _missionPos, [], 0, "NONE"];

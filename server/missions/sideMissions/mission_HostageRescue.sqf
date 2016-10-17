@@ -21,7 +21,7 @@ _setupObjects =
 	_missionPos = markerPos _missionLocation;
 
 	//delete existing base parts and vehicles at location
-	_baseToDelete = nearestObjects [_missionPos, ["All"], 25];
+	_baseToDelete = nearestObjects [_missionPos, ["ALL"], 25] select {_x getVariable ["ownerUID", ""] == ""};
 	{
 		if (_x getVariable ["ownerUID", ""] == "") then
 		{
