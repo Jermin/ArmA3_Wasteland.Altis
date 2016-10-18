@@ -8,7 +8,7 @@ class EditorData
 	toggles=6;
 	class ItemIDProvider
 	{
-		nextID=455;
+		nextID=457;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=36;
+		nextID=46;
 	};
 	class Camera
 	{
-		pos[]={21655.719,25,20794.488};
-		dir[]={-0.31824833,-0.25180936,0.91396123};
-		up[]={-0.082807809,0.96777338,0.23781033};
-		aside[]={0.94439155,1.4645047e-007,0.32884401};
+		pos[]={5842.2559,226.93564,20099.881};
+		dir[]={-0.92370266,-0.35331219,0.14830877};
+		up[]={-0.34887111,0.93549401,0.056012709};
+		aside[]={0.15853283,5.8187288e-007,0.9873808};
 	};
 };
 binarizationWanted=0;
@@ -117,7 +117,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=275;
+		items=277;
 		class Item0
 		{
 			dataType="Group";
@@ -6093,6 +6093,41 @@ class Mission
 			colorName="ColorBlue";
 			id=454;
 			atlOffset=5.7535968;
+		};
+		class Item275
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12415.5,26.286148,15562};
+				angles[]={0,3.1056738,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this] call A3W_fnc_setupMissionATM";
+			};
+			id=455;
+			type="Land_Atm_02_F";
+			atlOffset=0.11671448;
+		};
+		class Item276
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5838,226.78615,20102};
+				angles[]={0,0.12740904,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this] call A3W_fnc_setupMissionATM";
+			};
+			id=456;
+			type="Land_Atm_02_F";
+			atlOffset=0.40345764;
 		};
 	};
 };
