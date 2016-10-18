@@ -21,9 +21,11 @@ if !(_unit isUniformAllowed _uniform) then
 {
 	_uniforms =
 	[
-		["U_B_CombatUniform_mcam", "U_O_OfficerUniform_ocamo", "U_O_CombatUniform_ocamo", "U_I_CombatUniform"], // opfor officer uniform takes precedence on combat uniform to maintain balance
+		["U_B_CombatUniform_mcam_tshirt", "U_O_OfficerUniform_ocamo", "U_O_CombatUniform_ocamo", "U_I_CombatUniform_shortsleeve"], // opfor officer uniform takes precedence on combat uniform to maintain balance
+		["U_B_T_Soldier_F", "U_O_T_Officer_F", "U_O_T_Soldier_F", "U_I_CombatUniform"],
 
-		["U_B_T_Soldier_F", "U_O_T_Officer_F", "U_O_T_Soldier_F", "U_I_CombatUniform"], // jungle fatigues converts to default uniform for indies
+		["U_B_T_Soldier_AR_F", "U_O_T_Officer_F", "U_O_T_Soldier_F", "U_I_CombatUniform_shortsleeve"], // jungle fatigues converts to default uniform for indies
+		["U_B_T_Soldier_F", "U_O_T_Officer_F", "U_O_T_Soldier_F", "U_I_CombatUniform"],
 
 		["U_B_GhillieSuit", "U_O_GhillieSuit", "U_I_GhillieSuit"],
 		["U_B_T_Sniper_F", "U_O_T_Sniper_F", "U_I_GhillieSuit"],  // jungle light ghillie converts to normal light ghillie for indies
@@ -38,6 +40,7 @@ if !(_unit isUniformAllowed _uniform) then
 		["U_B_Wetsuit", "U_B_survival_uniform", "U_O_Wetsuit", "U_I_Wetsuit"],
 
 		["U_B_PilotCoveralls", "U_O_PilotCoveralls", "U_I_PilotCoveralls"],
+		["H_PilotHelmetHeli_B", "H_PilotHelmetHeli_O", "H_PilotHelmetHeli_I"],
 		["U_BG_Guerilla1_1", "U_OG_Guerilla1_1", "U_IG_Guerilla1_1"],
 		["U_BG_Guerilla2_1", "U_OG_Guerilla2_1", "U_IG_Guerilla2_1"],
 		["U_BG_Guerilla2_2", "U_OG_Guerilla2_2", "U_IG_Guerilla2_2"],
