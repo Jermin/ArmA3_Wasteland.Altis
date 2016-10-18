@@ -1943,9 +1943,9 @@ switch (_supporterLevel) do {
 			_player addBackpack "B_ViperHarness_hex_F";
 			_player forceAddUniform "U_O_V_Soldier_Viper_hex_F";
 			for "_i" from 1 to 2 do {_player addItemToUniform "Chemlight_red";};
-			for "_i" from 1 to 2 do {_player addItemToVest "16Rnd_9x21_Mag";};
-			for "_i" from 1 to 2 do {_player addItemToVest "MiniGrenade";};
-			for "_i" from 1 to 3 do {_player addItemToVest "APERSMine_Range_Mag";};
+			for "_i" from 1 to 2 do {_player addItemToBackpack "16Rnd_9x21_Mag";};
+			for "_i" from 1 to 2 do {_player addItemToBackpack "MiniGrenade";};
+			for "_i" from 1 to 3 do {_player addItemToBackpack "APERSMine_Range_Mag";};
 			_player addItemToUniform "FirstAidKit";
 			for "_i" from 1 to 7 do {_player addItemToBackpack "30Rnd_65x39_caseless_green";};
 			for "_i" from 1 to 3 do {_player addItemToBackpack "10Rnd_50BW_Mag_F";};
@@ -1977,8 +1977,8 @@ switch (_supporterLevel) do {
 			_player addBackpack "B_ViperHarness_hex_F";
 			_player forceAddUniform "U_O_V_Soldier_Viper_hex_F";
 			for "_i" from 1 to 2 do {_player addItemToUniform "Chemlight_red";};
-			for "_i" from 1 to 4 do {_player addItemToVest "16Rnd_9x21_Mag";};
-			for "_i" from 1 to 4 do {_player addItemToVest "MiniGrenade";};
+			for "_i" from 1 to 4 do {_player addItemToBackpack "16Rnd_9x21_Mag";};
+			for "_i" from 1 to 4 do {_player addItemToBackpack "MiniGrenade";};
 			_player addItemToUniform "FirstAidKit";
 			for "_i" from 1 to 8 do {_player addItemToBackpack "30Rnd_65x39_caseless_green";};
 			for "_i" from 1 to 5 do {_player addItemToBackpack "10Rnd_50BW_Mag_F";};
@@ -2010,10 +2010,11 @@ switch (_supporterLevel) do {
 			_player addBackpack "B_ViperHarness_hex_F";
 			_player forceAddUniform "U_O_V_Soldier_Viper_hex_F";
 			for "_i" from 1 to 2 do {_player addItemToUniform "Chemlight_red";};
-			for "_i" from 1 to 2 do {_player addItemToVest "16Rnd_9x21_Mag";};
-			for "_i" from 1 to 2 do {_player addItemToVest "MiniGrenade";};
+			for "_i" from 1 to 2 do {_player addItemToBackpack "16Rnd_9x21_Mag";};
+			for "_i" from 1 to 2 do {_player addItemToBackpack "MiniGrenade";};
 			_player addItemToUniform "FirstAidKit";
-			for "_i" from 1 to 4 do {_player addItemToBackpack "30Rnd_65x39_caseless_green";};
+			for "_i" from 1 to 5 do {_player addItemToBackpack "30Rnd_65x39_caseless_green";};
+			for "_i" from 1 to 5 do {_player addItemToBackpack "10Rnd_50BW_Mag_F";};
 			_player addItemToBackpack "SmokeShell";
 			_player addItemToBackpack "SmokeShellRed";
 			for "_i" from 1 to 2 do {_player addItemToBackpack "RPG32_F";};
@@ -2022,7 +2023,7 @@ switch (_supporterLevel) do {
 			_player addPrimaryWeaponItem "muzzle_snds_65_TI_hex_F";
 			_player addPrimaryWeaponItem "acc_pointer_IR";
 			_player addPrimaryWeaponItem "optic_Arco";
-			_player addWeapon "launch_RPG32_F";;
+			_player addWeapon "launch_RPG32_F";
 			_player addWeapon "hgun_Rook40_F";
 			_player addHandgunItem "muzzle_snds_L";
 
@@ -2421,9 +2422,9 @@ switch (_supporterLevel) do {
 			_player addBackpack "B_ViperHarness_ghex_F";
 			_player forceAddUniform "U_O_V_Soldier_Viper_F";
 			for "_i" from 1 to 2 do {_player addItemToUniform "Chemlight_red";};
-			for "_i" from 1 to 2 do {_player addItemToVest "16Rnd_9x21_Mag";};
-			for "_i" from 1 to 2 do {_player addItemToVest "MiniGrenade";};
-			for "_i" from 1 to 3 do {_player addItemToVest "APERSMine_Range_Mag";};
+			for "_i" from 1 to 2 do {_player addItemToBackpack "16Rnd_9x21_Mag";};
+			for "_i" from 1 to 2 do {_player addItemToBackpack "MiniGrenade";};
+			for "_i" from 1 to 3 do {_player addItemToBackpack "APERSMine_Range_Mag";};
 			_player addItemToUniform "FirstAidKit";
 			for "_i" from 1 to 7 do {_player addItemToBackpack "30Rnd_65x39_caseless_green";};
 			for "_i" from 1 to 3 do {_player addItemToBackpack "10Rnd_50BW_Mag_F";};
@@ -2455,8 +2456,8 @@ switch (_supporterLevel) do {
 			_player addBackpack "B_ViperHarness_ghex_F";
 			_player forceAddUniform "U_O_V_Soldier_Viper_F";
 			for "_i" from 1 to 2 do {_player addItemToUniform "Chemlight_red";};
-			for "_i" from 1 to 4 do {_player addItemToVest "16Rnd_9x21_Mag";};
-			for "_i" from 1 to 4 do {_player addItemToVest "MiniGrenade";};
+			for "_i" from 1 to 4 do {_player addItemToBackpack "16Rnd_9x21_Mag";};
+			for "_i" from 1 to 4 do {_player addItemToBackpack "MiniGrenade";};
 			_player addItemToUniform "FirstAidKit";
 			for "_i" from 1 to 8 do {_player addItemToBackpack "30Rnd_65x39_caseless_green";};
 			for "_i" from 1 to 5 do {_player addItemToBackpack "10Rnd_50BW_Mag_F";};
@@ -2488,10 +2489,11 @@ switch (_supporterLevel) do {
 			_player addBackpack "B_ViperHarness_ghex_F";
 			_player forceAddUniform "U_O_V_Soldier_Viper_F";
 			for "_i" from 1 to 2 do {_player addItemToUniform "Chemlight_red";};
-			for "_i" from 1 to 2 do {_player addItemToVest "16Rnd_9x21_Mag";};
-			for "_i" from 1 to 2 do {_player addItemToVest "MiniGrenade";};
+			for "_i" from 1 to 2 do {_player addItemToBackpack "16Rnd_9x21_Mag";};
+			for "_i" from 1 to 2 do {_player addItemToBackpack "MiniGrenade";};
 			_player addItemToUniform "FirstAidKit";
-			for "_i" from 1 to 4 do {_player addItemToBackpack "30Rnd_65x39_caseless_green";};
+			for "_i" from 1 to 5 do {_player addItemToBackpack "30Rnd_65x39_caseless_green";};
+			for "_i" from 1 to 5 do {_player addItemToBackpack "10Rnd_50BW_Mag_F";};
 			_player addItemToBackpack "SmokeShell";
 			_player addItemToBackpack "SmokeShellRed";
 			for "_i" from 1 to 2 do {_player addItemToBackpack "RPG32_F";};
@@ -2500,11 +2502,11 @@ switch (_supporterLevel) do {
 			_player addPrimaryWeaponItem "muzzle_snds_65_TI_ghex_F";
 			_player addPrimaryWeaponItem "acc_pointer_IR";
 			_player addPrimaryWeaponItem "optic_Arco_ghex_F";
-			_player addWeapon "launch_RPG32_ghex_F";;
+			_player addWeapon "launch_RPG32_ghex_F";
 			_player addWeapon "hgun_Rook40_F";
 			_player addHandgunItem "muzzle_snds_L";
 
-			_player addHeadgear "H_HelmetO_ViperSP_hex_F";
+			_player addHeadgear "H_HelmetO_ViperSP_ghex_F";
 			_player linkItem "ItemGPS";
 			_player addWeapon "Rangefinder";
 			//_player setObjectTextureGlobal  [0, _texDir + "hex.paa"]; backpackContainer _player setObjectTextureGlobal  [0, _texDir + "hex.paa"];
