@@ -1152,9 +1152,13 @@ colorsArray = compileFinal str
 			["NATO Tan", _texDir + "nato.paa"], // #(argb,8,8,3)color(0.584,0.565,0.515,0.3)
 			["CSAT Brown", _texDir + "csat.paa"], // #(argb,8,8,3)color(0.624,0.512,0.368,0.3)
 			["AAF Green", _texDir + "aaf.paa"], // #(argb,8,8,3)color(0.546,0.59,0.363,0.2)
+			["Alien", _texDir + "alien.jpg"],  //
+			["Apple", _texDir + "apple2.jpg"],  //
 			["Bloodshot", _texDir + "bloodshot.paa"],
 			["Carbon", _texDir + "carbon.paa"],
 			["Confederate", _texDir + "confederate.paa"],
+			["cute", _texDir + "cute.jpg"],   //
+			["Cross", _texDir + "cross.jpg"],  //
 			["Denim", _texDir + "denim.paa"],
 			["Digital", _texDir + "digi.paa"],
 			["Digital Black", _texDir + "digi_black.paa"],
@@ -1164,14 +1168,20 @@ colorsArray = compileFinal str
 			["Drylands", _texDir + "drylands.paa"],
 			["Hello Kitty", _texDir + "hellokitty.paa"],
 			["Hex", _texDir + "hex.paa"],
+			["Hexbob", _texDir + "hexbob.jpg"], //
 			["Hippie", _texDir + "hippie.paa"],
 			["ISIS", _texDir + "isis.paa"],
+			["Jungle Camo", _texDir + "jungle.jpg"], //
 			["Leopard", _texDir + "leopard.paa"],
+			["mcdonalds", _texDir + "mcdonalds.jpg"], //
 			["Mountain Dew", _texDir + "mtndew.paa"],
 			["'Murica", _texDir + "murica.paa"],
 			["Nazi", _texDir + "nazi.paa"],
+			["Nike", _texDir + "nike.jpg"],
+			["Ocean Camo", _texDir + "ocean.jpg"], //
 			["Orange Camo", _texDir + "camo_orange.paa"],
 			["Pink Camo", _texDir + "camo_pink.paa"],
+			["Predator Camo", _texDir + "predator.jpg"], //
 			["Pride", _texDir + "pride.paa"],
 			["Psych", _texDir + "psych.paa"],
 			["Red Camo", _texDir + "camo_red.paa"],
@@ -1184,6 +1194,7 @@ colorsArray = compileFinal str
 			["Swamp", _texDir + "swamp.paa"],
 			["Tiger", _texDir + "tiger.paa"],
 			["Trippy", _texDir + "rainbow.paa"],
+			["Trippy 2", _texDir + "trippy.jpg"],  //
 			["Union Jack", _texDir + "unionjack.paa"],
 			["Urban", _texDir + "urban.paa"],
 			["Weed", _texDir + "weed.paa"],
