@@ -17,7 +17,7 @@ MainMissions =
 	["mission_MBT", 1.5],
 	["mission_LightArmVeh", 0.5],
 	["mission_ArmedHeli", 2],
-	["mission_ArmedJet", 1],
+	["mission_ArmedJet", 0.5],
 	["mission_CivHeli", 0.5]
 ];
 
@@ -26,8 +26,8 @@ SideMissions =
 	["mission_HostileHelicopter", 0.5],
 	["mission_MiniConvoy", 1],
 	["mission_SunkenSupplies", 1],
-	["mission_TownInvasion", 2],
-	["mission_Outpost", 3],
+	["mission_TownInvasion", 0.4],
+	["mission_Outpost", 1],
 	["mission_Truck", 1],
 	["mission_GeoCache", 1],
 	["mission_HostageRescue", 1]
@@ -36,9 +36,9 @@ SideMissions =
 MoneyMissions =
 [
 	["mission_MoneyShipment", 1],
-	["mission_SunkenTreasure", 1],
-	["mission_drugsRunners", 0.1],
-	["mission_Roadblock", 0.4]
+	["mission_SunkenTreasure", 0.5],
+	["mission_drugsRunners", 1],
+	["mission_Roadblock", 1]
 ];
 
 ExtraMissions =
@@ -62,8 +62,8 @@ if !(ForestMissionMarkers isEqualTo []) then
 {
 	SideMissions append
 	[
-		["mission_AirWreck", 3],
-		["mission_WepCache", 3]
+		["mission_AirWreck", 1],
+		["mission_WepCache", 1]
 	];
 };
 
