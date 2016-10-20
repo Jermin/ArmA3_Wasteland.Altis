@@ -782,9 +782,9 @@ genItemArray = compileFinal str
 	["Compact NVG (Hex)", "O_NVGoggles_hex_F", 300, "nvg"],
 	["Compact NVG (G Hex)", "O_NVGoggles_ghex_F", 300, "nvg"],
 	["Compact NVG (Urban)", "O_NVGoggles_urb_F", 300, "nvg"],
-	["ENVG-II (Black)", "NVGogglesB_blk_F", 2000, "hat"],
-	["ENVG-II (Green)", "NVGogglesB_grn_F", 2000, "hat"],
-	["ENVG-II (Grey)", "NVGogglesB_gry_F", 2000, "hat"],
+	["ENVG-II (Black)", "NVGogglesB_blk_F", 2000, "nvg"],
+	["ENVG-II (Green)", "NVGogglesB_grn_F", 2000, "nvg"],
+	["ENVG-II (Grey)", "NVGogglesB_gry_F", 2000, "nvg"],
 	["Binoculars", "Binocular", 50, "binoc"],
 	["Rangefinder", "Rangefinder", 150, "binoc"],
 	["Laser Designator (Sand)", "Laserdesignator", 1000, "binoc", "noDLC"], // Increase price to 2500 if A3W_disableBuiltInThermal = 0
