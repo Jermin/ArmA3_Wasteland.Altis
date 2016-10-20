@@ -15,7 +15,9 @@ _setupVars =
 {
 	_vehicleClass =
 	["B_Plane_CAS_01_F",
-	"O_Plane_CAS_02_F"
+	"O_Plane_CAS_02_F",
+	"B_T_VTOL_01_armed_F",
+	"O_T_VTOL_02_vehicle_F"
 	] call BIS_fnc_selectRandom;
 
 	_missionType = "Abandoned Jet";
