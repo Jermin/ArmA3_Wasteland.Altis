@@ -350,5 +350,6 @@ R3F_LOG_CFG_objets_deplacables =
 	"Land_Grave_rocks_F",
 	"Land_Laptop_F",
 	"Land_HandyCam_F",
+	"Land_WinnersPodium_01_F",
 	"Land_Device_assembled_F" //relocker
 ];
