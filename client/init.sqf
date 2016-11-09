@@ -183,4 +183,11 @@ inGameUISetEventHandler ["Action", "_this call A3W_fnc_inGameUIActionEvent"];
 	};
 } forEach pvar_spawn_beacons;
 
+{
+	if(typename(profileNamespace getVariable [_x,0]) == typename "") then {
+		profileNamespace setVariable [_x,0.4];
+		//--- BAN USER HERE 
+	};
+} forEach ['igui_bcg_rgb_a','igui_bcg_rgb_r','igui_bcg_rgb_g','igui_bcg_rgb_b','IGUI_grid_mission_X','IGUI_grid_mission_Y','IGUI_grid_mission_W','IGUI_grid_mission_H'];
+
 if(hasInterface) then{[] execVM "addons\statusBar\statusbar.sqf"}; 
