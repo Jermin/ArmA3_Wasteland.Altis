@@ -7,7 +7,7 @@
 if (!isServer) exitwith {};
 #include "extraMissionDefines.sqf"
 
-private ["_planeChoices", "_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_vehicleName2", "_numWaypoints", "_cash", "_boxes1", "_currBox1", "_boxes2", "_currBox2", "_box1", "_box2"];
+private ["_planeChoices", "_convoyVeh", "_veh1", "_veh2", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_vehicleName2", "_numWaypoints", "_cash", "_boxes1", "_currBox1", "_boxes2", "_currBox2", "_box1", "_box2"];
 
 _setupVars =
 {
@@ -21,15 +21,14 @@ _setupObjects =
 
 	_planeChoices =
 	[
-		["B_Plane_CAS_01_F", "B_Plane_CAS_01_F", "B_Plane_CAS_01_F"],
-		["O_Plane_CAS_02_F", "O_Plane_CAS_02_F", "O_Plane_CAS_02_F"]
+		["B_Plane_CAS_01_F", "B_Plane_CAS_01_F"],
+		["O_Plane_CAS_02_F", "O_Plane_CAS_02_F"]
 	];
 
 	_convoyVeh = _planeChoices call BIS_fnc_selectRandom;
 
 	_veh1 = _convoyVeh select 0;
 	_veh2 = _convoyVeh select 1;
-	_veh3 = _convoyVeh select 2;
 
 	_createVehicle =
 	{
@@ -75,8 +74,7 @@ _setupObjects =
 	_vehicles =
 	[
 		[_veh1, _missionPos vectorAdd ([[random 50, 0, 0], random 360] call BIS_fnc_rotateVector2D), 0] call _createVehicle,
-		[_veh2, _missionPos vectorAdd ([[random 50, 0, 0], random 360] call BIS_fnc_rotateVector2D), 0] call _createVehicle,
-		[_veh3, _missionPos vectorAdd ([[random 50, 0, 0], random 360] call BIS_fnc_rotateVector2D), 0] call _createVehicle
+		[_veh2, _missionPos vectorAdd ([[random 50, 0, 0], random 360] call BIS_fnc_rotateVector2D), 0] call _createVehicle
 	];
 
 	_leader = effectiveCommander (_vehicles select 0);
@@ -85,7 +83,7 @@ _setupObjects =
 	
 	_aiGroup setCombatMode "RED";
 	_aiGroup setBehaviour "COMBAT";
-	_aiGroup setFormation "ECH RIGHT";
+	_aiGroup setFormation "LINE";
 
 	_speedMode = if (missionDifficultyHard) then { "NORMAL" } else { "LIMITED" };
 
@@ -98,7 +96,7 @@ _setupObjects =
 		_waypoint setWaypointCompletionRadius 50;
 		_waypoint setWaypointCombatMode "GREEN";
 		_waypoint setWaypointBehaviour "SAFE";
-		_waypoint setWaypointFormation "ECH RIGHT";
+		_waypoint setWaypointFormation "VEE";
 		_waypoint setWaypointSpeed _speedMode;
 	} forEach ((call cityList) call BIS_fnc_arrayShuffle);
 
@@ -108,7 +106,7 @@ _setupObjects =
 	_vehicleName = getText (configFile >> "CfgVehicles" >> _veh1 >> "displayName");
 	_vehicleName2 = getText (configFile >> "CfgVehicles" >> _veh2 >> "displayName");
 
-	_missionHintText = format ["A formation of Jets containing three <t color='%3'>%1</t> are patrolling the island. Destroy them and recover their cargo!", _vehicleName, _vehicleName2, extraMissionColor];
+	_missionHintText = format ["A formation of Jets containing two <t color='%3'>%1</t> are patrolling the island. Destroy them and recover their cargo!", _vehicleName, _vehicleName2, mainMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
@@ -128,10 +126,10 @@ _successExec =
 	//Money
 	for "_i" from 1 to 10 do
 	{
-		_cash = createVehicle ["Land_Money_F", _lastPos, [], 10, "None"];
+		_cash = createVehicle ["Land_Money_F", _lastPos, [], 5, "None"];
 		_cash setPos ([_lastPos, [[2 + random 3,0,0], random 360] call BIS_fnc_rotateVector2D] call BIS_fnc_vectorAdd);
 		_cash setDir random 360;
-		_cash setVariable ["cmoney", 7500, true];
+		_cash setVariable ["cmoney", 10000, true];
 		_cash setVariable ["owner", "world", true];
 	};
 
