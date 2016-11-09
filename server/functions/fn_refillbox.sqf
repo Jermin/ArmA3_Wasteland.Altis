@@ -58,7 +58,8 @@ switch (_boxType) do
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			["bac", ["B_Carryall_mcamo", "B_Bergen_mcamo_F"], RANDOM_BETWEEN(2,5)],
-			//["itm", "NVGoggles", 5],
+			["bac", ["B_UAV_01_backpack_F", "O_UAV_01_backpack_F", "I_UAV_01_backpack_F"], RANDOM_BETWEEN(0,1)],
+			["itm", ["NVGogglesB_blk_F", "NVGogglesB_grn_F", "NVGogglesB_gry_F"], RANDOM_BETWEEN(0,1)],
 			["wep", ["Binocular", "Rangefinder"], RANDOM_BETWEEN(0,3)],
 			["itm", "Medikit", RANDOM_BETWEEN(1,3)],
 			["itm", "Toolkit", RANDOM_BETWEEN(1,3)],
@@ -209,7 +210,6 @@ switch (_boxType) do
 			["mag","10Rnd_127x54_Mag", 10], 
 			["mag","10Rnd_50BW_Mag_F", 10], 
 			["mag",["5Rnd_127x108_Mag","5Rnd_127x108_APDS_Mag"], RANDOM_BETWEEN(10,15)],
-			["mag","SmokeShellyellow", RANDOM_BETWEEN(3,6)],
 			["mag",["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokePurple_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeYellow_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"], RANDOM_BETWEEN(8,10)],
 			["mag",["3Rnd_HE_Grenade_shell","3Rnd_Smoke_Grenade_shell","3Rnd_SmokePurple_Grenade_shell","3Rnd_SmokeBlue_Grenade_shell", "3Rnd_SmokeGreen_Grenade_shell", "3Rnd_SmokeYellow_Grenade_shell","3Rnd_SmokeOrange_Grenade_shell","3Rnd_SmokeRed_Grenade_shell"], RANDOM_BETWEEN(8,10)],
 			["mag",["UGL_FlareWhite_F", "UGL_FlareGreen_F","UGL_FlareYellow_F","UGL_FlareRed_F","UGL_FlareCIR_F", "3Rnd_UGL_FlareWhite_F", "3Rnd_UGL_FlareGreen_F","3Rnd_UGL_FlareYellow_F", "3Rnd_UGL_FlareRed_F","3Rnd_UGL_FlareCIR_F"], RANDOM_BETWEEN(10,15)]
@@ -223,7 +223,7 @@ switch (_boxType) do
 			// Item type, Item class(es), # of items, # of magazines per weapon
 			["wep", ["launch_RPG32_F", "launch_NLAW_F", "launch_I_Titan_short_F"], RANDOM_BETWEEN(3,5), RANDOM_BETWEEN(1,2)],
 			["wep", "launch_I_Titan_F", RANDOM_BETWEEN(1,2), RANDOM_BETWEEN(1,2)],
-			["mag", ["SmokeShellRed", "SmokeShellOrange", "SmokeShellYellow", "SmokeShellGreen", "SmokeShellBlue", "SmokeShellPurple"], RANDOM_BETWEEN(1,2)],
+			["mag", ["SmokeShellRed", "SmokeShellOrange", "SmokeShellGreen", "SmokeShellBlue", "SmokeShellPurple"], RANDOM_BETWEEN(1,2)],
 			["mag", ["SLAMDirectionalMine_Wire_Mag", "ATMine_Range_Mag", "DemoCharge_Remote_Mag", "SatchelCharge_Remote_Mag"], RANDOM_BETWEEN(3,5)],
 			["mag", "Titan_AP", RANDOM_BETWEEN(1,3)]
 		];
