@@ -764,9 +764,9 @@ genItemArray = compileFinal str
 	["UAV Terminal (NATO)", "B_UavTerminal", 500, "gps"],
 	["UAV Terminal (CSAT)", "O_UavTerminal", 500, "gps"],
 	["UAV Terminal (AAF)", "I_UavTerminal", 500, "gps"],
-	["Quadrotor UAV (NATO)", "B_UAV_01_backpack_F", 9500, "backpack"],
+	/*["Quadrotor UAV (NATO)", "B_UAV_01_backpack_F", 9500, "backpack"],
 	["Quadrotor UAV (CSAT)", "O_UAV_01_backpack_F", 9500, "backpack"],
-	["Quadrotor UAV (AAF)", "I_UAV_01_backpack_F", 9500, "backpack"],
+	["Quadrotor UAV (AAF)", "I_UAV_01_backpack_F", 9500, "backpack"],*/
 	["Remote Designator (Sand)", "B_Static_Designator_01_weapon_F", 2500, "backpack"],
 	["Remote Designator (Hex)", "O_Static_Designator_02_weapon_F", 2500, "backpack"],
 	["GPS", "ItemGPS", 100, "gps"],
@@ -1053,12 +1053,12 @@ helicoptersArray = compileFinal str
 	["UH-80 Ghost Hawk", "B_Heli_Transport_01_F", 7500, "vehicle"], // UH-60 Stealth with 2 side miniguns
 	["AH-9 Pawnee", "B_Heli_Light_01_armed_F", 12000, "vehicle"], // Armed AH-6
 	["PO-30 Orca (Armed, Black)", "O_Heli_Light_02_v2_F", 15000, "vehicle"], // Armed Ka-60 with orca paintjob
-	["PO-30 Orca (Armed, Hex)", "O_Heli_Light_02_F", 30000, "vehicle"], // Armed Ka-60
+	// ["PO-30 Orca (Armed, Hex)", "O_Heli_Light_02_F", 30000, "vehicle"], // Armed Ka-60
 	["WY-55 Hellcat (Armed)", "I_Heli_light_03_F", 17500, "vehicle"], // Armed AW159
-	["AH-99 Blackfoot", "B_Heli_Attack_01_F", 100000, "vehicle"], // RAH-66 with gunner
-	["Mi-48 Kajman", "O_Heli_Attack_02_F", 50000, "vehicle"], // Mi-28 with gunner
+	//["AH-99 Blackfoot", "B_Heli_Attack_01_F", 100000, "vehicle"], // RAH-66 with gunner
+	["Mi-48 Kajman", "O_Heli_Attack_02_F", 50000, "vehicle"] // Mi-28 with gunner
 
-	["MQ-12 Falcon UAV", "B_T_UAV_03_F", 50000, "vehicle"]
+	//["MQ-12 Falcon UAV", "B_T_UAV_03_F", 50000, "vehicle"]
 ];
 
 planesArray = compileFinal str
@@ -1066,23 +1066,23 @@ planesArray = compileFinal str
 	["Caesar BTT", "C_Plane_Civil_01_F", 3000, "vehicle"],
 	["Caesar BTT (Racing)", "C_Plane_Civil_01_racing_F", 5000, "vehicle"],
 
-	["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 50000, "vehicle"],
-	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 40000, "vehicle"],
-	["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 100000, "vehicle"],
-	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 80000, "vehicle"],
+	//["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 50000, "vehicle"],
+	//["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 40000, "vehicle"],
+	//["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 100000, "vehicle"],
+	//["To-199 Neophron CAS", "O_Plane_CAS_02_F", 80000, "vehicle"],
 
 	["V-44 X Blackfish (Infantry)", "B_T_VTOL_01_infantry_F", 20000, "vehicle"],
 	["V-44 X Blackfish (Gunship)", "B_T_VTOL_01_armed_F", 60000, "vehicle"],
-	["Y-32 Xi'an", "O_T_VTOL_02_infantry_F", 60000, "vehicle"],
+	["Y-32 Xi'an", "O_T_VTOL_02_infantry_F", 60000, "vehicle"]
 
 	// ["MQ4A Greyhawk Missile UAV", "B_UAV_02_F", 50000, "vehicle"],
-	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_CAS_F", 30000, "vehicle"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than Missile ones
+	//["MQ4A Greyhawk Bomber UAV", "B_UAV_02_CAS_F", 30000, "vehicle"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than Missile ones
 	// ["K40 Ababil-3 Missile UAV", "O_UAV_02_F", 50000, "vehicle"],
-	["K40 Ababil-3 Bomber UAV", "O_UAV_02_CAS_F", 30000, "vehicle"],
+	///["K40 Ababil-3 Bomber UAV", "O_UAV_02_CAS_F", 30000, "vehicle"],
 	// ["K40 Ababil-3 Missile UAV", "I_UAV_02_F", 50000, "vehicle"],
-	["K40 Ababil-3 Bomber UAV", "I_UAV_02_CAS_F", 30000, "vehicle"],
+	//["K40 Ababil-3 Bomber UAV", "I_UAV_02_CAS_F", 30000, "vehicle"],
 
-	["KH-3A Fenghuang UAV", "O_T_UAV_04_CAS_F", 50000, "vehicle"]
+	//["KH-3A Fenghuang UAV", "O_T_UAV_04_CAS_F", 50000, "vehicle"]
 ];
 
 boatsArray = compileFinal str
