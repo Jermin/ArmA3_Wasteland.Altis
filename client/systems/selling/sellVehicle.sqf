@@ -42,6 +42,15 @@ storeSellingHandle = _this spawn
 		};
 	} forEach (call allVehStoreVehicles);
 
+	if (_type == "B_Plane_CAS_01_F" || _type == "O_Plane_CAS_02_F" || _type == "B_Heli_Attack_01_F") then
+	{	
+		_price = 50000;
+	};
+	if (_type == "O_Heli_Light_02_F") then
+	{	
+		_price = 15000;
+	};
+
 	if (!isNil "_price") then
 	{
 		// Add total sell value to confirm message
