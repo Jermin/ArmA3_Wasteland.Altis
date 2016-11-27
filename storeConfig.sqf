@@ -1066,10 +1066,10 @@ planesArray = compileFinal str
 	["Caesar BTT", "C_Plane_Civil_01_F", 3000, "vehicle"],
 	["Caesar BTT (Racing)", "C_Plane_Civil_01_racing_F", 5000, "vehicle"],
 
-	//["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 50000, "vehicle"],
+	["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 50000, "vehicle"],
 	//["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 40000, "vehicle"],
 	//["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 100000, "vehicle"],
-	//["To-199 Neophron CAS", "O_Plane_CAS_02_F", 80000, "vehicle"],
+	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 80000, "vehicle"],
 
 	["V-44 X Blackfish (Infantry)", "B_T_VTOL_01_infantry_F", 20000, "vehicle"],
 	["V-44 X Blackfish (Gunship)", "B_T_VTOL_01_armed_F", 60000, "vehicle"],
