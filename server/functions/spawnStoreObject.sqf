@@ -292,6 +292,78 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 				};
 			};*/
 
+			if (_object isKindOf "O_Plane_CAS_02_F") then {
+			  	_object addAction [ "Release Smoke Trails", { 
+				  params [ 
+				   "_target", 
+				   "_caller", 
+				   "_id" 
+				  ]; 
+				   
+				  _smokeOn = _target getVariable [ "smokeTrailsOn", false ]; 
+				   
+				  switch ( _smokeOn ) do { 
+				   case true : { 
+				    _target setUserActionText [ _id, "Release Smoke Trails" ]; 
+				    { 
+				     deleteVehicle _x; 
+				    }forEach ( _target getVariable [ "emitters", [] ] ); 
+				   }; 
+				   case false : { 
+				    _target setUserActionText [ _id, "Stop Smoke Trails" ]; 
+				    _emitters = []; 
+				    { 
+				     _x params[ "_color", "_pos" ]; 
+				     _color params[ "_colorRed", "_colorGreen", "_colorBlue" ]; 
+				      
+				     _emitter = "#particlesource" createVehicle ( _target modelToWorld _pos ); 
+				     _emitter attachTo [ _target, _pos ]; 
+				      
+				     _colorAlpha = 0.5; 
+				     _timeout = 0; 
+				     _particleLifeTime = 50; 
+				     _particleDensity = 10; 
+				     _particleSize = 1; 
+				     _particleSpeed = 1; 
+				     _particleLifting = 1; 
+				     _windEffect = 1; 
+				     _effectSize = 1; 
+				     _expansion = 1; 
+				      
+				     _emitter setParticleParams [ 
+				      ["\A3\data_f\ParticleEffects\Universal\Universal_02",8,0,40,1],"","billboard",1,_particleLifeTime,[0,0,0],[0,0,2*_particleSpeed],0,0.05,0.04*_particleLifting,0.05*_windEffect,[1 *_particleSize + 1,1.8 * _particleSize + 15], 
+				     [[0.7*_colorRed,0.7*_colorGreen,0.7*_colorBlue,0.7*_colorAlpha],[0.7*_colorRed,0.7*_colorGreen,0.7*_colorBlue,0.6*_colorAlpha],[0.7*_colorRed,0.7*_colorGreen,0.7*_colorBlue,0.45*_colorAlpha], 
+				     [0.84*_colorRed,0.84*_colorGreen,0.84*_colorBlue,0.28*_colorAlpha],[0.84*_colorRed,0.84*_colorGreen,0.84*_colorBlue,0.16*_colorAlpha],[0.84*_colorRed,0.84*_colorGreen,0.84*_colorBlue,0.09*_colorAlpha], 
+				     [0.84*_colorRed,0.84*_colorGreen,0.84*_colorBlue,0.06*_colorAlpha],[1*_colorRed,1*_colorGreen,1*_colorBlue,0.02*_colorAlpha],[1*_colorRed,1*_colorGreen,1*_colorBlue,0*_colorAlpha]], 
+				     [1,0.55,0.35], 0.1, 0.08*_expansion, "", "", ""]; 
+				      
+				     _emitter setParticleRandom [_particleLifeTime/2, [0.5*_effectSize,0.5*_effectSize,0.2*_effectSize], [0.3,0.3,0.5], 1, 0, [0,0,0,0.06], 0, 0]; 
+				     _emitter setDropInterval (1/_particleDensity); 
+				      
+				     _nul = _emitters pushBack _emitter; 
+				    }forEach [ 
+				     [ [ 1, 0, 0 ], [-6, -3, -2] ], 
+				     [ [ 1, 0, 0 ], [6, -3, -2] ], 
+				     [ [ 1, 1, 0 ], [-6.5, -3, -2] ], 
+				     [ [ 1, 1, 0 ], [6.5, -3, -2] ], 
+				     [ [ 0, 0, 1 ], [-7, -3, -2] ], 
+				     [ [ 0, 0, 1 ], [7, -3, -2] ]  
+				    ]; 
+				    _target setVariable [ "emitters", _emitters ]; 
+				   }; 
+				  }; 
+				   
+				  _target setVariable [ "smokeTrailsOn", !_smokeOn ]; 
+				 }, 
+				 [], 
+				 1, 
+				 false, 
+				 true, 
+				 "", 
+				 "_this in crew _target" 
+				];
+			};
+
 			if (_skipSave) then
 			{
 				_object setVariable ["A3W_skipAutoSave", true, true];
